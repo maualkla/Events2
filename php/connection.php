@@ -10,7 +10,7 @@
 	--> Dependencies:   none 
 ************************************************************************************************* */
 // Set credentials
-    $servername = "127.0.0.1:8011";
+    $servername = "127.0.0.1";
     $username = "root";
     $password = "";
     $dbname = "evnt";
@@ -19,5 +19,9 @@
     $dbc = mysqli_connect($servername,$username,$password,$dbname);
     if (!$dbc) {
         die("Connection failed" . mysqli_connect_error());
+    }
+    else
+    {
+    	echo "ok";
     }
 ?>

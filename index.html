@@ -17,8 +17,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="error" id="error-msg">
-				DOM
+			<div class="" id="error-msg">
 			</div>
 			<div class="top">
 				<img src="assets/events-beta.png">
@@ -38,7 +37,9 @@
 	 		if(param == 1)
 	 		{
 	 			//alert(" Error, check your password ");
-	 			document.getElementById("error-msg").innerHTML = "Error, check your user or password!";
+	 			var text = document.getElementById("error-msg")
+	 			text.innerHTML = "Error, wrong user or password!";
+	 			text.classList.add("error");
 	 		}
 		</script>
 	</body>
