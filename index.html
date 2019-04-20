@@ -11,13 +11,23 @@
 <html>
 	<head>
 		<title>Events</title>
-		<!--link rel="shortcut icon" href=""-->
+		<link rel="shortcut icon" href="assets/events-beta-icon.png">
 		<link rel=StyleSheet href= "css/design.css" type="text/css">
 		<script type = "text/javascript" src="javascript/functions.js"></script>
 	</head>
 	<body>
 		<div class="container">
-			<h3> Welcome to Events PHP </h3>
+			<div class="top">
+				<img src="assets/events-beta.png">
+				<h3> Welcome to Events PHP </h3>
+			</div>
+			<div class="login">
+				<form name="login" class="" method="post" action="php/index.php">
+					<input type="email" autofocus id="user" name="user" size="18"  placeholder="Correo" onChange="">
+					<input type="password" id="password" name="contra" size="18" placeholder="Contraseña" ><br>
+					<input class="botongeneral" type="submit" name="botonlogin" value="ACCEDER">
+	            </form>
+			</div>
 		</div>
 	</body>
 </html>
