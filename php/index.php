@@ -26,17 +26,17 @@
 		    $cryptcontra = password_hash($contra, PASSWORD_BCRYPT); echo " ORIGINAL : ". $contra ." :: BCRYPT : ".$cryptcontra;
 		    $user = $_REQUEST['user'];
 		    $sql = "select * from user";
-		    require_once("connection.php");
-		    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
-		    mysqli_close($dbc);
-		    while($row = mysqli_fetch_array($result, MYSQLI_BOTH )) 
-		    {
-		        if(( $contra == $row[5])&&( $user == $row[4]))
-				{
-					$si++;
-					$id_user = $row[0];
-				}
-		    }
+		    //require_once("connection.php");
+		    //$result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
+		    //mysqli_close($dbc);
+		    //while($row = mysqli_fetch_array($result, MYSQLI_BOTH )) 
+		    //{
+		    //    if(( $contra == $row[5])&&( $user == $row[4]))
+			//	{
+			//		$si++;
+			//		$id_user = $row[0];
+			//	}
+		    //}
 		    if( $si == 1)
 		    {
 		        // Iniciamos una sesion en el sitio en caso de que si este correcto el usuario y contraseña.

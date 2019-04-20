@@ -17,17 +17,29 @@
 	</head>
 	<body>
 		<div class="container">
+			<div class="error" id="error-msg">
+				DOM
+			</div>
 			<div class="top">
 				<img src="assets/events-beta.png">
 				<h3> Welcome to Events PHP </h3>
 			</div>
 			<div class="login">
 				<form name="login" class="" method="post" action="php/index.php">
-					<input type="email" autofocus id="user" name="user" size="18"  placeholder="Correo" onChange="">
+					<input type="text" autofocus id="user" name="user" size="18"  placeholder="User" onChange="">
 					<input type="password" id="password" name="contra" size="18" placeholder="Contraseña" ><br>
 					<input class="botongeneral" type="submit" name="botonlogin" value="ACCEDER">
 	            </form>
 			</div>
 		</div>
+		<script type="text/javascript">
+			var url = new URL(window.location.href);
+	 		var param = url.searchParams.get("pe");
+	 		if(param == 1)
+	 		{
+	 			//alert(" Error, check your password ");
+	 			document.getElementById("error-msg").innerHTML = "Error, check your user or password!";
+	 		}
+		</script>
 	</body>
 </html>
