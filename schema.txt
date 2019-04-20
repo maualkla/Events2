@@ -1,13 +1,13 @@
 ## Events in PHP
 ## Database description
 
-## users
+## user
 	- userid int(5) User identify number
-	- fName string(25) User name
-	- lName string(25) User last name 
+	- fname string(25) User name
+	- lname string(25) User last name 
 	- email string(50) User email
-	- nickname string(10) User nickname
-	- passwprd string(25) User password
+	- nickname string(20) User nickname
+	- password string(25) User password
 
 ## events
 	- eventid
