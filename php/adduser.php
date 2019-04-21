@@ -27,15 +27,22 @@
 					$lname = ""; $lname = $_REQUEST['lname'];
 					$email = ""; $email = $_REQUEST['email'];
 					$alias = ""; $alias = $_REQUEST['alias'];
-					$password = ""; $password = $_REQUEST['pass'];
-					$password = password_hash($contra, PASSWORD_BCRYPT);
+					$contra = ""; $contra = $_REQUEST['pass'];
+					$options = [ 'salt' => "ASI99221111000__s¡??0popopop22MQVANDMEAL" ];
+					$password = password_hash($contra, PASSWORD_DEFAULT, $options);
 					if($fname != "" && $lname != "" && $email != "" && $alias != "" && $password != "")
 					{
-						echo "YEI";
+						//echo "Insert";
+						$sql = 'INSERT INTO user (fname, lname, email, nickname, password) VALUES ("'.$fname.'", "'.$lname.'", "'.$email.'", "'.$alias.'", "'.$password.'")';
+						require_once("connection.php");
+					    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
+					    mysqli_close($dbc);
+					    echo "Insersion Correcta";
+					    header('Location: ../users.php?pe=2');
 					}
 					else
 					{
-						echo " NO YEI ";
+						//echo "No Insert";
 					}
  				?>
 			</div>

@@ -31,5 +31,22 @@
 				<h3><a href="php/adduser.php">Add User</a></h3>
 			</div>
 		</div>
+		<script type="text/javascript">
+			var url = new URL(window.location.href);
+	 		var param = url.searchParams.get("pe");
+	 		if(param == 1)
+	 		{
+	 			//alert(" Error, check your password ");
+	 			var text = document.getElementById("error-msg")
+	 			text.innerHTML = "Insertion failed";
+	 			text.classList.add("error");
+	 		}
+	 		else if(param == 2)
+	 		{
+	 			var text = document.getElementById("error-msg")
+	 			text.innerHTML = "Sucesfull Insertion";
+	 			text.classList.add("warning");
+	 		}
+		</script>
 	</body>
 </html>
