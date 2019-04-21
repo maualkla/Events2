@@ -24,3 +24,13 @@ body
 	font-size: 200%;
 	color: white;
 }
+
+.display
+{
+	display: block;
+}
+
+.hide
+{
+	display: none;
+}

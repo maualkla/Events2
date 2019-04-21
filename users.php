@@ -30,6 +30,15 @@
 				<h3><a href="inicio.php">Back to Home</a></h3>
 				<h3><a href="php/adduser.php">Add User</a></h3>
 			</div>
+			<div class="content">
+				<div class="form">
+					<form action="users.php" method="POST">
+						<h5> USER ID OR NAME </h5>
+						<input type="text" placeholder="ID, NICKNAME OR NAME" value="" name="param"/>
+						<input type="submit" value="SEARCH"/>
+					</form>
+				</div>
+			</div>
 		</div>
 		<script type="text/javascript">
 			var url = new URL(window.location.href);
