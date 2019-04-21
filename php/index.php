@@ -24,18 +24,18 @@
 			$si = 0;
 		    $contra = $_REQUEST['contra'];
 		    $options = [ 'salt' => "ASI99221111000__s¡??0popopop22MQVANDMEAL" ];
-		    $cryptcontra = password_hash($contra, PASSWORD_DEFAULT, $options); echo " ORIGINAL : ". $contra ." :: BCRYPT : ".$cryptcontra;
+		    $cryptcontra = password_hash($contra, PASSWORD_DEFAULT, $options); //echo " ORIGINAL : ". $contra ." :: BCRYPT : ".$cryptcontra;
 		    $user = $_REQUEST['user'];
 		    $sql = "select * from user";
 		    require_once("connection.php");
 		    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 		    mysqli_close($dbc);
-		    echo "************************";
+		    //echo "************************";
 		    while($row = mysqli_fetch_array($result, MYSQLI_BOTH )) 
 		    {
-		    	echo "RECIBIDA : ".$cryptcontra;
-		    	echo " --- ";
-		    	echo "EN DB : ".$row[5];
+		    	//echo "RECIBIDA : ".$cryptcontra;
+		    	//echo " --- ";
+		    	//echo "EN DB : ".$row[5];
 		        if(( $cryptcontra == $row[5])&&( $user == $row[4]))
 				{
 					$si++;
@@ -49,11 +49,11 @@
 		        session_start();
 		        $_SESSION['sesion'] = $sesionhash; 
 		        $_SESSION['id_user'] = $id_user;
-		        //header('Location: ../inicio.php');
+		        header('Location: ../inicio.php');
 		    }
 		    else
 		    {
-		        //header('Location: ../index.html?pe=1');
+		        header('Location: ../index.html?pe=1');
 		    }
 		?>
 
