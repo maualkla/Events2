@@ -121,10 +121,10 @@
 							<?php
 								while($row = mysqli_fetch_array($edit_result, MYSQLI_BOTH)) 
 							    {
-							        echo "<tr><td><input type='text' value='".$row[0]."' name='userid' disabled='true'></td><td><input type='text' value='".$row[1]."' name='fname' ></td><td><input type='text' value='".$row[2]."' name='lname'></td><td><input type='text' value='".$row[3]."' name='email' ></td><td><input type='text' value='".$row[4]."' name='nickname'></td><td> <input type='submit' value='SAVE'> - <a href=''> CANCEL </a> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
+							        echo "<tr><td><input type='text' value='".$row[0]."' name='userid' disabled='true'></td><td><input type='text' value='".$row[1]."' name='fname' ></td><td><input type='text' value='".$row[2]."' name='lname'></td><td><input type='text' value='".$row[3]."' name='email' ></td><td><input type='text' value='".$row[4]."' name='nickname'></td><td> <input type='submit' value='SAVE'></form> - <a href='users.php'> CANCEL </a> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
 							    }
 							?>
-						</form>
+						
 					</table>
 				</div>
 			</div>
@@ -164,6 +164,10 @@
 	 			if(x)
 	 			{
 	 				window.location.href = 'users.php?option=2&param=' + param;
+	 			}
+	 			else
+	 			{
+	 				//nothing
 	 			}
 	 		}
 		</script>
