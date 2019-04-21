@@ -1,19 +1,19 @@
 <?php
-/* Inicio PHP */
+/* Users PHP */
 /* **********************************************************************************************
 	--> Events in PHP
 	--> Open Source proyect
 	--> Autor: @maualkla
 	--> Creation date: April 20th, 2019
 	--> Last Edition: April 20th, 2019
-	--> Description: Main page of the Events system
+	--> Description: Menu page for the users module
 	--> Dependencies:   connection.php ( For the DB connection )
 ************************************************************************************************* */
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Events</title>
+		<title>Events / Users</title>
 	</head>
 	<body>
 		<div class="container">
@@ -22,11 +22,11 @@
 				?>
 			</div>
 			<div class="top">
-				<h2>Here is the main page.</h2>
+				<h2>Users page</h2>
 			</div>
 			<div class="menu">
-				<h3><a href="php/close.php">Close Sesion</a></h3>
-				<h3><a href="users.php">Users Module</a></h3>
+				<h3><a href="inicio.php">Back to Home</a></h3>
+				<!--h3><a href="users.php">Users Module</a></h3-->
 			</div>
 		</div>
 	</body>
