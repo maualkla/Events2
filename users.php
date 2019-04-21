@@ -22,19 +22,49 @@
 			<div class="" id="error-msg">
 				<?php
 					$param = ""; $param = $_REQUEST['param'];
+					$option = ""; $option = $_REQUEST['option'];
 					$display = false;
-					if($param != "")
+					$edit = false;
+					if($option == '1')
 					{
-						$sql = "SELECT * FROM user WHERE fname LIKE '%".$param."%' OR lname LIKE '%".$param."%' OR nickname LIKE '%".$param."%' OR userid LIKE '%".$param."%'";
-						require_once("php/connection.php");
-					    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
-					    mysqli_close($dbc);
-					    $display = true;
+						//edit
+						$sql = 'SELECT * FROM user WHERE userid = "'.$param.'"';
+						require_once('php/connection.php');
+						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+						mysqli_close($dbc);
+						$edit = true;
+					}
+					elseif($option == '2')
+					{
+						//delete
+					}
+					elseif($option == '3')
+					{
+						//save
+						$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'" WHERE userid = "'.$_REQUEST['param'].'"';
+						echo $sql;
+						require_once('php/connection.php');
+						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+						mysqli_close($dbc);
+						header('Location: users.php?pe=3');
 					}
 					else
 					{
-						// No seek
+						//nothing
+						if($param != "")
+						{
+							$sql = "SELECT * FROM user WHERE fname LIKE '%".$param."%' OR lname LIKE '%".$param."%' OR nickname LIKE '%".$param."%' OR userid LIKE '%".$param."%'";
+							require_once("php/connection.php");
+						    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
+						    mysqli_close($dbc);
+						    $display = true;
+						}
+						else
+						{
+							// No seek
+						}
 					}
+					
 				?>
 			</div>
 			<div class="top">
@@ -65,9 +95,29 @@
 						<?php
 							while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) 
 						    {
-						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td> <a href=''> CHANGEPASS </a> - <a href=''> EDIT </a> - <a href=''> DELETE </a> </tr>";
+						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td> <a href=''> CHANGEPASS </a> - <a href='users.php?option=1&param=".$row[0]."'> EDIT </a> - <a href=''> DELETE </a> </tr>";
 						    }
 						?>
+					</table>
+				</div>
+				<div class="content-table <?php if($edit){echo'display';}else{echo 'hide';} ?>">
+					<table class="">
+						<tr>
+							<th> ID </th>
+							<th> Name </th>
+							<th> Lastname </th>
+							<th> Email </th>
+							<th> Nickname </th>
+							<th> Options </th>
+						</tr>
+						<form action="users.php?option=3&param=<?php echo $param; ?>" method="POST">
+							<?php
+								while($row = mysqli_fetch_array($edit_result, MYSQLI_BOTH)) 
+							    {
+							        echo "<tr><td><input type='text' value='".$row[0]."' name='userid' disabled='true'></td><td><input type='text' value='".$row[1]."' name='fname' ></td><td><input type='text' value='".$row[2]."' name='lname'></td><td><input type='text' value='".$row[3]."' name='email' ></td><td><input type='text' value='".$row[4]."' name='nickname'></td><td> <input type='submit' value='SAVE'> - <a href=''> CANCEL </a> - <a href=''> DELETE </a> </tr>";
+							    }
+							?>
+						</form>
 					</table>
 				</div>
 			</div>
@@ -86,6 +136,12 @@
 	 		{
 	 			var text = document.getElementById("error-msg")
 	 			text.innerHTML = "Sucesfull Insertion";
+	 			text.classList.add("warning");
+	 		}
+	 		else if(param == 3)
+	 		{
+	 			var text = document.getElementById("error-msg")
+	 			text.innerHTML = "Information Updated";
 	 			text.classList.add("warning");
 	 		}
 		</script>
