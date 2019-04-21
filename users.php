@@ -25,6 +25,7 @@
 					$option = ""; $option = $_REQUEST['option'];
 					$display = false;
 					$edit = false;
+					$delete = false;
 					if($option == '1')
 					{
 						//edit
@@ -37,10 +38,15 @@
 					elseif($option == '2')
 					{
 						//delete
+						$sql = 'DELETE FROM user WHERE userid = '.$param;
+						require_once('php/connection.php');
+						$delete_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+						mysqli_close($dbc);
+						$delete = true;
 					}
 					elseif($option == '3')
 					{
-						//save
+						//update
 						$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'" WHERE userid = "'.$_REQUEST['param'].'"';
 						echo $sql;
 						require_once('php/connection.php');
@@ -95,7 +101,7 @@
 						<?php
 							while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) 
 						    {
-						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td> <a href=''> CHANGEPASS </a> - <a href='users.php?option=1&param=".$row[0]."'> EDIT </a> - <a href=''> DELETE </a> </tr>";
+						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td> <a href=''> CHANGEPASS </a> - <a href='users.php?option=1&param=".$row[0]."'> EDIT </a> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
 						    }
 						?>
 					</table>
@@ -143,6 +149,15 @@
 	 			var text = document.getElementById("error-msg")
 	 			text.innerHTML = "Information Updated";
 	 			text.classList.add("warning");
+	 		}
+
+	 		function confirmDelete(param)
+	 		{
+	 			var x = confirm("Delete this user?");
+	 			if(x)
+	 			{
+	 				window.location.href = 'users.php?option=2&param=' + param;
+	 			}
 	 		}
 		</script>
 	</body>
