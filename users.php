@@ -57,7 +57,7 @@
 							require_once("php/connection.php");
 						    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 						    mysqli_close($dbc);
-						    $display = true;
+						    $display = true; 
 						}
 						else
 						{
