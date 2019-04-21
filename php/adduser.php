@@ -20,8 +20,24 @@
 	<body>
 		<div class="container">
 			<div class="" id="error-msg">
+			</div>
+			<div class="" id="msg">
 				<?php
-				?>
+					$fname = ""; $fname = $_REQUEST['fname'];
+					$lname = ""; $lname = $_REQUEST['lname'];
+					$email = ""; $email = $_REQUEST['email'];
+					$alias = ""; $alias = $_REQUEST['alias'];
+					$password = ""; $password = $_REQUEST['pass'];
+					$password = password_hash($contra, PASSWORD_BCRYPT);
+					if($fname != "" && $lname != "" && $email != "" && $alias != "" && $password != "")
+					{
+						echo "YEI";
+					}
+					else
+					{
+						echo " NO YEI ";
+					}
+ 				?>
 			</div>
 			<div class="top">
 				<h2>Add new user page</h2>
@@ -29,6 +45,22 @@
 			<div class="menu">
 				<h3><a href="../users.php">Back to Users</a></h3>
 				<!--h3><a href="php/adduser.php">Add User</a></h3-->
+			</div>
+			<div class="content">
+				<form action="adduser.php" method="POST">
+					<h4> First Name </h4>
+					<input type="text" name="fname" />
+					<h4> Last Name </h4>
+					<input type="text" name="lname" />
+					<h4> Email </h4>
+					<input type="text" name="email" />
+					<h4> Alias </h4>
+					<input type="text" name="alias" />
+					<h4> Password </h4>
+					<input type="text" name="pass" />
+
+					<input type="submit" name="submit" value="Create User">
+				</form>
 			</div>
 		</div>
 	</body>
