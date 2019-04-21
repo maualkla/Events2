@@ -54,6 +54,11 @@
 						mysqli_close($dbc);
 						header('Location: users.php?pe=3');
 					}
+					elseif($option == '4')
+					{
+						//Change pass
+						
+					}
 					else
 					{
 						//nothing
@@ -101,7 +106,7 @@
 						<?php
 							while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) 
 						    {
-						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td> <a href=''> CHANGEPASS </a> - <a href='users.php?option=1&param=".$row[0]."'> EDIT </a> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
+						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td> <button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <a href='users.php?option=1&param=".$row[0]."'> EDIT </a> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
 						    }
 						?>
 					</table>
@@ -167,6 +172,15 @@
 	 			else
 	 			{
 	 				//nothing
+	 			}
+	 		}
+
+	 		function changePass(param)
+	 		{
+	 			var x = prompt("Type your password", "");
+	 			if(x)
+	 			{
+	 				window.location.href = 'users.php?option=4&param=' + param + '&pass=' + x;
 	 			}
 	 		}
 		</script>
