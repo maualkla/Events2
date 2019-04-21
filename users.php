@@ -42,6 +42,7 @@
 						require_once('php/connection.php');
 						$delete_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 						mysqli_close($dbc);
+						header('Location: users.php?pe=4');
 						$delete = true;
 					}
 					elseif($option == '3')
@@ -120,7 +121,7 @@
 							<?php
 								while($row = mysqli_fetch_array($edit_result, MYSQLI_BOTH)) 
 							    {
-							        echo "<tr><td><input type='text' value='".$row[0]."' name='userid' disabled='true'></td><td><input type='text' value='".$row[1]."' name='fname' ></td><td><input type='text' value='".$row[2]."' name='lname'></td><td><input type='text' value='".$row[3]."' name='email' ></td><td><input type='text' value='".$row[4]."' name='nickname'></td><td> <input type='submit' value='SAVE'> - <a href=''> CANCEL </a> - <a href=''> DELETE </a> </tr>";
+							        echo "<tr><td><input type='text' value='".$row[0]."' name='userid' disabled='true'></td><td><input type='text' value='".$row[1]."' name='fname' ></td><td><input type='text' value='".$row[2]."' name='lname'></td><td><input type='text' value='".$row[3]."' name='email' ></td><td><input type='text' value='".$row[4]."' name='nickname'></td><td> <input type='submit' value='SAVE'> - <a href=''> CANCEL </a> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
 							    }
 							?>
 						</form>
@@ -141,13 +142,19 @@
 	 		else if(param == 2)
 	 		{
 	 			var text = document.getElementById("error-msg")
-	 			text.innerHTML = "Sucesfull Insertion";
+	 			text.innerHTML = "User created";
 	 			text.classList.add("warning");
 	 		}
 	 		else if(param == 3)
 	 		{
 	 			var text = document.getElementById("error-msg")
-	 			text.innerHTML = "Information Updated";
+	 			text.innerHTML = "User updated";
+	 			text.classList.add("warning");
+	 		}
+	 		else if(param == 4)
+	 		{
+	 			var text = document.getElementById("error-msg")
+	 			text.innerHTML = "User deleted";
 	 			text.classList.add("warning");
 	 		}
 
