@@ -24,9 +24,7 @@
 				<?php
 					$param = ""; $param = $_REQUEST['param'];
 					$option = ""; $option = $_REQUEST['option'];
-					$display = false;
-					$edit = false;
-					$delete = false;
+					$display = 0;
 					if($option == '1')
 					{
 						//edit
@@ -34,7 +32,7 @@
 						require_once('php/connection.php');
 						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 						mysqli_close($dbc);
-						$edit = true;
+						$display = 1;
 					}
 					elseif($option == '2')
 					{
@@ -44,7 +42,6 @@
 						$delete_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 						mysqli_close($dbc);
 						header('Location: users.php?pe=4');
-						$delete = true;
 					}
 					elseif($option == '3')
 					{
@@ -65,7 +62,7 @@
 							require_once("php/connection.php");
 						    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 						    mysqli_close($dbc);
-						    $display = true;
+						    $display = 2;
 						}
 						else
 						{
@@ -90,7 +87,7 @@
 						<input type="submit" value="SEARCH"/>
 					</form>
 				</div>
-				<div class="content-table <?php if($display){echo'display';}else{echo 'hide';} ?>">
+				<div class="content-table <?php if($display == 2){echo'display';}else{echo 'hide';} ?>">
 					<table class="">
 						<tr>
 							<th> ID </th>
@@ -108,7 +105,7 @@
 						?>
 					</table>
 				</div>
-				<div class="content-table <?php if($edit){echo'display';}else{echo 'hide';} ?>">
+				<div class="content-table <?php if($display == 1 ){echo'display';}else{echo 'hide';} ?>">
 					<table class="">
 						<tr>
 							<th> ID </th>
