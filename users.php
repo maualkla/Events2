@@ -14,6 +14,8 @@
 <html>
 	<head>
 		<title>Events / Users</title>
+		<link rel="shortcut icon" href="assets/events-beta-icon.png">
+		<link rel=StyleSheet href= "css/design.css" type="text/css">
 	</head>
 	<body>
 		<div class="container">
