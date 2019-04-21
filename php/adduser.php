@@ -5,9 +5,9 @@
 	--> Open Source proyect
 	--> Autor: @maualkla
 	--> Creation date: April 20th, 2019
-	--> Last Edition: April 20th, 2019
+	--> Last Edition: April 21th, 2019
 	--> Description: Page focus in add new users
-	--> Dependencies:   connection.php ( For the DB connection )
+	--> Dependencies:   connection.php ( For the DB connection ) css/design.css (For the styles)
 ************************************************************************************************* */
 ?>
 <!DOCTYPE html>

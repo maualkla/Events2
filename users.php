@@ -5,9 +5,10 @@
 	--> Open Source proyect
 	--> Autor: @maualkla
 	--> Creation date: April 20th, 2019
-	--> Last Edition: April 20th, 2019
+	--> Last Edition: April 21th, 2019
 	--> Description: Menu page for the users module
-	--> Dependencies:   connection.php ( For the DB connection )
+	--> Dependencies:   connection.php ( For the DB connection ) php/adduser.php (For adding users)
+						css/design.css (For the styles)
 ************************************************************************************************* */
 ?>
 <!DOCTYPE html>
