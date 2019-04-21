@@ -60,11 +60,12 @@
 							<th> Lastname </th>
 							<th> Email </th>
 							<th> Nickname </th>
+							<th> Options </th>
 						</tr>
 						<?php
 							while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) 
 						    {
-						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>";
+						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td> <a href=''> CHANGEPASS </a> - <a href=''> EDIT </a> - <a href=''> DELETE </a> </tr>";
 						    }
 						?>
 					</table>
