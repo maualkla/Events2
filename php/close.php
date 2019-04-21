@@ -1,23 +1,31 @@
 <?php
-/* Inicio PHP */
+/* Close PHP */
 /* **********************************************************************************************
 	--> Events in PHP
 	--> Open Source proyect
 	--> Autor: @maualkla
 	--> Creation date: April 20th, 2019
 	--> Last Edition: April 20th, 2019
-	--> Description: Main page of the Events system
+	--> Description: Close sesion file.
 	--> Dependencies:   connection.php ( For the DB connection )
 ************************************************************************************************* */
 ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Events</title>
+		<title> Closing sesion </title>
+		<link rel="shortcut icon" href="../assets/events-beta-icon.png">
+		<link rel=StyleSheet href= "../css/design.css" type="text/css">
 	</head>
 	<body>
-		
-		<h2>Here is the main page.</h2>
-		<h3><a href="php/close.php">Close Sesion</a></h3>
+		<div class="error">
+		<?php
+			session_start();
+			session_destroy();
+			header("Location: ../index.html?pe=2");
+		?>
+		</div>
+		<h3>Closing sesion</h3>
 	</body>
 </html>
