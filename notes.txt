@@ -13,3 +13,4 @@ normal = nl
 6 = User updated (wr)
 7 = User deleted (wr)
 8 = Password Incorrect (er)
+9 = Passwords dont match (er)

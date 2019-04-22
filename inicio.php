@@ -20,7 +20,7 @@
 		<link rel=StyleSheet href= "css/design.css" type="text/css">
 		<script type = "text/javascript" src="javascript/functions.js"></script>
 	</head>
-	<body>
+	<body onload="alerts()">
 		<div class="container">
 			<div class="" id="error-msg">
 				<?php

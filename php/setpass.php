@@ -20,7 +20,7 @@
 		<link rel=StyleSheet href= "../css/design.css" type="text/css">
 		<script type = "text/javascript" src="../javascript/functions.js"></script>
 	</head>
-	<body>
+	<body onload="alerts()">
 		<div class="container">
 			<div class="" id="error-msg">
 				<?php
@@ -40,7 +40,11 @@
 							require_once('connection.php');
 							$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 							mysqli_close($dbc);
-							header('Location: ../users.php?pe=3');
+							header('Location: ../users.php?pe=10');
+						}
+						else
+						{
+							header('Location: setpass.php?pe=9');
 						}
 					}
 				?>
