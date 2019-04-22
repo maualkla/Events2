@@ -1,3 +1,4 @@
+<?php include("php/sesion.php"); ?>
 <?php
 /* Inicio PHP */
 /* **********************************************************************************************
@@ -5,9 +6,10 @@
 	--> Open Source proyect
 	--> Autor: @maualkla
 	--> Creation date: April 20th, 2019
-	--> Last Edition: April 20th, 2019
+	--> Last Edition: April 21th, 2019
 	--> Description: Main page of the Events system
-	--> Dependencies:   connection.php ( For the DB connection )
+	--> Dependencies:   connection.php ( For the DB connection ) php/close.php ( For destroing sesion)
+						users.php (Users module)
 ************************************************************************************************* */
 ?>
 <!DOCTYPE html>
