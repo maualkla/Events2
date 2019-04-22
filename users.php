@@ -47,7 +47,8 @@
 					elseif($option == '3')
 					{
 						//update
-						$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'" WHERE userid = "'.$_REQUEST['param'].'"';
+						// ---> Falta validar parametros
+						$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'" WHERE userid = "'.$param.'"';
 						echo $sql;
 						require_once('php/connection.php');
 						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
@@ -58,6 +59,7 @@
 					{
 						//Change pass	
 						$pass = ""; $pass = $_REQUEST['ps'];
+						$step = false;
 						$decodepass = base64_decode($pass);
 						echo 'ORIGINAL : '.$pass.' :::: DECODED :: '.$decodepass;
 						$options = [ 'salt' => "ASI99221111000__s¡??0popopop22MQVANDMEAL" ];
@@ -67,16 +69,20 @@
 		    			require_once('php/connection.php');
 		    			$validating_pass = mysqli_query($dbc, $sql) or die (" Error: ".mysqli_error($dbc));
 		    			mysqli_close($dbc);
-		    			if($validating_pass)
-		    			{
-		    				echo '*****************YEI';
-		    			}
-		    			else
-		    			{
-		    				echo '*******************NOEI';
-		    			}
 		    			// Aqui validamos la pass
-		    			// Aqui Mostramos los campos
+		    			while($row = mysqli_fetch_array($validating_pass, MYSQLI_BOTH))
+		    			{
+		    				$step = true;
+		    				echo 'ENTRO A STEP';
+		    			}
+		    			if($step) 
+	    				{
+	    					header('Location: php/setpass.php?option=1&param='.$param.'&auth=true');
+	    				}
+	    				else
+	    				{
+	    					header('Location: users.php?pe=5');
+	    				}
 					}
 					else
 					{
@@ -179,6 +185,12 @@
 	 			var text = document.getElementById("error-msg")
 	 			text.innerHTML = "User deleted";
 	 			text.classList.add("warning");
+	 		}
+	 		else if(param == 5)
+	 		{
+	 			var text = document.getElementById("error-msg")
+	 			text.innerHTML = "Password incorrect";
+	 			text.classList.add("error");
 	 		}
 
 	 		function confirmDelete(param)
