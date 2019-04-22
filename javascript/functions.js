@@ -4,7 +4,7 @@
 // V1 
 function alerts()
 {
-	console.log( " Hey im in alert ");
+	//console.log( " Hey im in alert ");
 	var url = new URL(window.location.href);
 	var param = url.searchParams.get("pe");
 	var text = "";
