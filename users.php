@@ -42,7 +42,7 @@
 						require_once('php/connection.php');
 						$delete_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 						mysqli_close($dbc);
-						header('Location: users.php?pe=4');
+						header('Location: users.php?pe=7');
 					}
 					elseif($option == '3')
 					{
@@ -53,7 +53,7 @@
 						require_once('php/connection.php');
 						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 						mysqli_close($dbc);
-						header('Location: users.php?pe=3');
+						header('Location: users.php?pe=6');
 					}
 					elseif($option == '4')
 					{
@@ -81,7 +81,7 @@
 	    				}
 	    				else
 	    				{
-	    					header('Location: users.php?pe=5');
+	    					header('Location: users.php?pe=8');
 	    				}
 					}
 					else
@@ -161,32 +161,32 @@
 		<script type="text/javascript">
 			var url = new URL(window.location.href);
 	 		var param = url.searchParams.get("pe");
-	 		if(param == 1)
+	 		if(param == 4)
 	 		{
 	 			//alert(" Error, check your password ");
 	 			var text = document.getElementById("error-msg")
 	 			text.innerHTML = "Insertion failed";
 	 			text.classList.add("error");
 	 		}
-	 		else if(param == 2)
+	 		else if(param == 5)
 	 		{
 	 			var text = document.getElementById("error-msg")
 	 			text.innerHTML = "User created";
 	 			text.classList.add("warning");
 	 		}
-	 		else if(param == 3)
+	 		else if(param == 6)
 	 		{
 	 			var text = document.getElementById("error-msg")
 	 			text.innerHTML = "User updated";
 	 			text.classList.add("warning");
 	 		}
-	 		else if(param == 4)
+	 		else if(param == 7)
 	 		{
 	 			var text = document.getElementById("error-msg")
 	 			text.innerHTML = "User deleted";
 	 			text.classList.add("warning");
 	 		}
-	 		else if(param == 5)
+	 		else if(param == 8)
 	 		{
 	 			var text = document.getElementById("error-msg")
 	 			text.innerHTML = "Password incorrect";

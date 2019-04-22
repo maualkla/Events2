@@ -39,7 +39,7 @@
 					    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 					    mysqli_close($dbc);
 					    echo "Insersion Correcta";
-					    header('Location: ../users.php?pe=2');
+					    header('Location: ../users.php?pe=5');
 					}
 					else
 					{

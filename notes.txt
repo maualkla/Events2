@@ -1,0 +1,15 @@
+###### Messages list
+
+error = er
+warning = wr
+success = sc
+normal = nl
+
+1 = Error, Wrong user or password! (er)
+2 = Sesion Closed (wr)
+3 = Login first (wr)
+4 = Isertion failed (er)
+5 = User created (wr)
+6 = User updated (wr)
+7 = User deleted (wr)
+8 = Password Incorrect (er)
