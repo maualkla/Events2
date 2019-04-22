@@ -16,6 +16,7 @@
 		<title>Validating Password</title>
 		<link rel="shortcut icon" href="../assets/events-beta-icon.png">
 		<link rel=StyleSheet href= "../css/design.css" type="text/css">
+		<script type = "text/javascript" src="../javascript/functions.js"></script>
 	</head>
 	<body>
 		<div class="error">
