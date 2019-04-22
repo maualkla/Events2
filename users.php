@@ -56,8 +56,27 @@
 					}
 					elseif($option == '4')
 					{
-						//Change pass
-						
+						//Change pass	
+						$pass = ""; $pass = $_REQUEST['ps'];
+						$decodepass = base64_decode($pass);
+						echo 'ORIGINAL : '.$pass.' :::: DECODED :: '.$decodepass;
+						$options = [ 'salt' => "ASI99221111000__s¡??0popopop22MQVANDMEAL" ];
+		    			$cryptcontra = password_hash($decodepass, PASSWORD_DEFAULT, $options);
+		    			echo $_SESSION['id_user'];
+		    			$sql = 'SELECT password FROM user WHERE userid = "'.$_SESSION['id_user'].'" AND password = "'.$cryptcontra.'"';
+		    			require_once('php/connection.php');
+		    			$validating_pass = mysqli_query($dbc, $sql) or die (" Error: ".mysqli_error($dbc));
+		    			mysqli_close($dbc);
+		    			if($validating_pass)
+		    			{
+		    				echo '*****************YEI';
+		    			}
+		    			else
+		    			{
+		    				echo '*******************NOEI';
+		    			}
+		    			// Aqui validamos la pass
+		    			// Aqui Mostramos los campos
 					}
 					else
 					{
@@ -180,7 +199,8 @@
 	 			var x = prompt("Type your password", "");
 	 			if(x)
 	 			{
-	 				window.location.href = 'users.php?option=4&param=' + param + '&pass=' + x;
+	 				var y = btoa(x);
+	 				window.location.href = 'users.php?option=4&param=' + param + '&ps=' + y;
 	 			}
 	 		}
 		</script>
