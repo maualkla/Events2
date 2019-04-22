@@ -93,11 +93,7 @@
 							require_once("php/connection.php");
 						    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 						    mysqli_close($dbc);
-<<<<<<< HEAD
-						    $display = true; 
-=======
 						    $display = 2;
->>>>>>> cdbc3325c057894595b9397ea7be466dbeb0084e
 						}
 						else
 						{
