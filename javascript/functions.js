@@ -27,7 +27,7 @@ function alerts()
 			text = 'Isertion failed!'; war = 'er'; show = true;
 			break;
 		case '5': 
-			console.log( " Entro a 5");
+			//console.log( " Entro a 5");
 			text = 'User created!'; war = 'wr'; show = true;
 			break;
 		case '6': 
@@ -46,7 +46,7 @@ function alerts()
 			text = 'Password updated!'; war = 'wr'; show = true;
 			break;
 		default :
-		console.log("nada");
+			//console.log("nada");
 			break;
 	}
 
