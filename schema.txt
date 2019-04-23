@@ -8,16 +8,31 @@
 	- email string(50) User email
 	- nickname string(20) User nickname
 	- password string(25) User password
+	- level int(1) level of rights who user has
 
-## events
-	- eventid
-
-
-## assistant
-	- assistantid
+## event
+	- eventid int(5) Event identify number
+	- event_name varchar(25) Event name
+	- event_descr varchar(140) Event Description
+	- event_short_name varchar(15) Organization who is the owner
+	- event_start datetime() Date and time event starts
+	- event_stop datetime() Date and time event finish 
+	- owner_name varchar(25) Owner name of the event
+	- owner_descr varchar(140) Owner org description
+	- owner_short_name varchar(15) Owner org short name
+	- userid int(5) User owner of the event
 
 ## section
-	- sectionid
+	- sectionid 
+
+## table
+	- tableid int(5) Table id
+	- eventid int(5) Owner event id
+	- 
+
+## guest
+	- assistantid
+
 
 ## table
 	- tableid

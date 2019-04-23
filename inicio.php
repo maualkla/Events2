@@ -32,6 +32,7 @@
 			<div class="menu">
 				<h3><a href="modules/system/close.php">Close Sesion</a></h3>
 				<h3><a href="modules/users/users.php">Users Module</a></h3>
+				<h3><a href="modules/event/event.php">Events Module</a></h3>
 			</div>
 		</div>
 	</body>
