@@ -2,7 +2,7 @@
 ## Database description
 
 ## user
-	- userid int(5) User identify number
+	- []userid int(5) User identify number
 	- fname string(25) User name
 	- lname string(25) User last name 
 	- email string(50) User email
@@ -11,7 +11,7 @@
 	- level int(1) level of rights who user has
 
 ## event
-	- eventid int(5) Event identify number
+	- []eventid int(5) Event identify number
 	- event_name varchar(25) Event name
 	- event_descr varchar(140) Event Description
 	- event_short_name varchar(15) Organization who is the owner
@@ -23,18 +23,32 @@
 	- userid int(5) User owner of the event
 
 ## section
-	- sectionid 
+	- []sectionid int(5) Section indentify number
+	- *eventid int(5) Event related id
+	- section_name varchar(25) Name of the section
+	- section_short_name varchar(15) Shortname of the section
+	- section_descr varchar(140) Description of the section
+	- section_active bool() "false" flag to know if the section is active
+	- section_count int(6) count of the guest in that section
+	- section_cap int(6) capacity of guest in this section
 
 ## table
-	- tableid int(5) Table id
-	- eventid int(5) Owner event id
-	- 
+	- []tableid int(5) Table id
+	- *sectionid int(5) Section related id
+	- table_name varchar(20) Table name
+	- table_short_name varchar(10) Table short name
+	- table_descr varchar(140) Table description
+	- table_owner varchar(50) table owner
+	- table_cap int(3) Capacity of sits in the table
+	- table_count int(3) count of the guest in that table
+	- table_active bool() "false" flag to know if the table is active
 
 ## guest
-	- assistantid
-
-
-## table
-	- tableid
-
-##  
+	- []guestid int(5) Guest id
+	- *siteid int(5) table or section id
+	- site_place int(6) place in the table or section
+	- guest_name varchar(50) name of the guest
+	- guest_in datetime() moment when the gest in
+	- guest_out datetime() moment when the guest out
+	- guest_comment varchar(140) ramdom place for guest comments
+	- 
