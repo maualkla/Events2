@@ -59,6 +59,18 @@ function alerts()
 		msg.innerHTML = text;
 		msg.classList.add(war);
 	}
+	//other functions
+	noBackButton();
+}
+
+function noBackButton()
+{
+	window.location.hash="no-back-button";
+	window.location.hash="Again-No-back-button" //chrome
+	window.onhashchange=function()
+	{
+		window.location.hash="no-back-button";
+	}
 }
 
 function confirmDelete(param)

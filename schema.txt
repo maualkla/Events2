@@ -14,7 +14,7 @@
 	- []eventid int(5) Event identify number
 	- event_name varchar(25) Event name
 	- event_descr varchar(140) Event Description
-	- event_short_name varchar(15) Organization who is the owner
+	- event_short_name varchar(10) Organization who is the owner
 	- event_start datetime() Date and time event starts
 	- event_stop datetime() Date and time event finish 
 	- owner_name varchar(25) Owner name of the event
@@ -26,13 +26,13 @@
 	- []sectionid int(5) Section indentify number
 	- *eventid int(5) Event related id
 	- section_name varchar(25) Name of the section
-	- section_short_name varchar(15) Shortname of the section
+	- section_short_name varchar(10) Shortname of the section
 	- section_descr varchar(140) Description of the section
 	- section_active bool() "false" flag to know if the section is active
 	- section_count int(6) count of the guest in that section
 	- section_cap int(6) capacity of guest in this section
 
-## table
+## stable
 	- []tableid int(5) Table id
 	- *sectionid int(5) Section related id
 	- table_name varchar(20) Table name

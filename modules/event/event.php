@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Events</title>
+		<title>Event</title>
 		<link rel="shortcut icon" href="/Events/assets/events-beta-icon.png">
 		<link rel=StyleSheet href= "/Events/css/design.css" type="text/css">
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
