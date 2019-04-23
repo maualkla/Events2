@@ -139,7 +139,7 @@
 				</div>
 				<div class="content-table <?php if($display == 1 ){echo'display';}else{echo 'hide';} ?>">
 					<table class="">
-						<tr>
+						<tr> 
 							<th> ID </th>
 							<th> Name </th>
 							<th> Lastname </th>
