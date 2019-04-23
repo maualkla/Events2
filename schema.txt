@@ -51,4 +51,11 @@
 	- guest_in datetime() moment when the gest in
 	- guest_out datetime() moment when the guest out
 	- guest_comment varchar(140) ramdom place for guest comments
-	- 
+	- guest_active bool() "false" flag to know if the guest is here
+
+## log
+	- logid int(10) log id
+	- log_name varchar(10) situation or context of the log
+	- log_descript varchar(40) description of the log
+	- log_date datetime() moment when the log happen
+	- log_file varchar(20) file where the log was created
