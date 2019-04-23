@@ -49,7 +49,7 @@
 					{
 						//update
 						// ---> Falta validar parametros
-						$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'" WHERE userid = "'.$param.'"';
+						$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'", level = "'.$_REQUEST['level'].'" WHERE userid = "'.$param.'"';
 						echo $sql;
 						require_once('php/connection.php');
 						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
