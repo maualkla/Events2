@@ -45,6 +45,9 @@ function alerts()
 		case '10': 
 			text = 'Password updated!'; war = 'wr'; show = true;
 			break;
+		case '11':
+			text = 'Error try again'; war = 'er'; show = true;
+			break;
 		default :
 			//console.log("nada");
 			break;

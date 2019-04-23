@@ -1,4 +1,4 @@
-<?php include("php/sesion.php"); ?>
+<?php include("modules/system/sesion.php"); ?>
 <?php
 /* Inicio PHP */
 /* **********************************************************************************************
@@ -16,9 +16,9 @@
 <html>
 	<head>
 		<title>Events</title>
-		<link rel="shortcut icon" href="assets/events-beta-icon.png">
-		<link rel=StyleSheet href= "css/design.css" type="text/css">
-		<script type = "text/javascript" src="javascript/functions.js"></script>
+		<link rel="shortcut icon" href="/Events/assets/events-beta-icon.png">
+		<link rel=StyleSheet href= "/Events/css/design.css" type="text/css">
+		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
 		<div class="container">
@@ -30,8 +30,8 @@
 				<h2>Here is the main page.</h2>
 			</div>
 			<div class="menu">
-				<h3><a href="php/close.php">Close Sesion</a></h3>
-				<h3><a href="users.php">Users Module</a></h3>
+				<h3><a href="modules/system/close.php">Close Sesion</a></h3>
+				<h3><a href="modules/users/users.php">Users Module</a></h3>
 			</div>
 		</div>
 	</body>

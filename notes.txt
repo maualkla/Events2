@@ -1,5 +1,7 @@
 ###### Messages list
 
+
+## Notifications
 error = er
 warning = wr
 success = sc
@@ -15,3 +17,17 @@ normal = nl
 8 = Password Incorrect (er)
 9 = Passwords dont match (er)
 10 = Password updated (wr)
+11 = Error try again (er)
+
+
+
+## Levels
+1 -> Just Read (Just see the event, and can display the event section)
+2 -> Read and Create (Can create events and users, but no edit it)
+3 -> Read, Create and Update (Can do everithing less delete)
+4 -> Read, Create, Update and Delete (Super user)
+
+
+## Next steps
+
+	1.- Create events module
