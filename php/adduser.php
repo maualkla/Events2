@@ -30,12 +30,13 @@
 					$email = ""; $email = $_REQUEST['email'];
 					$alias = ""; $alias = $_REQUEST['alias'];
 					$contra = ""; $contra = $_REQUEST['pass'];
+					$level = ""; $level = $_REQUEST['level'];
 					$options = [ 'salt' => "ASI99221111000__s¡??0popopop22MQVANDMEAL" ];
 					$password = password_hash($contra, PASSWORD_DEFAULT, $options);
-					if($fname != "" && $lname != "" && $email != "" && $alias != "" && $password != "")
+					if($fname != "" && $lname != "" && $email != "" && $alias != "" && $password != "" && ($level != "" && (intval($level) > 0) && (intval($level) < 5)))
 					{
 						//echo "Insert";
-						$sql = 'INSERT INTO user (fname, lname, email, nickname, password) VALUES ("'.$fname.'", "'.$lname.'", "'.$email.'", "'.$alias.'", "'.$password.'")';
+						$sql = 'INSERT INTO user (fname, lname, email, nickname, password, level) VALUES ("'.$fname.'", "'.$lname.'", "'.$email.'", "'.$alias.'", "'.$password.'", "'.$level.'")';
 						require_once("connection.php");
 					    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 					    mysqli_close($dbc);
@@ -58,15 +59,17 @@
 			<div class="content">
 				<form action="adduser.php" method="POST">
 					<h4> First Name </h4>
-					<input type="text" name="fname" />
+					<input type="text" required name="fname" />
 					<h4> Last Name </h4>
-					<input type="text" name="lname" />
+					<input type="text" required name="lname" />
 					<h4> Email </h4>
-					<input type="text" name="email" />
+					<input type="text" required name="email" />
 					<h4> Alias </h4>
-					<input type="text" name="alias" />
+					<input type="text" required name="alias" />
 					<h4> Password </h4>
-					<input type="text" name="pass" />
+					<input type="text" required name="pass" />
+					<h4> Level </h4>
+					<input type="text" required name="level" />
 
 					<input type="submit" name="submit" value="Create User">
 				</form>

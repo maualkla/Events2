@@ -127,12 +127,13 @@
 							<th> Lastname </th>
 							<th> Email </th>
 							<th> Nickname </th>
+							<th> Level </th>
 							<th> Options </th>
 						</tr>
 						<?php
 							while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) 
 						    {
-						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td> <button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
+						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td><button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
 						    }
 						?>
 					</table>
@@ -145,13 +146,14 @@
 							<th> Lastname </th>
 							<th> Email </th>
 							<th> Nickname </th>
+							<th> Level </th>
 							<th> Options </th>
 						</tr>
 						<form action="users.php?option=3&param=<?php echo $param; ?>" method="POST">
 							<?php
 								while($row = mysqli_fetch_array($edit_result, MYSQLI_BOTH)) 
 							    {
-							        echo "<tr><td><input type='text' value='".$row[0]."' name='userid' disabled='true'></td><td><input type='text' value='".$row[1]."' name='fname' ></td><td><input type='text' value='".$row[2]."' name='lname'></td><td><input type='text' value='".$row[3]."' name='email' ></td><td><input type='text' value='".$row[4]."' name='nickname'></td><td> <input type='submit' value='SAVE'></form> - <button onclick='resetPage()'> CANCEL </button> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
+							        echo "<tr><td><input type='text' value='".$row[0]."' name='userid' disabled='true'></td><td><input type='text' value='".$row[1]."' name='fname' ></td><td><input type='text' value='".$row[2]."' name='lname'></td><td><input type='text' value='".$row[3]."' name='email' ></td><td><input type='text' value='".$row[4]."' name='nickname'></td><td><input type='text' value='".$row[5]."' name='level'></td><td> <input type='submit' value='SAVE'></form> - <button onclick='resetPage()'> CANCEL </button> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
 							    }
 							?>
 						
