@@ -54,7 +54,7 @@
 	- guest_active bool() "false" flag to know if the guest is here
 
 ## log
-	- logid int(10) log id
+	- []logid int(10) log id
 	- log_name varchar(10) situation or context of the log
 	- log_descript varchar(40) description of the log
 	- log_date datetime() moment when the log happen

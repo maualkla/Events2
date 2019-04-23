@@ -11,3 +11,26 @@
 	--> Dependencies:   connection.php ( For the DB connection ) 
 ************************************************************************************************* */
 ?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Events</title>
+		<link rel="shortcut icon" href="/Events/assets/events-beta-icon.png">
+		<link rel=StyleSheet href= "/Events/css/design.css" type="text/css">
+		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
+	</head>
+	<body onload="alerts()">
+		<div class="container">
+			<div class="" id="error-msg">
+				<?php
+				?>
+			</div>
+			<div class="top">
+				<h2>Events main</h2>
+			</div>
+			<div class="menu">
+				<h3><a href="../../inicio.php">Back to Home</a></h3>
+			</div>
+		</div>
+	</body>
+</html>
