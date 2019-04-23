@@ -1,4 +1,4 @@
-<?php include("php/sesion.php"); ?>
+<?php include("../system/sesion.php"); ?>
 <?php
 /* Users PHP */
 /* **********************************************************************************************
@@ -16,9 +16,9 @@
 <html>
 	<head>
 		<title>Events / Users</title>
-		<link rel="shortcut icon" href="assets/events-beta-icon.png">
-		<link rel=StyleSheet href= "css/design.css" type="text/css">
-		<script type = "text/javascript" src="javascript/functions.js"></script>
+		<link rel="shortcut icon" href="/Events/assets/events-beta-icon.png">
+		<link rel=StyleSheet href= "/Events/css/design.css" type="text/css">
+		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
 		<div class="container">
@@ -31,7 +31,7 @@
 					{
 						//edit
 						$sql = 'SELECT * FROM user WHERE userid = "'.$param.'"';
-						require_once('php/connection.php');
+						require_once('../system/connection.php');
 						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 						mysqli_close($dbc);
 						$display = 1;
@@ -40,10 +40,10 @@
 					{
 						//delete
 						$sql = 'DELETE FROM user WHERE userid = '.$param;
-						require_once('php/connection.php');
+						require_once('../system/connection.php');
 						$delete_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 						mysqli_close($dbc);
-						header('Location: users.php?pe=7');
+						header('Location: /Events/modules/users/users.php?pe=7');
 					}
 					elseif($option == '3')
 					{
@@ -51,7 +51,7 @@
 						// ---> Falta validar parametros
 						$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'", level = "'.$_REQUEST['level'].'" WHERE userid = "'.$param.'"';
 						echo $sql;
-						require_once('php/connection.php');
+						require_once('../system/connection.php');
 						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 						mysqli_close($dbc);
 						header('Location: users.php?pe=6');
@@ -67,7 +67,7 @@
 		    			$cryptcontra = password_hash($decodepass, PASSWORD_DEFAULT, $options);
 		    			echo $_SESSION['id_user'];
 		    			$sql = 'SELECT password FROM user WHERE userid = "'.$_SESSION['id_user'].'" AND password = "'.$cryptcontra.'"';
-		    			require_once('php/connection.php');
+		    			require_once('../system/connection.php');
 		    			$validating_pass = mysqli_query($dbc, $sql) or die (" Error: ".mysqli_error($dbc));
 		    			mysqli_close($dbc);
 		    			// Aqui validamos la pass
@@ -78,7 +78,7 @@
 		    			}
 		    			if($step) 
 	    				{
-	    					header('Location: php/setpass.php?option=1&param='.$param.'&auth=true');
+	    					header('Location: setpass.php?option=1&param='.$param.'&auth=true');
 	    				}
 	    				else
 	    				{
@@ -91,7 +91,7 @@
 						if($param != "")
 						{
 							$sql = "SELECT * FROM user WHERE fname LIKE '%".$param."%' OR lname LIKE '%".$param."%' OR nickname LIKE '%".$param."%' OR userid LIKE '%".$param."%'";
-							require_once("php/connection.php");
+							require_once('../system/connection.php');
 						    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 						    mysqli_close($dbc);
 						    $display = 2;
@@ -108,12 +108,12 @@
 				<h2>Users page</h2>
 			</div>
 			<div class="menu">
-				<h3><a href="inicio.php">Back to Home</a></h3>
-				<h3><a href="php/adduser.php">Add User</a></h3>
+				<h3><a href="/Events/inicio.php">Back to Home</a></h3>
+				<h3><a href="/Events/modules/users/adduser.php">Add User</a></h3>
 			</div>
 			<div class="content">
 				<div class="form">
-					<form action="users.php" method="POST">
+					<form action="/Events/modules/users/users.php" method="POST">
 						<h5> USER ID OR NAME </h5>
 						<input type="text" placeholder="ID, NICKNAME OR NAME" value="" name="param">
 						<input type="submit" value="SEARCH"/>

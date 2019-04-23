@@ -1,4 +1,4 @@
-<?php include("sesion.php"); ?>
+<?php include("../system/sesion.php"); ?>
 <?php
 /* AddUser PHP */
 /* **********************************************************************************************
@@ -15,9 +15,9 @@
 <html>
 	<head>
 		<title>Events / Users / Add User</title>
-		<link rel="shortcut icon" href="../assets/events-beta-icon.png">
-		<link rel=StyleSheet href= "../css/design.css" type="text/css">
-		<script type = "text/javascript" src="../javascript/functions.js"></script>
+		<link rel="shortcut icon" href="/Events/assets/events-beta-icon.png">
+		<link rel=StyleSheet href= "/Events/css/design.css" type="text/css">
+		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
 		<div class="container">
@@ -37,11 +37,11 @@
 					{
 						//echo "Insert";
 						$sql = 'INSERT INTO user (fname, lname, email, nickname, password, level) VALUES ("'.$fname.'", "'.$lname.'", "'.$email.'", "'.$alias.'", "'.$password.'", "'.$level.'")';
-						require_once("connection.php");
+						require_once("../system/connection.php");
 					    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 					    mysqli_close($dbc);
 					    echo "Insersion Correcta";
-					    header('Location: ../users.php?pe=5');
+					    header('Location: users.php?pe=5');
 					}
 					else
 					{
@@ -53,7 +53,7 @@
 				<h2>Add new user page</h2>
 			</div>
 			<div class="menu">
-				<h3><a href="../users.php">Back to Users</a></h3>
+				<h3><a href="/Events/modules/users/users.php">Back to Users</a></h3>
 				<!--h3><a href="php/adduser.php">Add User</a></h3-->
 			</div>
 			<div class="content">

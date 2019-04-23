@@ -14,9 +14,9 @@
 <html>
 	<head>
 		<title>Validating Password</title>
-		<link rel="shortcut icon" href="../assets/events-beta-icon.png">
-		<link rel=StyleSheet href= "../css/design.css" type="text/css">
-		<script type = "text/javascript" src="../javascript/functions.js"></script>
+		<link rel="shortcut icon" href="/Events/assets/events-beta-icon.png">
+		<link rel=StyleSheet href= "/Events/css/design.css" type="text/css">
+		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
 		<div class="error">
@@ -28,7 +28,7 @@
 		    $cryptcontra = password_hash($contra, PASSWORD_DEFAULT, $options); //echo " ORIGINAL : ". $contra ." :: BCRYPT : ".$cryptcontra;
 		    $user = $_REQUEST['user'];
 		    $sql = "select * from user";
-		    require_once("connection.php");
+		    require_once("../system/connection.php");
 		    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 		    mysqli_close($dbc);
 		    //echo "************************";
@@ -50,11 +50,11 @@
 		        session_start();
 		        $_SESSION['sesion'] = $sesionhash; 
 		        $_SESSION['id_user'] = $id_user;
-		        header('Location: ../inicio.php');
+		        header('Location: ../../inicio.php');
 		    }
 		    else
 		    {
-		        header('Location: ../index.html?pe=1');
+		        header('Location: ../../index.html?pe=1');
 		    }
 		?>
 
