@@ -40,7 +40,7 @@ function alerts()
 			text = 'Password Incorrect!'; war = 'er'; show = true;
 			break;
 		case '9': 
-			text = 'Passwords don´t match!'; war = 'er'; show = true;
+			text = 'Passwords do not match!'; war = 'er'; show = true;
 			break;
 		case '10': 
 			text = 'Password updated!'; war = 'wr'; show = true;
@@ -63,13 +63,18 @@ function alerts()
 	noBackButton();
 }
 
+document.oncontextmenu = function()
+{
+    return false;
+}
+
 function noBackButton()
 {
-	window.location.hash="no-back-button";
-	window.location.hash="Again-No-back-button" //chrome
+	window.location.hash="nbb";
+	window.location.hash="anbb" //chrome
 	window.onhashchange=function()
 	{
-		window.location.hash="no-back-button";
+		window.location.hash="nbb";
 	}
 }
 

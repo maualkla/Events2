@@ -24,9 +24,16 @@
 		<div class="container">
 			<div class="" id="error-msg">
 				<?php
-					$param = ""; $param = $_REQUEST['param'];
-					$option = ""; $option = $_REQUEST['option'];
-					$display = 0;
+					$param = "";
+					$option = "";
+
+					if( isset($_REQUEST['param']) )
+					{
+						$param = $_REQUEST['param'];
+						$option = $_REQUEST['option'];
+						$display = 0;
+					}
+					
 					if($option == '1')
 					{
 						//edit
@@ -113,7 +120,7 @@
 			</div>
 			<div class="content">
 				<div class="form">
-					<form action="/Events/modules/users/users.php" method="POST">
+					<form action="/Events/modules/users/users.php?option=0" method="POST">
 						<h5> USER ID OR NAME </h5>
 						<input type="text" placeholder="ID, NICKNAME OR NAME" value="" name="param">
 						<input type="submit" value="SEARCH"/>

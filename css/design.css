@@ -1,7 +1,7 @@
 /* Design CSS */
 body
 {
-	font-size: 15px; font-family: arial; text-align: center;
+	font-size: 15px; font-family: helvetica; text-align: center;
 	background-color: #FFEEE6;
 }
 
@@ -33,4 +33,29 @@ body
 .hide
 {
 	display: none;
+}
+
+a
+{
+	padding: 8px; margin: 2px;
+	background-color: #EBB1BE;
+	border-radius: 5px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover
+{
+	background-color: #EB93BC;
+}
+
+table
+{
+	border: 1px solid #EAD9FF;
+	padding: 5px;
+}
+
+th
+{
+	background-color: #E8DEC5;
 }
