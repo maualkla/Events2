@@ -56,6 +56,6 @@
 ## log
 	- []logid int(10) log id
 	- log_name varchar(10) situation or context of the log
-	- log_descript varchar(40) description of the log
+	- log_descr varchar(40) description of the log
 	- log_date datetime() moment when the log happen
 	- log_file varchar(20) file where the log was created
