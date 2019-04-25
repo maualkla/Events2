@@ -23,13 +23,13 @@
 		<div class="container">
 			<div class="" id="error-msg">
 				<?php
+					$display = 0;
 					if(isset($_REQUEST['option']))
 					{
-						$display = 0;
 						$option = $_REQUEST['option'];
 						switch ($option) 
 						{
-							case '2':
+							case '1':
 								# Query
 								$param = $_REQUEST['param'];
 								$sql = 'SELECT * FROM event WHERE eventid LIKE "%'.$param.'%" OR event_name LIKE "%'.$param.'%"';
@@ -38,7 +38,12 @@
 								mysqli_close($dbc);
 								$display = 1;
 								break;
-							
+							case '2':
+								# Edit
+								break;
+							case '3':
+								# delete
+								break;
 							default:
 								
 								break;
@@ -58,7 +63,7 @@
 			</div>
 			<div class="content">
 				<h5>Buscar Evento por Nombre o Id</h5>
-				<form action="event.php?option=2" method="POST">
+				<form action="event.php?option=1" method="POST">
 					<input type="text" name="param">
 					<input type="submit" value="Search Event">
 				</form>
@@ -77,7 +82,7 @@
 					<?php
 						while($row = mysqli_fetch_array($event_result,  MYSQLI_BOTH))
 						{
-							echo '<tr><td>'.$row['eventid'].'</td><td>'.$row['event_name'].'</td><td>'.$row['event_start'].'</td><td>'.$row['event_stop'].'</td><td>'.$row['owner_name'].'</td><td>'.$row['userid'].'</td><td> <a href="play.php?param='.$row['eventid'].'">Go To Event Screen</a> </td></tr>';
+							echo '<tr><td>'.$row['eventid'].'</td><td>'.$row['event_name'].'</td><td>'.$row['event_start'].'</td><td>'.$row['event_stop'].'</td><td>'.$row['owner_name'].'</td><td>'.$row['userid'].'</td><td> <a href="play.php?param='.$row['eventid'].'">Go To Event Screen</a> - <button onclick="window.location.href=\'event.php?option=2&param='.$row['eventid'].'\';"> Event Settings </button> <button onclick="window.location.href = \'events.php?option=3&param='.$row['eventid'].'\'";> Delete </button></td></tr>';
 						}
 					?>
 				</table>	

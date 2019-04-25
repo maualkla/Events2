@@ -19,7 +19,7 @@
 	if($_SESSION['sesion'] != $sesionhash)
 	{
 	    // En caso de no haber iniciado sesion, se le redirecciona.
-	    header("Location: ../../index.html?pe=9");
+	    header("Location: ../../index.html?pe=3");
 	    exit();
 	}
 
