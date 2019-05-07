@@ -73,7 +73,8 @@
 					<input type="submit" value="Search Event">
 				</form>
 			</div>
-			<div class="display-results <?php if($display == 1){echo "display";}else{echo "hide";} ?>">
+		<?php if($display == 1){ ?><!--echo "display";}else{echo "hide";} ?>"-->
+			<div class="display-results ">
 				<table>
 					<tr>
 						<th>Event ID</th>
@@ -92,12 +93,14 @@
 					?>
 				</table>	
 			</div>
-			<div class="display-settings <?php if($display == 2){echo "display";}else{echo "hide";} ?>">
-				<?php if($display == 2){ ?>
+		<?php } elseif($display == 2){?>
+			<div class="display-settings ">
+				<div class="settings-card">
 				<?php $row = mysqli_fetch_array($event_result2, MYSQLI_BOTH); ?>
 				<h1><?php echo $row['event_name']; ?></h1>
-				<?php } ?>
+				</div>
 			</div>
+		<?php } ?>
 		</div>
 	</body>
 </html>
