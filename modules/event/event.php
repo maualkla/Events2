@@ -39,7 +39,12 @@
 								$display = 1;
 								break;
 							case '2':
-								# Edit
+								$param = $_REQUEST['param'];
+								$sql = 'SELECT * FROM event WHERE eventid = "'.$param.'"';
+								require_once('../system/connection.php');
+								$event_result2 = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+								mysqli_close($dbc);
+								$display = 2;
 								break;
 							case '3':
 								# delete
@@ -86,6 +91,12 @@
 						}
 					?>
 				</table>	
+			</div>
+			<div class="display-settings <?php if($display == 2){echo "display";}else{echo "hide";} ?>">
+				<?php if($display == 2){ ?>
+				<?php $row = mysqli_fetch_array($event_result2, MYSQLI_BOTH); ?>
+				<h1><?php echo $row['event_name']; ?></h1>
+				<?php } ?>
 			</div>
 		</div>
 	</body>
