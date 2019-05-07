@@ -98,16 +98,23 @@
 			<div class="display-settings ">
 				<div class="settings-card">
 					<div class="sc-banner">
+						<h6><?php echo $row['eventid']; ?></h6>
 					</div>
-					<div class="sc-title-top">
-						<div class="sc-tt-left"><h3><?php echo $row['event_name']; ?></h3></div>
-						<div class="sc-tt-right"><h1><?php echo $row['event_short_name']; ?></h1></div>
+					<div class="sc-title">
+						<div class="sc-tt-left">
+							<h3><?php echo $row['event_name']; ?></h3>
+							<h1><?php echo $row['event_short_name']; ?></h1>
+						</div>
+						<div class="sc-tt-right">
+							<p><?php echo $row['event_descr']; ?></p>
+						</div>
 					</div>
 					<div class="sc-content">
-						<div class="sc-content-left"></div>
-						<div class="sc-content-right"></div>
+						<div class="sc-content-left"><?php echo $row['event_start']; ?></div>
+						<div class="sc-content-right"><?php echo $row['event_stop']; ?></div>
 					</div>
 					<div class="sc-content-down">
+
 					</div>
 				</div>
 			</div>
