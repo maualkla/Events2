@@ -97,6 +97,7 @@
 			<?php $row = mysqli_fetch_array($event_result2, MYSQLI_BOTH); ?>
 			<div class="display-settings ">
 				<div class="settings-card">
+					<button onclick="window.location.href = 'event.php?option=2&param=<?php echo $row[0]; ?>&val=1'">Edit Event</button>
 					<div class="sc-banner">
 						<h6><?php echo $row['eventid']; ?></h6>
 					</div>
