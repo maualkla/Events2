@@ -46,7 +46,14 @@
 							$display = 2;
 							break;
 						case '3':
-							# update;
+							# update
+							$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'", level = "'.$_REQUEST['level'].'" WHERE userid = "'.$param.'"';
+							echo $sql;
+							require_once('../system/connection.php');
+							$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+							mysqli_close($dbc);
+							header('Location: users.php?pe=6');
+							break;
 						case '4':
 							#delete
 							break;
@@ -105,20 +112,20 @@
 						<button onclick="window.location.href = 'event.php?option=2&param=<?php echo $row[0]; ?>'">Cancel Edition</button>
 						<form action="event.php?option=3&param=<?php echo $row[0]; ?>" method="POST">
 							<div class="sc-banner">
-								<h6><input type='text' value='<?php echo $row['eventid']; ?>'></h6>
+								<h6><?php echo $row['eventid']; ?></h6>
 							</div>
 							<div class="sc-title">
 								<div class="sc-tt-left">
-									<h3><input type='text' value='<?php echo $row['event_name']; ?>' ></h3>
-									<h1><input type='text' value='<?php echo $row['event_short_name']; ?>'></h1>
+									<h3><input name='event_name' type='text' value='<?php echo $row['event_name']; ?>' ></h3>
+									<h1><input name='event_short_name' type='text' value='<?php echo $row['event_short_name']; ?>'></h1>
 								</div>
 								<div class="sc-tt-right">
-									<p><input type='text' value='<?php echo $row['event_descr']; ?>' ></p>
+									<p><input name='event_descr' type='text' value='<?php echo $row['event_descr']; ?>' ></p>
 								</div>
 							</div>
 							<div class="sc-content">
-								<div class="sc-content-left"><input type='text' value='<?php echo $row['event_start']; ?>'></div>
-								<div class="sc-content-right"><input type='text' value='<?php echo $row['event_stop']; ?>' ></div>
+								<div class="sc-content-left"><input name='event_start' type='datetime' value='<?php echo $row['event_start']; ?>'></div>
+								<div class="sc-content-right"><input name='event_stop' type='datetime' value='<?php echo $row['event_stop']; ?>' ></div>
 							</div>
 							<input class="sub-button" type="submit" value="Save Changes">
 						</form>
