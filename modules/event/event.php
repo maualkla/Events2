@@ -47,12 +47,16 @@
 							break;
 						case '3':
 							# update
-							$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'", level = "'.$_REQUEST['level'].'" WHERE userid = "'.$param.'"';
-							echo $sql;
-							require_once('../system/connection.php');
-							$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
-							mysqli_close($dbc);
-							header('Location: users.php?pe=6');
+							if(isset($_REQUEST['event_name']) == true && isset($_REQUEST['event_short_name']) == true && isset($_REQUEST['event_descr']) && isset($_REQUEST['event_start']) == true && isset($_REQUEST['event_stop']) == true)
+							{
+								$sql = 'UPDATE event SET event_name = "'.$_REQUEST['event_name'].'", event_short_name = "'.$_REQUEST['event_short_name'].'", event_descr = "'.$_REQUEST['event_descr'].'", event_start = "'.$_REQUEST['event_start'].'", event_stop = "'.$_REQUEST['event_stop'].'" WHERE eventid = "'.$param.'"';
+								echo $sql;
+								require_once('../system/connection.php');
+								$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+								mysqli_close($dbc);
+								header('Location: event.php?pe=12');
+							}
+								
 							break;
 						case '4':
 							#delete

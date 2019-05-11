@@ -75,7 +75,7 @@ a, button, .sub-button
 	opacity: .8;
 }
 
-a:hover, button:hover, sub-button:hover
+a:hover, button:hover, .sub-button:hover
 {
 	background-color: #ffff00;
 	color: white;
