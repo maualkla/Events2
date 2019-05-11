@@ -1,10 +1,13 @@
 /* Design CSS */
+/* GENERAL DESIGN */
 body
 {
-	font-size: 15px; font-family: helvetica; text-align: center;
-	background-color: #FFEEE6;
+	font-size: 15px; font-family: helvetica; text-align: center; color: #263238;
+	background-color: white;
 }
 
+
+/* Warnings and float messages */
 .er
 {
 	background-color: red;
@@ -25,6 +28,31 @@ body
 	color: white;
 }
 
+/* Container general design*/
+.container
+{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 2fr 10fr;
+}
+
+/* Top bar design */
+.top
+{
+	background: url('../assets/confetti-bg.mp4') ;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 2fr 3fr;
+}
+.menu
+{
+	display: inline-flex;
+}
+
+
+
+
+/* other kind of things */
 .display
 {
 	display: block;
@@ -35,24 +63,31 @@ body
 	display: none;
 }
 
-a
+
+/* Links  and button*/
+a, button
 {
 	padding: 8px; margin: 2px;
-	background-color: #EBB1BE;
-	border-radius: 5px;
+	background-color: #ffff8d;
+	border: none; border-radius: 2px;
 	text-decoration: none;
 	cursor: pointer;
+	opacity: .8;
 }
 
-a:hover
+a:hover, button:hover
 {
-	background-color: #EB93BC;
+	background-color: #ffff00;
 	color: white;
+	opacity: 1;
 }
 
+
+
+/* Tables */
 table
 {
-	border: 1px solid #EAD9FF;
+	border: 1px solid #37474f;
 	padding: 5px;
 }
 

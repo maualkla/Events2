@@ -112,12 +112,13 @@
 				?>
 			</div>
 			<div class="top">
-				<h2>Users page</h2>
+				<div class="top-title"><h2>Users page</h2></div>
+				<div class="menu">
+					<button onclick="window.location.href ='/Events/inicio.php'">Back to Home</button>
+					<button onclick="window.location.href ='/Events/modules/users/adduser.php'">Add User</button>
+				</div>
 			</div>
-			<div class="menu">
-				<h3><a href="/Events/inicio.php">Back to Home</a></h3>
-				<h3><a href="/Events/modules/users/adduser.php">Add User</a></h3>
-			</div>
+			
 			<div class="content">
 				<div class="form">
 					<form action="/Events/modules/users/users.php?option=0" method="POST">

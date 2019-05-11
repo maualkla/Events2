@@ -27,13 +27,14 @@
 				?>
 			</div>
 			<div class="top">
-				<h2>Here is the main page.</h2>
+				<div class='top-title'><h2>Here is the main page.</h2></div>
+				<div class="menu">
+					<button onclick='window.location.href="modules/system/close.php"'>Close Sesion</button>
+					<button onclick='window.location.href="modules/users/users.php"'>Users Module</button>
+					<button onclick='window.location.href="modules/event/event.php"'>Events Module</button>
+				</div>
 			</div>
-			<div class="menu">
-				<h3><a href="modules/system/close.php">Close Sesion</a></h3>
-				<h3><a href="modules/users/users.php">Users Module</a></h3>
-				<h3><a href="modules/event/event.php">Events Module</a></h3>
-			</div>
+			
 		</div>
 	</body>
 </html>
