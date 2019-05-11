@@ -6,6 +6,8 @@ body
 	background-color: white;
 }
 
+
+/* Warnings and float messages */
 .er
 {
 	background-color: red;
@@ -26,6 +28,28 @@ body
 	color: white;
 }
 
+/* Container general design*/
+.container
+{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 9fr;
+}
+
+/* Top bar design */
+.top
+{
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 3fr;
+}
+
+
+
+
+
+
+/* other kind of things */
 .display
 {
 	display: block;
@@ -36,6 +60,8 @@ body
 	display: none;
 }
 
+
+/* Links */
 a
 {
 	padding: 8px; margin: 2px;
@@ -51,6 +77,9 @@ a:hover
 	color: white;
 }
 
+
+
+/* Tables */
 table
 {
 	border: 1px solid #37474f;
