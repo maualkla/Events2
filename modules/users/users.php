@@ -118,13 +118,12 @@
 					<button onclick="window.location.href ='/Events/modules/users/adduser.php'">Add User</button>
 				</div>
 			</div>
-			
 			<div class="content">
 				<div class="form">
 					<form action="/Events/modules/users/users.php?option=0" method="POST">
 						<h5> USER ID OR NAME </h5>
 						<input type="text" placeholder="ID, NICKNAME OR NAME" value="" name="param">
-						<input type="submit" value="SEARCH"/>
+						<input class="sub-button" type="submit" value="SEARCH"/>
 					</form>
 				</div>
 				<div class="content-table <?php if($display == 2){echo'display';}else{echo 'hide';} ?>">
