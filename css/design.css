@@ -1,8 +1,9 @@
 /* Design CSS */
+/* GENERAL DESIGN */
 body
 {
-	font-size: 15px; font-family: helvetica; text-align: center;
-	background-color: #FFEEE6;
+	font-size: 15px; font-family: helvetica; text-align: center; color: #263238;
+	background-color: white;
 }
 
 .er
@@ -38,7 +39,7 @@ body
 a
 {
 	padding: 8px; margin: 2px;
-	background-color: #EBB1BE;
+	background-color: #ffff8d;
 	border-radius: 5px;
 	text-decoration: none;
 	cursor: pointer;
@@ -46,17 +47,18 @@ a
 
 a:hover
 {
-	background-color: #EB93BC;
+	background-color: #ffff00;
 	color: white;
 }
 
 table
 {
-	border: 1px solid #EAD9FF;
+	border: 1px solid #37474f;
 	padding: 5px;
 }
 
 th
 {
-	background-color: #E8DEC5;
+	background-color: #263238;
+	color: white;
 }
