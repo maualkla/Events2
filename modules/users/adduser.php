@@ -20,38 +20,38 @@
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
-		<div class="container">
-			<div class="" id="error-msg">
-			</div>
-			<div class="" id="msg">
-				<?php
-					if(isset($_REQUEST['fname']))
+		<div class="" id="error-msg">
+		</div>
+		<div class="" id="msg">
+			<?php
+				if(isset($_REQUEST['fname']))
+				{
+					$fname = $_REQUEST['fname'];
+					$lname = ""; $lname = $_REQUEST['lname'];
+					$email = ""; $email = $_REQUEST['email'];
+					$alias = ""; $alias = $_REQUEST['alias'];
+					$contra = ""; $contra = $_REQUEST['pass'];
+					$level = ""; $level = $_REQUEST['level'];
+					$options = [ 'salt' => "ASI99221111000__s¡??0popopop22MQVANDMEAL" ];
+					$password = password_hash($contra, PASSWORD_DEFAULT, $options);
+					if($fname != "" && $lname != "" && $email != "" && $alias != "" && $password != "" && ($level != "" && (intval($level) > 0) && (intval($level) < 5)))
 					{
-						$fname = $_REQUEST['fname'];
-						$lname = ""; $lname = $_REQUEST['lname'];
-						$email = ""; $email = $_REQUEST['email'];
-						$alias = ""; $alias = $_REQUEST['alias'];
-						$contra = ""; $contra = $_REQUEST['pass'];
-						$level = ""; $level = $_REQUEST['level'];
-						$options = [ 'salt' => "ASI99221111000__s¡??0popopop22MQVANDMEAL" ];
-						$password = password_hash($contra, PASSWORD_DEFAULT, $options);
-						if($fname != "" && $lname != "" && $email != "" && $alias != "" && $password != "" && ($level != "" && (intval($level) > 0) && (intval($level) < 5)))
-						{
-							//echo "Insert";
-							$sql = 'INSERT INTO user (fname, lname, email, nickname, password, level) VALUES ("'.$fname.'", "'.$lname.'", "'.$email.'", "'.$alias.'", "'.$password.'", "'.$level.'")';
-							require_once("../system/connection.php");
-						    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
-						    mysqli_close($dbc);
-						    echo "Insersion Correcta";
-						    header('Location: users.php?pe=5');
-						}
-						else
-						{
-							//echo "No Insert";
-						}
-					} 
- 				?>
-			</div>
+						//echo "Insert";
+						$sql = 'INSERT INTO user (fname, lname, email, nickname, password, level) VALUES ("'.$fname.'", "'.$lname.'", "'.$email.'", "'.$alias.'", "'.$password.'", "'.$level.'")';
+						require_once("../system/connection.php");
+					    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
+					    mysqli_close($dbc);
+					    echo "Insersion Correcta";
+					    header('Location: users.php?pe=5');
+					}
+					else
+					{
+						//echo "No Insert";
+					}
+				} 
+				?>
+		</div>
+		<div class="container">
 			<div class="top">
 				<h2>Add new user page</h2>
 			</div>

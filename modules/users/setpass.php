@@ -21,38 +21,38 @@
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
-		<div class="container">
-			<div class="" id="error-msg">
-				<?php
-					$option = ""; $option = $_REQUEST['option'];
-					$param =  ""; $param = $_REQUEST['param'];
-					$auth = ""; $auth = $_REQUEST['auth'];
-					if($option == "2" && $auth == 'true' && $param != "")
+		<div class="" id="error-msg">
+			<?php
+				$option = ""; $option = $_REQUEST['option'];
+				$param =  ""; $param = $_REQUEST['param'];
+				$auth = ""; $auth = $_REQUEST['auth'];
+				if($option == "2" && $auth == 'true' && $param != "")
+				{
+					$pass1 = ""; $pass1 = $_REQUEST['p1'];
+					$pass2 = ""; $pass2 = $_REQUEST['p2'];
+					if(($pass1 != "" && $pass2 != "") && ($pass1 == $pass2) && (strlen($pass1) > 3))
 					{
-						$pass1 = ""; $pass1 = $_REQUEST['p1'];
-						$pass2 = ""; $pass2 = $_REQUEST['p2'];
-						if(($pass1 != "" && $pass2 != "") && ($pass1 == $pass2) && (strlen($pass1) > 3))
-						{
-							$options = [ 'salt' => "ASI99221111000__s¡??0popopop22MQVANDMEAL" ];
-		    				$cryptcontra = password_hash($pass1, PASSWORD_DEFAULT, $options); 
-		    				$sql = 'UPDATE user SET password = "'.$cryptcontra.'" WHERE userid = "'.$param.'"';
-							echo $sql;
-							require_once('../system/connection.php');
-							$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
-							mysqli_close($dbc);
-							header('Location: users.php?pe=10');
-						}
-						else
-						{
-							header('Location: users.php?pe=11');
-						}
+						$options = [ 'salt' => "ASI99221111000__s¡??0popopop22MQVANDMEAL" ];
+	    				$cryptcontra = password_hash($pass1, PASSWORD_DEFAULT, $options); 
+	    				$sql = 'UPDATE user SET password = "'.$cryptcontra.'" WHERE userid = "'.$param.'"';
+						echo $sql;
+						require_once('../system/connection.php');
+						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+						mysqli_close($dbc);
+						header('Location: users.php?pe=10');
 					}
 					else
 					{
-						//header('Location: users.php?pe=11');
+						header('Location: users.php?pe=11');
 					}
-				?>
-			</div>
+				}
+				else
+				{
+					//header('Location: users.php?pe=11');
+				}
+			?>
+		</div>
+		<div class="container">
 			<div class="top">
 				<h2>Set the new password</h2>
 			</div>

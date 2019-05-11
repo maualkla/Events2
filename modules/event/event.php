@@ -20,48 +20,48 @@
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
-		<div class="container">
-			<div class="" id="error-msg">
-				<?php
-					$display = 0;
-					if(isset($_REQUEST['option']))
+		<div class="" id="error-msg">
+			<?php
+				$display = 0;
+				if(isset($_REQUEST['option']))
+				{
+					$option = $_REQUEST['option'];
+					switch ($option) 
 					{
-						$option = $_REQUEST['option'];
-						switch ($option) 
-						{
-							case '1':
-								# Query
-								$param = $_REQUEST['param'];
-								$sql = 'SELECT * FROM event WHERE eventid LIKE "%'.$param.'%" OR event_name LIKE "%'.$param.'%"';
-								require_once('../system/connection.php');
-								$event_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
-								mysqli_close($dbc);
-								$display = 1;
-								break;
-							case '2':
-								$param = $_REQUEST['param'];
-								$sql = 'SELECT * FROM event WHERE eventid = "'.$param.'"';
-								require_once('../system/connection.php');
-								$event_result2 = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
-								mysqli_close($dbc);
-								$display = 2;
-								break;
-							case '3':
-								# update;
-							case '4':
-								#delete
-								break;
-							case '5':
-								#create
-								$display = 3;
-								break;
-							default:
-								
-								break;
-						}
+						case '1':
+							# Query
+							$param = $_REQUEST['param'];
+							$sql = 'SELECT * FROM event WHERE eventid LIKE "%'.$param.'%" OR event_name LIKE "%'.$param.'%"';
+							require_once('../system/connection.php');
+							$event_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+							mysqli_close($dbc);
+							$display = 1;
+							break;
+						case '2':
+							$param = $_REQUEST['param'];
+							$sql = 'SELECT * FROM event WHERE eventid = "'.$param.'"';
+							require_once('../system/connection.php');
+							$event_result2 = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+							mysqli_close($dbc);
+							$display = 2;
+							break;
+						case '3':
+							# update;
+						case '4':
+							#delete
+							break;
+						case '5':
+							#create
+							$display = 3;
+							break;
+						default:
+							
+							break;
 					}
-				?>
-			</div>
+				}
+			?>
+		</div>
+		<div class="container">
 			<div class="top">
 				<div class="top-title"><h2>Events main</h2></div>
 				<div class="menu">

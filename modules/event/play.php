@@ -20,11 +20,12 @@
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
+		<div class="" id="error-msg">
+			<?php
+			?>
+		</div>
 		<div class="container">
-			<div class="" id="error-msg">
-				<?php
-				?>
-			</div>
+			
 			<div class="top">
 				<h2>Play Event</h2>
 			</div>
