@@ -53,11 +53,11 @@
 		</div>
 		<div class="container">
 			<div class="top">
-				<h2>Add new user page</h2>
-			</div>
-			<div class="menu">
-				<h3><a href="/Events/modules/users/users.php">Back to Users</a></h3>
-				<!--h3><a href="php/adduser.php">Add User</a></h3-->
+				<div class="top-title"><h2>Add new user page</h2></div>
+				<div class="menu">
+					<button onclick='window.location.href="/Events/modules/users/users.php"'>Back to Users</button>
+					<!--h3><a href="php/adduser.php">Add User</a></h3-->
+				</div>
 			</div>
 			<div class="content">
 				<form action="adduser.php" method="POST">
