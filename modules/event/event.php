@@ -11,7 +11,7 @@
 	--> Dependencies:   connection.php ( For the DB connection ) 
 ************************************************************************************************* */
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 	<head>
 		<title>Event</title>
