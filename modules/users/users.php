@@ -103,7 +103,7 @@
 						    mysqli_close($dbc);
 						    $display = 2;
 						}
-						else
+						else 
 						{
 							// No seek
 						}
