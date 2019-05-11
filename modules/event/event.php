@@ -102,24 +102,25 @@
 			<?php $row = mysqli_fetch_array($event_result2, MYSQLI_BOTH); ?>
 			<div class="display-settings ">
 				<div class="settings-card">
-					<button onclick="window.location.href = 'event.php?option=2&param=<?php echo $row[0]; ?>&val=1'">Edit Event</button>
+					<button onclick="window.location.href = 'event.php?option=2&param=<?php echo $row[0]; ?>'">Cancel Edition</button>
 					<form action="event.php?option=3&param=<?php echo $row[0]; ?>" method="POST">
 						<div class="sc-banner">
-							<h6><?php echo $row['eventid']; ?></h6>
+							<h6><input type='text' value='<?php echo $row['eventid']; ?>'></h6>
 						</div>
 						<div class="sc-title">
 							<div class="sc-tt-left">
-								<h3><?php echo $row['event_name']; ?></h3>
-								<h1><?php echo $row['event_short_name']; ?></h1>
+								<h3><input type='text' value='<?php echo $row['event_name']; ?>' ></h3>
+								<h1><input type='text' value='<?php echo $row['event_short_name']; ?>'></h1>
 							</div>
 							<div class="sc-tt-right">
-								<p><?php echo $row['event_descr']; ?></p>
+								<p><input type='text' value='<?php echo $row['event_descr']; ?>' ></p>
 							</div>
 						</div>
 						<div class="sc-content">
-							<div class="sc-content-left"><?php echo $row['event_start']; ?></div>
-							<div class="sc-content-right"><?php echo $row['event_stop']; ?></div>
+							<div class="sc-content-left"><input type='text' value='<?php echo $row['event_start']; ?>'></div>
+							<div class="sc-content-right"><input type='text' value='<?php echo $row['event_stop']; ?>' ></div>
 						</div>
+						<input type="submit" value="Save Changes">
 					</form>
 					<div class="sc-content-down">
 
