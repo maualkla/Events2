@@ -60,12 +60,11 @@
 				?>
 			</div>
 			<div class="top">
-				<h2>Events main</h2>
-			</div>
-			<div class="menu">
-				<h3><a href="../../inicio.php">Back to Home</a></h3>
-				<h3><a href="createevent.php?option=1">Create New Event</a></h3>
-				<h3></h3>
+				<div class="top-title"><h2>Events main</h2></div>
+				<div class="menu">
+					<button onclick='window.location.href="../../inicio.php"'>Back to Home</button>
+					<button onclick='window.location.href="createevent.php?option=1"'>Create New Event</button>
+				</div>
 			</div>
 			<div class="form_new_event">
 			</div>
