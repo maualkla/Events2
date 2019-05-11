@@ -33,7 +33,7 @@ body
 {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 2fr 10fr;
+	grid-template-rows: 1fr 10fr;
 }
 
 /* Top bar design */
@@ -75,7 +75,7 @@ a, button, .sub-button
 	opacity: .8;
 }
 
-a:hover, button:hover, sub-button:hover
+a:hover, button:hover, .sub-button:hover
 {
 	background-color: #ffff00;
 	color: white;

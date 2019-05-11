@@ -21,11 +21,11 @@
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
+		<div class="" id="error-msg">
+			<?php
+			?>
+		</div>
 		<div class="container">
-			<div class="" id="error-msg">
-				<?php
-				?>
-			</div>
 			<div class="top">
 				<div class='top-title'><h2>Here is the main page.</h2></div>
 				<div class="menu">

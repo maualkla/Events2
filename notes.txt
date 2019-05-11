@@ -16,6 +16,7 @@
 	9 = Passwords dont match (er)
 	10 = Password updated (wr)
 	11 = Error try again (er)
+	12 = Event Updated (wr)
 
 
 

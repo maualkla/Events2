@@ -20,48 +20,59 @@
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
-		<div class="container">
-			<div class="" id="error-msg">
-				<?php
-					$display = 0;
-					if(isset($_REQUEST['option']))
+		<div class="" id="error-msg">
+			<?php
+				$display = 0;
+				if(isset($_REQUEST['option']))
+				{
+					$option = $_REQUEST['option'];
+					switch ($option) 
 					{
-						$option = $_REQUEST['option'];
-						switch ($option) 
-						{
-							case '1':
-								# Query
-								$param = $_REQUEST['param'];
-								$sql = 'SELECT * FROM event WHERE eventid LIKE "%'.$param.'%" OR event_name LIKE "%'.$param.'%"';
+						case '1':
+							# Query
+							$param = $_REQUEST['param'];
+							$sql = 'SELECT * FROM event WHERE eventid LIKE "%'.$param.'%" OR event_name LIKE "%'.$param.'%"';
+							require_once('../system/connection.php');
+							$event_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+							mysqli_close($dbc);
+							$display = 1;
+							break;
+						case '2':
+							$param = $_REQUEST['param'];
+							$sql = 'SELECT * FROM event WHERE eventid = "'.$param.'"';
+							require_once('../system/connection.php');
+							$event_result2 = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+							mysqli_close($dbc);
+							$display = 2;
+							break;
+						case '3':
+							# update
+							if(isset($_REQUEST['event_name']) == true && isset($_REQUEST['event_short_name']) == true && isset($_REQUEST['event_descr']) && isset($_REQUEST['event_start']) == true && isset($_REQUEST['event_stop']) == true)
+							{
+								$sql = 'UPDATE event SET event_name = "'.$_REQUEST['event_name'].'", event_short_name = "'.$_REQUEST['event_short_name'].'", event_descr = "'.$_REQUEST['event_descr'].'", event_start = "'.$_REQUEST['event_start'].'", event_stop = "'.$_REQUEST['event_stop'].'" WHERE eventid = "'.$param.'"';
+								echo $sql;
 								require_once('../system/connection.php');
-								$event_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+								$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 								mysqli_close($dbc);
-								$display = 1;
-								break;
-							case '2':
-								$param = $_REQUEST['param'];
-								$sql = 'SELECT * FROM event WHERE eventid = "'.$param.'"';
-								require_once('../system/connection.php');
-								$event_result2 = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
-								mysqli_close($dbc);
-								$display = 2;
-								break;
-							case '3':
-								# update;
-							case '4':
-								#delete
-								break;
-							case '5':
-								#create
-								$display = 3;
-								break;
-							default:
+								header('Location: event.php?pe=12');
+							}
 								
-								break;
-						}
+							break;
+						case '4':
+							#delete
+							break;
+						case '5':
+							#create
+							$display = 3;
+							break;
+						default:
+							
+							break;
 					}
-				?>
-			</div>
+				}
+			?>
+		</div>
+		<div class="container">
 			<div class="top">
 				<div class="top-title"><h2>Events main</h2></div>
 				<div class="menu">
@@ -105,20 +116,20 @@
 						<button onclick="window.location.href = 'event.php?option=2&param=<?php echo $row[0]; ?>'">Cancel Edition</button>
 						<form action="event.php?option=3&param=<?php echo $row[0]; ?>" method="POST">
 							<div class="sc-banner">
-								<h6><input type='text' value='<?php echo $row['eventid']; ?>'></h6>
+								<h6><?php echo $row['eventid']; ?></h6>
 							</div>
 							<div class="sc-title">
 								<div class="sc-tt-left">
-									<h3><input type='text' value='<?php echo $row['event_name']; ?>' ></h3>
-									<h1><input type='text' value='<?php echo $row['event_short_name']; ?>'></h1>
+									<h3><input name='event_name' type='text' value='<?php echo $row['event_name']; ?>' ></h3>
+									<h1><input name='event_short_name' type='text' value='<?php echo $row['event_short_name']; ?>'></h1>
 								</div>
 								<div class="sc-tt-right">
-									<p><input type='text' value='<?php echo $row['event_descr']; ?>' ></p>
+									<p><input name='event_descr' type='text' value='<?php echo $row['event_descr']; ?>' ></p>
 								</div>
 							</div>
 							<div class="sc-content">
-								<div class="sc-content-left"><input type='text' value='<?php echo $row['event_start']; ?>'></div>
-								<div class="sc-content-right"><input type='text' value='<?php echo $row['event_stop']; ?>' ></div>
+								<div class="sc-content-left"><input name='event_start' type='datetime' value='<?php echo $row['event_start']; ?>'></div>
+								<div class="sc-content-right"><input name='event_stop' type='datetime' value='<?php echo $row['event_stop']; ?>' ></div>
 							</div>
 							<input class="sub-button" type="submit" value="Save Changes">
 						</form>

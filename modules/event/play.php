@@ -20,16 +20,17 @@
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
+		<div class="" id="error-msg">
+			<?php
+			?>
+		</div>
 		<div class="container">
-			<div class="" id="error-msg">
-				<?php
-				?>
-			</div>
+			
 			<div class="top">
-				<h2>Play Event</h2>
-			</div>
-			<div class="menu">
-				<h3><a href="event.php">Back to Events</a></h3>
+				<div class="top-title"><h2>Play Event</h2></div>
+				<div class="menu">
+					<button onclick='window.location.href="event.php"'>Back to Events</button>
+				</div>
 			</div>
 		</div>
 	</body>
