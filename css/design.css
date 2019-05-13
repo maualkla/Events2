@@ -33,7 +33,7 @@ body
 {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 10fr;
+	grid-template-rows: 1fr 5;
 }
 
 /* Top bar design */
@@ -88,7 +88,7 @@ a, button, .sub-button
 a:hover, button:hover, .sub-button:hover
 {
 	background-color: #ffff00;
-	color: white;
+	color: lightgray;
 	opacity: 1;
 }
 
@@ -97,8 +97,9 @@ a:hover, button:hover, .sub-button:hover
 .input-search
 {
 	font-size: 1.4em;
-	border: none;
+	border: lightgray 1px solid; border-radius: 3px;
 	color: #263238;
+	padding: 8px;
 
 }
 .input-search:active
