@@ -170,7 +170,27 @@
 			}
 			elseif($display == 3){?>
 				<div class="form_new_event">
-					CREATE EVENT OK
+					<form action="event.php?option=5&param=<?php echo $row[0]; ?>" method="POST">
+						<p>Event Name</p>
+						<input name="event_name" type="text" value="" placeholder="My event" required>
+						<p>Event Description</p>
+						<input name="event_descr" type="text" value="" placeholder="Event for those days" required>
+						<p>Event Short Name</p>
+						<input name="event_short_name" type="text" value="" placeholder="My short event name" required>
+						<p>Event Start Date and Time</p>
+						<input name="event_start" type="datetime" value="" required>
+						<p>Event Finish Date and Time</p>
+						<input name="event_stop" type="date-time" value="" required>
+						<p>Owner Name</p>
+						<input name="owner_name" type="text" value="" placeholder="My Org Name" required>
+						<p>Owner Description</p>
+						<input name="owner_descr" type="text" value="" placeholder="My org Description" required>
+						<p>Owner Short Name</p>
+						<input name="owner_short_name" type="text" value="" placeholder="MyOrg short name" required>
+						<p>User Owner</p>
+						<input name="userid" type="text" value="" placeholder="User Owner" required>
+						<input type="submit" name="" value="Create" class="sub-button">
+					</form>
 				</div>
 			<?php } ?>
 			</div>
