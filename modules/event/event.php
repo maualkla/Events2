@@ -6,7 +6,7 @@
 	--> Open Source proyect
 	--> Autor: @maualkla
 	--> Creation date: April 23rd, 2019
-	--> Last Edition: May 11th, 2019
+	--> Last Edition: May 13th, 2019
 	--> Description: Main page of the Events module
 	--> Dependencies:   connection.php ( For the DB connection ) 
 ************************************************************************************************* */
@@ -63,6 +63,14 @@
 							break;
 						case '5':
 							#create
+							if(isset($_REQUEST['event_name']) == true && isset($_REQUEST['event_short_name']) == true && isset($_REQUEST['event_descr']) && isset($_REQUEST['event_start']) == true && isset($_REQUEST['event_stop']) == true)
+							{
+								$sql = 'INSERT INTO event (event_name, event_descr, event_short_name, event_start, event_stop, owner_name, owner_descr, owner_short_name, userid) VALUES ("'.$_REQUEST['event_name'].'", "'.$_REQUEST['event_descr'].'", "'.$_REQUEST['event_short_name'].'", "'.$_REQUEST['event_start'].'", "'.$_REQUEST['event_stop'].'", "'.$_REQUEST['owner_name'].'"), "'.$_REQUEST['owner_descr'].'"), "'.$_REQUEST['owner_short_name'].'"), "'.$_REQUEST['userid'].'")';
+								require_once("../system/connection.php");
+							    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
+							    mysqli_close($dbc);
+							    header('Location: users.php?pe=5');
+							}
 							$display = 3;
 							break;
 						default:
