@@ -81,11 +81,13 @@
 				</div>
 			</div>
 			<div class="content">
-				<h5>Buscar Evento por Nombre o Id</h5>
-				<form action="event.php?option=1" method="POST">
-					<input type="text" name="param">
-					<input class="sub-button" type="submit" value="Search Event">
-				</form>
+				<div class="c-buscador">
+					<h5>Buscar Evento por Nombre o Id</h5>
+					<form action="event.php?option=1" method="POST">
+						<input class="input-search" type="text" name="param">
+						<input class="sub-button" type="submit" value="Search Event">
+					</form>
+				</div>
 			
 			<?php if($display == 1){ ?><!--echo "display";}else{echo "hide";} ?>"-->
 				<div class="display-results ">
