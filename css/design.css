@@ -27,13 +27,19 @@ body
 	font-size: 200%;
 	color: white;
 }
+.error-msg
+{
+	background-color: darkred;
+	padding: 20px; color: white;
+	border-radius: 5px;
+}
 
 /* Container general design*/
 .container
 {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 10fr;
+	grid-template-rows: 1fr 5;
 }
 
 /* Top bar design */
@@ -49,8 +55,24 @@ body
 	display: inline-flex;
 }
 
+/* Content design */
+.content
+{
 
+}
+.c-buscador
+{
+	background-color: #FFFFD9;
+	min-width: 150px; width: 40%;
+	margin: 20px auto;
+	padding: 10px;
+}
 
+/* settings card */
+.settings-card-edit
+{
+	bor
+}
 
 /* other kind of things */
 .display
@@ -78,10 +100,24 @@ a, button, .sub-button
 a:hover, button:hover, .sub-button:hover
 {
 	background-color: #ffff00;
-	color: white;
+	color: lightgray;
 	opacity: 1;
 }
 
+
+/* inputs */
+.input-search
+{
+	font-size: 1.4em;
+	border: lightgray 1px solid; border-radius: 3px;
+	color: #263238;
+	padding: 8px;
+
+}
+.input-search:active
+{
+	border: none;
+}
 
 
 /* Tables */

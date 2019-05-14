@@ -59,3 +59,6 @@
 	- log_descr varchar(40) description of the log
 	- log_date datetime() moment when the log happen
 	- log_file varchar(20) file where the log was created
+
+	labsoftware2019
+	

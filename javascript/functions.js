@@ -51,6 +51,8 @@ function alerts()
 		case '12':
 			text = 'Event updated'; war = 'wr'; show = true;
 			break;
+		case '13':
+			text = 'Event Created'; war = 'wr'; show = true;
 		default :
 			//console.log("nada");
 			break;
