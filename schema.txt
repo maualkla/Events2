@@ -60,5 +60,5 @@
 	- log_date datetime() moment when the log happen
 	- log_file varchar(20) file where the log was created
 
-	labsoftware2019
+	LabSoftware2019
 	

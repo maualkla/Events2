@@ -49,7 +49,8 @@
 							# update
 							if(isset($_REQUEST['event_name']) == true && isset($_REQUEST['event_short_name']) == true && isset($_REQUEST['event_descr']) && isset($_REQUEST['event_start']) == true && isset($_REQUEST['event_stop']) == true)
 							{
-								$sql = 'UPDATE event SET event_name = "'.$_REQUEST['event_name'].'", event_short_name = "'.$_REQUEST['event_short_name'].'", event_descr = "'.$_REQUEST['event_descr'].'", event_start = "'.$_REQUEST['event_start'].'", event_stop = "'.$_REQUEST['event_stop'].'" WHERE eventid = "'.$param.'"';
+								$param = $_REQUEST['param'];
+								$sql = 'UPDATE event SET event_name = "'.$_REQUEST['event_name'].'", event_short_name = "'.$_REQUEST['event_short_name'].'", event_descr = "'.$_REQUEST['event_descr'].'", event_start = "'.$_REQUEST['event_start']." ".$_REQUEST['event_start_t'].':00'.'", event_stop = "'.$_REQUEST['event_stop']." ".$_REQUEST['event_stop_t'].':00'.'" WHERE eventid = "'.$param.'"';
 								echo $sql;
 								require_once('../system/connection.php');
 								$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
@@ -65,12 +66,15 @@
 							#create
 							if(isset($_REQUEST['event_name']) == true && isset($_REQUEST['event_short_name']) == true && isset($_REQUEST['event_descr']) && isset($_REQUEST['event_start']) == true && isset($_REQUEST['event_stop']) == true)
 							{
-								$sql = 'INSERT INTO event (eventid, event_name, event_descr, event_short_name, event_start, event_stop, owner_name, owner_descr, owner_short_name, userid) VALUES ("", "'.$_REQUEST['event_name'].'", "'.$_REQUEST['event_descr'].'", "'.$_REQUEST['event_short_name'].'", "'.$_REQUEST['event_start'].'", "'.$_REQUEST['event_stop'].'", "'.$_REQUEST['owner_name'].'", "'.$_REQUEST['owner_descr'].'", "'.$_REQUEST['owner_short_name'].'", "'.$_REQUEST['userid'].'") ';
+								
+								$sql = 'INSERT INTO event (eventid, event_name, event_descr, event_short_name, event_start, event_stop, owner_name, owner_descr, owner_short_name, userid) VALUES ("", "'.$_REQUEST['event_name'].'", n"'.$_REQUEST['event_descr'].'", "'.$_REQUEST['event_short_name'].'", "'.$_REQUEST['event_start']." ".$_REQUEST['event_start_t'].':00'.'", "'.$_REQUEST['event_stop']." ".$_REQUEST['event_stop_t'].':00'.'", "'.$_REQUEST['owner_name'].'", "'.$_REQUEST['owner_descr'].'", "'.$_REQUEST['owner_short_name'].'", "'.$_REQUEST['userid'].'") ';
 								echo $sql;
 								require_once("../system/connection.php");
 							    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 							    mysqli_close($dbc);
-							    header('Location: event.php?pe=13');
+
+							    echo $_REQUEST['event_stop']." ".$_REQUEST['event_stop_t'];
+							    //header('Location: event.php?pe=13');
 							}
 							$display = 3;
 							break;
@@ -146,8 +150,8 @@
 								</div>
 							</div>
 							<div class="sc-content">
-								<div class="sc-content-left"><input name='event_start' type='datetime' value='<?php echo $row['event_start']; ?>'></div>
-								<div class="sc-content-right"><input name='event_stop' type='datetime' value='<?php echo $row['event_stop']; ?>' ></div>
+								<div class="sc-content-left"><?php echo $row['event_start']; ?><input name='event_start' type='date' value='<?php echo $row['event_start']; ?>'><input name='event_start_t' type='time' value='<?php echo $row['event_start']; ?>'></div>
+								<div class="sc-content-right"><?php echo $row['event_stop']; ?><input name='event_stop' type='date' value='<?php echo $row['event_stop']; ?>' ><input name='event_stop_t' type='time' value='<?php echo $row['event_stop']; ?>' ></div>
 							</div>
 							<input class="sub-button" type="submit" value="Save Changes">
 						</form>
@@ -196,9 +200,9 @@
 						<p>Event Short Name</p>
 						<input name="event_short_name" type="text" value="" placeholder="My short event name" required>
 						<p>Event Start Date and Time</p>
-						<input name="event_start" type="date" value="" required>
+						<input name="event_start" type="date" value="" required><input name="event_start_t" type="time" value="" required>
 						<p>Event Finish Date and Time</p>
-						<input name="event_stop" type="date" value="" required>
+						<input name="event_stop" type="date" value="" required><input name="event_stop_t" type="time" value="" required>
 						<p>Owner Name</p>
 						<input name="owner_name" type="text" value="" placeholder="My Org Name" required>
 						<p>Owner Description</p>
