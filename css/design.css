@@ -27,6 +27,12 @@ body
 	font-size: 200%;
 	color: white;
 }
+.error-msg
+{
+	background-color: darkred;
+	padding: 20px; color: white;
+	border-radius: 5px;
+}
 
 /* Container general design*/
 .container
@@ -60,6 +66,12 @@ body
 	min-width: 150px; width: 40%;
 	margin: 20px auto;
 	padding: 10px;
+}
+
+/* settings card */
+.settings-card-edit
+{
+	bor
 }
 
 /* other kind of things */

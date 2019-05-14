@@ -20,7 +20,7 @@
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
 	</head>
 	<body onload="alerts()">
-		<div class="" id="error-msg">
+		<div class="">
 			<?php
 				$display = 0;
 				if(isset($_REQUEST['option']))
@@ -65,11 +65,12 @@
 							#create
 							if(isset($_REQUEST['event_name']) == true && isset($_REQUEST['event_short_name']) == true && isset($_REQUEST['event_descr']) && isset($_REQUEST['event_start']) == true && isset($_REQUEST['event_stop']) == true)
 							{
-								$sql = 'INSERT INTO event (event_name, event_descr, event_short_name, event_start, event_stop, owner_name, owner_descr, owner_short_name, userid) VALUES ("'.$_REQUEST['event_name'].'", "'.$_REQUEST['event_descr'].'", "'.$_REQUEST['event_short_name'].'", "'.$_REQUEST['event_start'].'", "'.$_REQUEST['event_stop'].'", "'.$_REQUEST['owner_name'].'"), "'.$_REQUEST['owner_descr'].'"), "'.$_REQUEST['owner_short_name'].'"), "'.$_REQUEST['userid'].'")';
+								$sql = 'INSERT INTO event (eventid, event_name, event_descr, event_short_name, event_start, event_stop, owner_name, owner_descr, owner_short_name, userid) VALUES ("", "'.$_REQUEST['event_name'].'", "'.$_REQUEST['event_descr'].'", "'.$_REQUEST['event_short_name'].'", "'.$_REQUEST['event_start'].'", "'.$_REQUEST['event_stop'].'", "'.$_REQUEST['owner_name'].'", "'.$_REQUEST['owner_descr'].'", "'.$_REQUEST['owner_short_name'].'", "'.$_REQUEST['userid'].'") ';
+								echo $sql;
 								require_once("../system/connection.php");
 							    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 							    mysqli_close($dbc);
-							    header('Location: users.php?pe=5');
+							    header('Location: event.php?pe=13');
 							}
 							$display = 3;
 							break;
@@ -80,13 +81,17 @@
 				}
 			?>
 		</div>
+		<div class="" id="error-msg">
+		</div>
 		<div class="container">
 			<div class="top">
 				<div class="top-title"><h2>Events main</h2></div>
 				<div class="menu">
-					<button onclick='window.location.href="../../inicio.php"'>Back to Home</button>
 				<?php if($display != 3){ ?>
+					<button onclick='window.location.href="../../inicio.php"'>Back to Home</button>
 					<button onclick='window.location.href="event.php?option=5"'>Create New Event</button>
+				<?php }else{ ?>
+					<button onclick='window.location.href="event.php"'>Back to Events</button>
 				<?php } ?>
 				</div>
 			</div>
@@ -125,7 +130,7 @@
 				{ ?>
 				<?php $row = mysqli_fetch_array($event_result2, MYSQLI_BOTH); ?>
 				<div class="display-settings ">
-					<div class="settings-card">
+					<div class="settings-card-edit">
 						<button onclick="window.location.href = 'event.php?option=2&param=<?php echo $row[0]; ?>'">Cancel Edition</button>
 						<form action="event.php?option=3&param=<?php echo $row[0]; ?>" method="POST">
 							<div class="sc-banner">
@@ -183,7 +188,7 @@
 			}
 			elseif($display == 3){?>
 				<div class="form_new_event">
-					<form action="event.php?option=5&param=<?php echo $row[0]; ?>" method="POST">
+					<form action="event.php?option=5" method="POST">
 						<p>Event Name</p>
 						<input name="event_name" type="text" value="" placeholder="My event" required>
 						<p>Event Description</p>
@@ -191,9 +196,9 @@
 						<p>Event Short Name</p>
 						<input name="event_short_name" type="text" value="" placeholder="My short event name" required>
 						<p>Event Start Date and Time</p>
-						<input name="event_start" type="datetime" value="" required>
+						<input name="event_start" type="date" value="" required>
 						<p>Event Finish Date and Time</p>
-						<input name="event_stop" type="date-time" value="" required>
+						<input name="event_stop" type="date" value="" required>
 						<p>Owner Name</p>
 						<input name="owner_name" type="text" value="" placeholder="My Org Name" required>
 						<p>Owner Description</p>
