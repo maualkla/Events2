@@ -88,8 +88,10 @@
 				<div class="top-title"><h2>Events main</h2></div>
 				<div class="c-buscador">
 					<form action="event.php?option=1" method="POST">
-						<input class="input-search" type="text" name="param">
-						<input class="sub-button" type="submit" value="Search Event">
+						<div class="c-b-box">
+							<input class="input-search" type="text" name="param">
+							<input class="sub-button" type="submit" value="Search Event">
+						</div>
 					</form>
 				</div>
 				<div class="menu">

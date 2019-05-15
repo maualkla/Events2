@@ -115,8 +115,10 @@
 				<div class="top-title"><h2>Users page</h2></div>
 				<div class="c-buscador">
 					<form action="/Events/modules/users/users.php?option=0" method="POST">
-						<input type="text" class="input-search" value="" name="param">
-						<input class="sub-button" type="submit" value="SEARCH"/>
+						<div class="c-b-box">
+							<input type="text" class="input-search" value="" name="param">
+							<input class="sub-button" type="submit" value="SEARCH"/>
+						</div>
 					</form>
 				</div>
 				<div class="menu">

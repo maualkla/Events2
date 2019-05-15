@@ -20,7 +20,6 @@
 	13 = Event Created (wr)
 
 
-
 ## Levels
 	1 -> Just Read (Just see the event, and can display the event section)
 	2 -> Read and Create (Can create events and users, but no edit it)
@@ -31,3 +30,23 @@
 ## Next steps
 
 	1.- Create events module
+
+
+## Color palete
+#fff
+#C6FFE8 Claro
+#B3E6D1
+#95BFAE
+#638074
+#32403A Obscuro
+
+## complementarios
+#FFD0C7 Claro
+#B37468 Obscuro
+
+## Alerts
+red alert #FF616D
+green alert #72FF93
+yellow alert #FFE884
+blue alert #C6FFE8
+gray alert #638074
