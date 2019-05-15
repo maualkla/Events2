@@ -39,7 +39,7 @@ body
 {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 5;
+	grid-template-rows: auto;
 }
 
 /* Top bar design */
@@ -48,7 +48,7 @@ body
 	background: #FFFFD9 ;
 	display: grid;
 	grid-template-rows: 1fr;
-	grid-template-columns: 2fr 3fr;
+	grid-template-columns: 2fr 3fr 2fr;
 }
 .menu
 {
@@ -64,8 +64,8 @@ body
 {
 	background-color: #FFFFD9;
 	min-width: 150px; width: 40%;
-	margin: 20px auto;
-	padding: 10px;
+	margin: 0px auto;
+	padding: 0;
 }
 
 /* settings card */
