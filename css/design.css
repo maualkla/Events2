@@ -162,6 +162,12 @@ td
 .mega-title
 {
 	font-size: 20em;
+	margin: auto;
+}
+.big-title
+{
+	font-size: 4em;
+	margin: auto;
 }
 
 /* live title for sandbox purposes */

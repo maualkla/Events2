@@ -54,13 +54,13 @@
 		</div>
 		<div class="container">
 			<div class="top">
-				<div>
+				<div class="top-title">
 					<img class="t-t-img" src="/Events/assets/events-beta.png">
 					<h2>Set the new password</h2>
 				</div>
 				<div></div>
 				<div class="menu">
-					<button onclick='window.onload.href="/Events/modules/users/users.php"'>Back to Users</button>
+					<button onclick='window.location.href="/Events/modules/users/users.php"'>Back to Users</button>
 				</div>
 			</div>
 			

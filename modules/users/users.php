@@ -35,7 +35,7 @@
 				
 				if($option == '1')
 				{
-					//edit
+					//Seek
 					$sql = 'SELECT * FROM user WHERE userid = "'.$param.'"';
 					require_once('../system/connection.php');
 					$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
