@@ -113,18 +113,22 @@
 		<div class="container">
 			<div class="top">
 				<div class="top-title"><h2>Users page</h2></div>
+				<div class="c-buscador">
+					<form action="/Events/modules/users/users.php?option=0" method="POST">
+						<div class="c-b-box">
+							<input type="text" class="input-search" value="" name="param">
+							<input class="sub-button" type="submit" value="SEARCH"/>
+						</div>
+					</form>
+				</div>
 				<div class="menu">
 					<button onclick="window.location.href ='/Events/inicio.php'">Back to Home</button>
 					<button onclick="window.location.href ='/Events/modules/users/adduser.php'">Add User</button>
 				</div>
 			</div>
 			<div class="content">
-				<div class="c-buscador">
-					<form action="/Events/modules/users/users.php?option=0" method="POST">
-						<h5> USER ID OR NAME </h5>
-						<input type="text" class="input-search" value="" name="param">
-						<input class="sub-button" type="submit" value="SEARCH"/>
-					</form>
+				<div>
+					
 				</div>
 				<div class="content-table <?php if($display == 2){echo'display';}else{echo 'hide';} ?>">
 					<table class="">

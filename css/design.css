@@ -2,36 +2,39 @@
 /* GENERAL DESIGN */
 body
 {
-	font-size: 15px; font-family: helvetica; text-align: center; color: #263238;
-	background-color: white;
+	font-size: 15px; font-family: helvetica; text-align: center; color: #32403A;
+	background-color: #fff;
 }
 
 
 /* Warnings and float messages */
 .er
 {
-	background-color: red;
+	background-color: #FF616D;
 	border: none; border-radius: 10px;
 	padding: 10px;
 	margin: 10px;
 	font-size: 200%;
-	color: white;
+	color: #fff;
 }
 
 .wr
 {
-	background-color: green;
+	background-color: #FFE884;
 	border: none; border-radius: 10px;
 	padding: 10px;
 	margin: 10px;
 	font-size: 200%;
-	color: white;
+	color: #fff;
 }
-.error-msg
+.ss
 {
-	background-color: darkred;
-	padding: 20px; color: white;
-	border-radius: 5px;
+	background-color: #72FF93;
+	border: none; border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+	font-size: 200%;
+	color: #fff;
 }
 
 /* Container general design*/
@@ -39,16 +42,16 @@ body
 {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 5;
+	grid-template-rows: auto;
 }
 
 /* Top bar design */
 .top
 {
-	background: #FFFFD9 ;
+	background: #C6FFE8 ;
 	display: grid;
 	grid-template-rows: 1fr;
-	grid-template-columns: 2fr 3fr;
+	grid-template-columns: 2fr 3fr 2fr;
 }
 .menu
 {
@@ -62,16 +65,20 @@ body
 }
 .c-buscador
 {
-	background-color: #FFFFD9;
 	min-width: 150px; width: 40%;
-	margin: 20px auto;
-	padding: 10px;
+	margin: 0px auto;
+	padding: 0;
+}
+.c-b-box
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
 /* settings card */
 .settings-card-edit
 {
-	bor
+
 }
 
 /* other kind of things */
@@ -90,7 +97,7 @@ body
 a, button, .sub-button
 {
 	padding: 8px; margin: 2px;
-	background-color: #ffff8d;
+	background-color: #B3E6D1;
 	border: none; border-radius: 2px;
 	text-decoration: none;
 	cursor: pointer;
@@ -99,8 +106,8 @@ a, button, .sub-button
 
 a:hover, button:hover, .sub-button:hover
 {
-	background-color: #ffff00;
-	color: lightgray;
+	background-color: #95BFAE;
+	color: #fff;
 	opacity: 1;
 }
 
@@ -110,7 +117,7 @@ a:hover, button:hover, .sub-button:hover
 {
 	font-size: 1.4em;
 	border: lightgray 1px solid; border-radius: 3px;
-	color: #263238;
+	color: #32403A ;
 	padding: 8px;
 
 }
@@ -123,14 +130,14 @@ a:hover, button:hover, .sub-button:hover
 /* Tables */
 table
 {
-	border: 1px solid #37474f;
+	border: 1px solid #32403A;
 	padding: 5px;
 	margin-right: auto; margin-left: auto;
 }
 
 th
 {
-	background-color: #E8DEC5;
+	background-color: #638074;
 }
 
 td

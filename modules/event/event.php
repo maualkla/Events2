@@ -90,6 +90,14 @@
 		<div class="container">
 			<div class="top">
 				<div class="top-title"><h2>Events main</h2></div>
+				<div class="c-buscador">
+					<form action="event.php?option=1" method="POST">
+						<div class="c-b-box">
+							<input class="input-search" type="text" name="param">
+							<input class="sub-button" type="submit" value="Search Event">
+						</div>
+					</form>
+				</div>
 				<div class="menu">
 				<?php if($display != 3){ ?>
 					<button onclick='window.location.href="../../inicio.php"'>Back to Home</button>
@@ -101,12 +109,8 @@
 			</div>
 			<?php if($display != 3){ ?>
 			<div class="content">
-				<div class="c-buscador">
-					<h5>Buscar Evento por Nombre o Id</h5>
-					<form action="event.php?option=1" method="POST">
-						<input class="input-search" type="text" name="param">
-						<input class="sub-button" type="submit" value="Search Event">
-					</form>
+				<div>
+					
 				</div>
 			<?php } ?>
 			<?php if($display == 1){ ?><!--echo "display";}else{echo "hide";} ?>"-->
