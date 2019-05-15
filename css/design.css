@@ -11,30 +11,32 @@ body
 .er
 {
 	background-color: #FF616D;
-	border: none; border-radius: 10px;
+	border: none; border-radius: 2px;
 	padding: 10px;
-	margin: 10px;
-	font-size: 200%;
-	color: #fff;
+	margin: 10px 0px;
+	font-size: 1.4em; color: #638074; text-shadow: 1px 1px #fff;
+	cursor: default;
 }
 
 .wr
 {
 	background-color: #FFE884;
-	border: none; border-radius: 10px;
+	border: none; border-radius: 2px;
 	padding: 10px;
-	margin: 10px;
-	font-size: 200%;
-	color: #fff;
+	margin: 10px 0px;
+	font-size: 1.4em; color: #fff; text-shadow: 1px 1px #638074;
+	font-size: 1.4em; color: #638074; text-shadow: 1px 1px #fff;
+	cursor: default;
 }
 .ss
 {
 	background-color: #72FF93;
-	border: none; border-radius: 10px;
+	border: none; border-radius: 2px;
 	padding: 10px;
-	margin: 10px;
-	font-size: 200%;
-	color: #fff;
+	margin: 10px 0px;
+	font-size: 1.4em; color: #fff; text-shadow: 1px 1px #638074;
+	font-size: 1.4em; color: #638074; text-shadow: 1px 1px #fff;
+	cursor: default;
 }
 
 /* Container general design*/
@@ -124,7 +126,7 @@ a:hover, button:hover, .sub-button:hover
 	border: lightgray 1px solid; border-radius: 3px;
 	color: #32403A ;
 	padding: 8px;
-	margin: 12px auto;
+	margin: 8px auto;
 
 }
 .input-search:active
@@ -161,13 +163,18 @@ td
 /* Title text */
 .mega-title
 {
-	font-size: 20em;
+	font-size: 20em; text-shadow: 1px 1px #638074;
 	margin: auto;
 }
 .big-title
 {
-	font-size: 4em;
+	font-size: 4em; text-shadow: 1px 1px #638074;
 	margin: auto;
+}
+.h1title
+{
+	font-size: 1.6em; text-shadow: .5px .5px #638074;
+	margin: auto 3px;
 }
 
 /* live title for sandbox purposes */

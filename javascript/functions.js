@@ -60,9 +60,16 @@ function alerts()
 
 	if(show)
 	{
-		var msg = document.getElementById("error-msg")
+		var msg = document.getElementById("error-msg");
 		msg.innerHTML = text;
 		msg.classList.add(war);
+		msg.addEventListener("click", function(){
+			var msg = document.getElementById("error-msg");
+			msg.innerHTML = null;
+			msg.classList.remove("er");
+			msg.classList.remove("wr");
+			msg.classList.remove("ss");
+		});
 	}
 	//other functions
 	noBackButton();

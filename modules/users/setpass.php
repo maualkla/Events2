@@ -56,7 +56,7 @@
 			<div class="top">
 				<div class="top-title">
 					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<h2>Set the new password</h2>
+					<div class="h1title">Set the new password</div>
 				</div>
 				<div></div>
 				<div class="menu">

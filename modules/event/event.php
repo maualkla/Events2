@@ -91,7 +91,7 @@
 			<div class="top">
 				<div class="top-title">
 					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<h2>Events main</h2>
+					<div class="h1title">Events main</div>
 				</div>
 				<div class="c-buscador">
 					<form action="event.php?option=1" method="POST">

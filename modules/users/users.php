@@ -114,7 +114,7 @@
 			<div class="top">
 				<div class="top-title">
 					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<h2>Users page</h2>
+					<div class="h1title">Users page</div>
 				</div>
 				<div class="c-buscador">
 					<form action="/Events/modules/users/users.php?option=0" method="POST">

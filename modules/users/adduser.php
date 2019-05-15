@@ -58,7 +58,7 @@
 			<div class="top">
 				<div class="top-title">
 					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<h2>Add new user page</h2>
+					<div class="h1title">Add new user page</div>
 				</div>
 				<div></div>
 				<div class="menu">

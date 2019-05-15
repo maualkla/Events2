@@ -39,7 +39,7 @@
 			<div class="top">
 				<div class="top-title">
 					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<h2>Play Event</h2>
+					<div class="h1title">Play Event</div>
 				</div>
 				<div></div>
 				<div class="menu">

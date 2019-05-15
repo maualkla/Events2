@@ -29,7 +29,7 @@
 			<div class="top">
 				<div class='top-title'>
 					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<h2>Welcome Again</h2>
+					<div class="h1title">Welcome Again</div>
 				</div>
 				<div></div>
 				<div class="menu">
