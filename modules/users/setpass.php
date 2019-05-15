@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Events / Users / Set Pass</title>
+		<title><?php echo $_SESSION['title'] ; ?> / Users </title>
 		<link rel="shortcut icon" href="/Events/assets/events-beta-icon.png">
 		<link rel=StyleSheet href= "/Events/css/design.css" type="text/css">
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
@@ -54,11 +54,16 @@
 		</div>
 		<div class="container">
 			<div class="top">
-				<h2>Set the new password</h2>
+				<div>
+					<img class="t-t-img" src="/Events/assets/events-beta.png">
+					<h2>Set the new password</h2>
+				</div>
+				<div></div>
+				<div class="menu">
+					<button onclick='window.onload.href="/Events/modules/users/users.php"'>Back to Users</button>
+				</div>
 			</div>
-			<div class="menu">
-				<h3><a href="/Events/modules/users/users.php">Back</a></h3>
-			</div>
+			
 			<div class="content">
 				<form method="POST" action="/Events/modules/users/setpass.php?option=2&param=<?php echo $param; ?>&auth=true">
 					<h4> Type the password </h4>

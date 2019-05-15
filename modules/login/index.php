@@ -50,6 +50,7 @@
 		        session_start();
 		        $_SESSION['sesion'] = $sesionhash; 
 		        $_SESSION['id_user'] = $id_user;
+		        $_SESSION['title'] = " Even Tech";
 		        header('Location: ../../inicio.php');
 		    }
 		    else

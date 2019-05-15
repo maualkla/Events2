@@ -24,11 +24,11 @@ function alerts()
 			text = 'Login first!'; war = 'wr'; show = true;
 			break;
 		case '4': 
-			text = 'Isertion failed!'; war = 'er'; show = true;
+			text = 'Insertion failed!'; war = 'er'; show = true;
 			break;
 		case '5': 
 			//console.log( " Entro a 5");
-			text = 'User created!'; war = 'wr'; show = true;
+			text = 'User created!'; war = 'ss'; show = true;
 			break;
 		case '6': 
 			text = 'User updated!'; war = 'wr'; show = true;
@@ -52,7 +52,7 @@ function alerts()
 			text = 'Event updated'; war = 'wr'; show = true;
 			break;
 		case '13':
-			text = 'Event Created'; war = 'wr'; show = true;
+			text = 'Event Created'; war = 'ss'; show = true;
 		default :
 			//console.log("nada");
 			break;

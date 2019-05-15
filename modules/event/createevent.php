@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Create Event</title>
+		<title><?php echo $_SESSION['title'] ; ?> / Event</title>
 		<link rel="shortcut icon" href="/Events/assets/events-beta-icon.png">
 		<link rel=StyleSheet href= "/Events/css/design.css" type="text/css">
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
@@ -26,11 +26,16 @@
 		</div>
 		<div class="container">
 			<div class="top">
-				<h2>Create New Event</h2>
+				<div class="top-title">
+					<img class="t-t-img" src="/Events/assets/events-beta.png">
+					<h2>Create New Event</h2>
+				</div>
+				<div></div>
+				<div class="menu">
+					<h3><a href="event.php">Back to Events</a></h3>
+				</div>
 			</div>
-			<div class="menu">
-				<h3><a href="event.php">Back to Events</a></h3>
-			</div>
+			
 		</div>
 	</body>
 </html>

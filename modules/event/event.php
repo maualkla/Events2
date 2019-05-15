@@ -14,7 +14,7 @@
 <!DOCTYPE html> 
 <html>
 	<head>
-		<title>Event</title>
+		<title><?php echo $_SESSION['title'] ; ?> / Events</title>
 		<link rel="shortcut icon" href="/Events/assets/events-beta-icon.png">
 		<link rel=StyleSheet href= "/Events/css/design.css" type="text/css">
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
@@ -31,7 +31,7 @@
 						case '1':
 							# Query
 							$param = $_REQUEST['param'];
-							$sql = 'SELECT * FROM event WHERE eventid LIKE "%'.$param.'%" OR event_name LIKE "%'.$param.'%"';
+							$sql = 'SELECT * FROM event WHERE eventid LIKE "%'.$param.'%" OR event_name LIKE "%'.$param.'%" OR event_short_name LIKE "%'.$param.'%"';
 							require_once('../system/connection.php');
 							$event_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 							mysqli_close($dbc);
@@ -67,14 +67,14 @@
 							if(isset($_REQUEST['event_name']) == true && isset($_REQUEST['event_short_name']) == true && isset($_REQUEST['event_descr']) && isset($_REQUEST['event_start']) == true && isset($_REQUEST['event_stop']) == true)
 							{
 								
-								$sql = 'INSERT INTO event (eventid, event_name, event_descr, event_short_name, event_start, event_stop, owner_name, owner_descr, owner_short_name, userid) VALUES ("", "'.$_REQUEST['event_name'].'", n"'.$_REQUEST['event_descr'].'", "'.$_REQUEST['event_short_name'].'", "'.$_REQUEST['event_start']." ".$_REQUEST['event_start_t'].':00'.'", "'.$_REQUEST['event_stop']." ".$_REQUEST['event_stop_t'].':00'.'", "'.$_REQUEST['owner_name'].'", "'.$_REQUEST['owner_descr'].'", "'.$_REQUEST['owner_short_name'].'", "'.$_REQUEST['userid'].'") ';
+								$sql = 'INSERT INTO event (eventid, event_name, event_descr, event_short_name, event_start, event_stop, owner_name, owner_descr, owner_short_name, userid) VALUES ("", "'.$_REQUEST['event_name'].'", "'.$_REQUEST['event_descr'].'", "'.$_REQUEST['event_short_name'].'", "'.$_REQUEST['event_start']." ".$_REQUEST['event_start_t'].':00'.'", "'.$_REQUEST['event_stop']." ".$_REQUEST['event_stop_t'].':00'.'", "'.$_REQUEST['owner_name'].'", "'.$_REQUEST['owner_descr'].'", "'.$_REQUEST['owner_short_name'].'", "'.$_REQUEST['userid'].'") ';
 								echo $sql;
 								require_once("../system/connection.php");
 							    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
 							    mysqli_close($dbc);
 
 							    echo $_REQUEST['event_stop']." ".$_REQUEST['event_stop_t'];
-							    //header('Location: event.php?pe=13');
+							    header('Location: event.php?pe=13');
 							}
 							$display = 3;
 							break;
@@ -89,7 +89,10 @@
 		</div>
 		<div class="container">
 			<div class="top">
-				<div class="top-title"><h2>Events main</h2></div>
+				<div class="top-title">
+					<img class="t-t-img" src="/Events/assets/events-beta.png">
+					<h2>Events main</h2>
+				</div>
 				<div class="c-buscador">
 					<form action="event.php?option=1" method="POST">
 						<div class="c-b-box">

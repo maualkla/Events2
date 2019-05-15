@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Events / Users</title>
+		<title><?php echo $_SESSION['title'] ; ?> / Users</title>
 		<link rel="shortcut icon" href="/Events/assets/events-beta-icon.png">
 		<link rel=StyleSheet href= "/Events/css/design.css" type="text/css">
 		<script type = "text/javascript" src="/Events/javascript/functions.js"></script>
@@ -112,7 +112,10 @@
 		</div>
 		<div class="container">
 			<div class="top">
-				<div class="top-title"><h2>Users page</h2></div>
+				<div class="top-title">
+					<img class="t-t-img" src="/Events/assets/events-beta.png">
+					<h2>Users page</h2>
+				</div>
 				<div class="c-buscador">
 					<form action="/Events/modules/users/users.php?option=0" method="POST">
 						<div class="c-b-box">

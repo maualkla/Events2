@@ -27,7 +27,11 @@
 		</div>
 		<div class="container">
 			<div class="top">
-				<div class='top-title'><h2>Here is the main page.</h2></div>
+				<div class='top-title'>
+					<img class="t-t-img" src="/Events/assets/events-beta.png">
+					<h2>Welcome Again</h2>
+				</div>
+				<div></div>
 				<div class="menu">
 					<button onclick='window.location.href="modules/system/close.php"'>Close Sesion</button>
 					<button onclick='window.location.href="modules/users/users.php"'>Users Module</button>
