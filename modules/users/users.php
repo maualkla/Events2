@@ -22,7 +22,91 @@
 	</head>
 	<body onload="alerts()">
 		<div class="" id="error-msg">
+			<!--?php
+			// New Version
+			if(isset($_REQUEST['option']) && isset($_REQUEST['param']))
+			{
+
+				$option = $_REQUEST['option'];
+				$param = $_REQUEST['param'];
+				switch ($option) {
+					case '0':
+						$sql = "SELECT * FROM user WHERE fname LIKE '%".$param."%' OR lname LIKE '%".$param."%' OR nickname LIKE '%".$param."%' OR userid LIKE '%".$param."%'";
+						require_once('../system/connection.php');
+					    $result = mysqli_query($dbc,$sql) or die ("Error: " .mysqli_error($dbc));
+					    mysqli_close($dbc);
+					    $display = 2;
+						break;
+					
+					case '1':
+						//Seek
+						$sql = 'SELECT * FROM user WHERE userid = "'.$param.'"';
+						require_once('../system/connection.php');
+						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+						mysqli_close($dbc);
+						$display = 1;
+						break;
+
+					case '2':
+						//delete
+						$sql = 'DELETE FROM user WHERE userid = '.$param;
+						require_once('../system/connection.php');
+						$delete_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+						mysqli_close($dbc);
+						header('Location: /Events/modules/users/users.php?pe=7');
+						break;
+
+					case '3':
+						//update
+						// -> Falta validar parametros
+						$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'", level = "'.$_REQUEST['level'].'" WHERE userid = "'.$param.'"';
+						echo $sql;
+						require_once('../system/connection.php');
+						$edit_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+						mysqli_close($dbc);
+						header('Location: users.php?pe=6');
+						break;
+
+					case '4':
+						//Change pass	
+						$pass = ""; $pass = $_REQUEST['ps'];
+						$step = false;
+						$decodepass = base64_decode($pass);
+						echo 'ORIGINAL : '.$pass.' :::: DECODED :: '.$decodepass;
+						$options = [ 'salt' => "ASI99221111000__s¡??0popopop22MQVANDMEAL" ];
+		    			$cryptcontra = password_hash($decodepass, PASSWORD_DEFAULT, $options);
+		    			echo $_SESSION['id_user'];
+		    			$sql = 'SELECT password FROM user WHERE userid = "'.$_SESSION['id_user'].'" AND password = "'.$cryptcontra.'"';
+		    			require_once('../system/connection.php');
+		    			$validating_pass = mysqli_query($dbc, $sql) or die (" Error: ".mysqli_error($dbc));
+		    			mysqli_close($dbc);
+		    			// Aqui validamos la pass
+		    			while($row = mysqli_fetch_array($validating_pass, MYSQLI_BOTH))
+		    			{
+		    				$step = true;
+		    				echo 'ENTRO A STEP';
+		    			}
+		    			if($step) 
+	    				{
+	    					header('Location: setpass.php?option=1&param='.$param.'&auth=true');
+	    				}
+	    				else
+	    				{
+	    					header('Location: users.php?pe=8');
+	    				}
+						break;
+
+					case '5':
+
+						break;
+					default:
+						# code...
+						break;
+				}
+			}
+			?-->
 			<?php
+			//OLD VERSION
 				$param = "";
 				$option = "";
 
@@ -133,7 +217,9 @@
 				<div>
 					
 				</div>
-				<div class="content-table <?php if($display == 2){echo'display';}else{echo 'hide';} ?>">
+				<!-- Display Results table -->
+				<?php if($option == 0){?>
+				<div class="content-table ">
 					<table class="">
 						<tr>
 							<th> ID </th>
@@ -147,12 +233,15 @@
 						<?php
 							while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) 
 						    {
-						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[6]."</td><td><button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].")'> DELETE </button> </tr>";
+						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[6]."</td><td><button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button> </tr>";
 						    }
 						?>
 					</table>
 				</div>
-				<div class="content-table <?php if($display == 1 ){echo'display';}else{echo 'hide';} ?>">
+				<?php }?>
+				<!-- Display Editable table -->
+				<?php if($option == 1 ){?>
+				<div class="content-table ">
 					<table class="">
 						<tr> 
 							<th> ID </th>
@@ -173,6 +262,7 @@
 						
 					</table>
 				</div>
+			<?php } ?>
 			</div>
 		</div>
 		<script type="text/javascript">
