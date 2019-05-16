@@ -132,24 +132,18 @@
 				</div>
 				<!-- Display Results table -->
 				<?php if($display == 2){?>
-				<div class="content-table ">
-					<table class="">
-						<tr>
-							<th> ID </th>
-							<th> Name </th>
-							<th> Lastname </th>
-							<th> Email </th>
-							<th> Nickname </th>
-							<th> Level </th>
-							<th> Options </th>
-						</tr>
-						<?php
-							while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) 
-						    {
-						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[6]."</td><td><button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button> </tr>";
-						    }
-						?>
-					</table>
+				<div class="content-cards">
+				<?php
+					while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
+				 	{ ?>
+				 	<div class="c-c-card">
+				 	<?php
+				        echo "<div>".$row[0]."</div><div>".$row[1]."</div><div>".$row[2]."</div><div>".$row[3]."</div><div>".$row[4]."</div><div>".$row[6]."</div><div><button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button> </div>";
+				    ?>
+					</div>
+				    <?php
+				    }
+				?>
 				</div>
 				<?php }?>
 				<!-- Display Editable table -->

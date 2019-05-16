@@ -32,8 +32,8 @@
 
 	1.- Create events module
 		- Delete function. [DONE]
-		- Standarize code between users and events modules
-		- redesign events view
+		- Standarize code between users and events modules [DONE]
+		- redesign events view 
 	2.- Create a ticket generator who
 		- Generate tickets by events 
 		- Send the ticket via mail

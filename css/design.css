@@ -81,6 +81,28 @@ body
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
+/* Cards to display many items */
+.content-cards
+{
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 50px;
+	margin: auto 5%;
+	color: #fff;
+	max-width: 
+}
+.c-c-card
+{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	padding: 10px; 
+	margin: auto;
+	background-color: #638074;
+	border: none; border-radius: 1px;
+	height: 30em; width: 25em;
+}
 
 /* settings card */
 .settings-card-edit
