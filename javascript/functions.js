@@ -53,6 +53,11 @@ function alerts()
 			break;
 		case '13':
 			text = 'Event Created'; war = 'ss'; show = true;
+			break;
+		case '14':
+			text = 'Event Deleted!'; war = 'wr'; show = true;
+			break;
+
 		default :
 			//console.log("nada");
 			break;

@@ -18,6 +18,7 @@
 	11 = Error try again (er)
 	12 = Event Updated (wr)
 	13 = Event Created (wr)
+	14 = Event Deleted (wr)
 
 
 ## Levels

@@ -61,7 +61,11 @@
 							break;
 						case '4':
 							#delete
-							echo "deleteeeeeeeee"; 
+							$sql = 'DELETE FROM event WHERE eventid = '.$param;
+							require_once('../system/connection.php');
+							$delete_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
+							mysqli_close($dbc);
+							header('Location: /Events/modules/event/event.php?pe=7');
 							break;
 						case '5':
 							#create
