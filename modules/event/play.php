@@ -46,7 +46,7 @@
 					<button onclick='window.location.href="event.php"'>Back to Events</button>
 				</div>
 			</div>
-			<div class="mega-title"><?php echo $event['event_short_name']; ?></div>
+			<div class="mega-title">#<?php echo $event['event_short_name']; ?></div>
 			<div class="live-title">LIVE</div>
 		</div>
 	</body>

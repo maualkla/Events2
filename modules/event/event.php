@@ -61,6 +61,7 @@
 							break;
 						case '4':
 							#delete
+							echo "deleteeeeeeeee"; 
 							break;
 						case '5':
 							#create
@@ -131,7 +132,7 @@
 						<?php
 							while($row = mysqli_fetch_array($event_result,  MYSQLI_BOTH))
 							{
-								echo '<tr><td>'.$row['eventid'].'</td><td>'.$row['event_name'].'</td><td>'.$row['event_start'].'</td><td>'.$row['event_stop'].'</td><td>'.$row['owner_name'].'</td><td>'.$row['userid'].'</td><td> <a href="play.php?param='.$row['eventid'].'">Go To Event Screen</a> - <button onclick="window.location.href=\'event.php?option=2&param='.$row['eventid'].'\';"> Event Settings </button> <button onclick="window.location.href = \'events.php?option=3&param='.$row['eventid'].'\'";> Delete </button></td></tr>';
+								echo '<tr><td>'.$row['eventid'].'</td><td>'.$row['event_name'].'</td><td>'.$row['event_start'].'</td><td>'.$row['event_stop'].'</td><td>'.$row['owner_name'].'</td><td>'.$row['userid'].'</td><td> <a href="play.php?param='.$row['eventid'].'">Go To Event Screen</a> - <button onclick="window.location.href=\'event.php?option=2&param='.$row['eventid'].'\';"> Event Settings </button> <button onclick=\'confirmDelete('.$row[0].', "event", "4")\'> Delete </button></td></tr>';
 							}
 						?>
 					</table>	

@@ -90,12 +90,12 @@ function noBackButton()
 	}
 }
 
-function confirmDelete(param)
+function confirmDelete(param, page, num)
 {
-	var x = confirm("Delete this user?");
+	var x = confirm("Confirm delete?");
 	if(x)
 	{
-		window.location.href = 'users.php?option=2&param=' + param;
+		window.location.href = page + '.php?option=' + num + '&param=' + param;
 	}
 	else
 	{

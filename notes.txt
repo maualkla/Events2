@@ -30,6 +30,21 @@
 ## Next steps
 
 	1.- Create events module
+		- Delete function.
+		- Standarize code between users and events modules
+		- redesign events view
+	2.- Create a ticket generator who
+		- Generate tickets by events 
+		- Send the ticket via mail
+		- Generate a blockchain hash to identify each ticket
+	3.- Develop play view:
+		- Put a tweets feed who retrieve twits with the shortname hashtag
+		- Display a interface to input tickets
+	4.- General design
+		- Redesign all the views
+		- Redesign the inicio view
+		- Apply resposiveness
+
 
 
 ## Color palete
