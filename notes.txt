@@ -31,7 +31,7 @@
 ## Next steps
 
 	1.- Create events module
-		- Delete function.
+		- Delete function. [DONE]
 		- Standarize code between users and events modules
 		- redesign events view
 	2.- Create a ticket generator who

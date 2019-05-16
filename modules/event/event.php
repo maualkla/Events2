@@ -61,7 +61,9 @@
 							break;
 						case '4':
 							#delete
+							$param = $_REQUEST['param'];
 							$sql = 'DELETE FROM event WHERE eventid = '.$param;
+							echo $sql;
 							require_once('../system/connection.php');
 							$delete_result = mysqli_query($dbc, $sql) or die ("Error: ".mysqli_error($dbc));
 							mysqli_close($dbc);
