@@ -22,8 +22,9 @@
 	</head>
 	<body onload="alerts()">
 		<div class="" id="error-msg">
-			<!--?php
+			<?php
 			// New Version
+			$display = 0;
 			if(isset($_REQUEST['option']) && isset($_REQUEST['param']))
 			{
 
@@ -104,8 +105,8 @@
 						break;
 				}
 			}
-			?-->
-			<?php
+			?>
+			<!--?php
 			//OLD VERSION
 				$param = "";
 				$option = "";
@@ -138,7 +139,7 @@
 				elseif($option == '3')
 				{
 					//update
-					// ---> Falta validar parametros
+					// -> Falta validar parametros
 					$sql = 'UPDATE user SET fname = "'.$_REQUEST['fname'].'", lname = "'.$_REQUEST['lname'].'", email = "'.$_REQUEST['email'].'", nickname = "'.$_REQUEST['nickname'].'", level = "'.$_REQUEST['level'].'" WHERE userid = "'.$param.'"';
 					echo $sql;
 					require_once('../system/connection.php');
@@ -192,7 +193,7 @@
 					}
 				}
 				
-			?>
+			?-->
 		</div>
 		<div class="container">
 			<div class="top">
@@ -218,7 +219,7 @@
 					
 				</div>
 				<!-- Display Results table -->
-				<?php if($option == 0){?>
+				<?php if($display == 2){?>
 				<div class="content-table ">
 					<table class="">
 						<tr>
@@ -240,7 +241,7 @@
 				</div>
 				<?php }?>
 				<!-- Display Editable table -->
-				<?php if($option == 1 ){?>
+				<?php if($display == 1 ){?>
 				<div class="content-table ">
 					<table class="">
 						<tr> 
