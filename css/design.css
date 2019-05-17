@@ -90,19 +90,31 @@ body
 	grid-gap: 50px;
 	margin: auto 5%;
 	color: #fff;
-	max-width: 
 }
 .c-c-card
 {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: auto;
+	grid-template-rows: 1fr 6fr 1fr 3fr 2fr;
 	padding: 10px; 
 	margin: auto;
-	background-color: #638074;
+	background-color: #32403A;
 	border: none; border-radius: 1px;
 	height: 30em; width: 25em;
 }
+.ccc-1{}
+.ccc-2
+{
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 4fr 1fr;
+}
+	.ccc2-1
+	{
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr;
+	}
 
 /* settings card */
 .settings-card-edit

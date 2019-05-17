@@ -137,9 +137,28 @@
 					while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
 				 	{ ?>
 				 	<div class="c-c-card">
-				 	<?php
+				 		<div class="ccc-1">
+				 			<?php echo $row[0]; ?>
+				 		</div>
+				 		<div class="ccc-2">
+				 			<div class="ccc2-1">
+				 				<div><?php echo $row[1]; ?></div>
+				 				<div><?php echo $row[2]; ?></div>
+				 			</div>
+				 			<div>IMG</div>
+				 		</div>
+				 		<div class="ccc-3">
+				 			<?php echo $row[3]; ?>
+				 		</div>
+				 		<div class="ccc-4">
+				 			Nivel de Acceso <?php echo $row[6]; ?>
+				 		</div>
+				 		<div class="ccc-5">
+				 			<?php echo "<button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button>"; ?>
+				 		</div>
+				 	<!--?php
 				        echo "<div>".$row[0]."</div><div>".$row[1]."</div><div>".$row[2]."</div><div>".$row[3]."</div><div>".$row[4]."</div><div>".$row[6]."</div><div><button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button> </div>";
-				    ?>
+				    ?--->
 					</div>
 				    <?php
 				    }
