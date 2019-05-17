@@ -113,9 +113,9 @@ function goToEdit(param)
 	window.location.href="users.php?option=1&param=" + param;
 }
 
-function resetPage()
+function resetPage(direc, param, option)
 {
-	window.location.href = 'users.php';
+	window.location.href = direc + '.php?option=' + option + '&param=' + param;
 }
 
 function changePass(param)

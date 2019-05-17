@@ -193,12 +193,12 @@
 							<input type='text' value='<?php echo $row[6]; ?>' name='level' id='edit_6'>
 						</div>
 						<div> 
-							<input type='submit' class="card-button" value='Save User Data'>
+							<!--input type='submit' class="card-button" value='Save User Data'-->
+							<button class='card-button' onlick="updateRequest('users', '<?php #echo $row[0]; ?>')"> Save User Info</button>
 							</form> 
-							<!--button onclick="updateRequest('users', '<?php #echo $row[0]; ?>')"> Save User Info</button-->
 						</div>
 						<div>
-							<button onclick='resetPage()' class='card-button'> Cancel Edition </button> 
+							<button onclick='resetPage("users", "<?php echo $row[0]; ?>", "0")' class='card-button'> Cancel Edition </button> 
 						</div>
 					<?php }
 					?>

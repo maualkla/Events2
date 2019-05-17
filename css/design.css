@@ -88,7 +88,11 @@ body
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 4fr 1fr 1fr;
+	width: 90%; height: 80%; min-height: 200px; max-height: 500px;
+	background-color: red;
+	margin: auto auto;
 }
+
 
 /* Cards to display many items */
 .content-cards
