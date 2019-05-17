@@ -142,10 +142,10 @@
 				 		</div>
 				 		<div class="ccc-2">
 				 			<div class="ccc2-1">
-				 				<div><?php echo $row[1]; ?></div>
-				 				<div><?php echo $row[2]; ?></div>
+				 				<div class="ccc21-1"><?php echo substr($row[1], 0, 10); ?></div>
+				 				<div class="ccc21-2"><?php echo substr($row[2], 0, 7); ?></div>
 				 			</div>
-				 			<div>IMG</div>
+				 			<div class="ccc2-2"><img src="../../assets/events-beta-icon.png" class="thumb-img"></div>
 				 		</div>
 				 		<div class="ccc-3">
 				 			<?php echo $row[3]; ?>
