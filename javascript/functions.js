@@ -127,3 +127,30 @@ function changePass(param)
 		window.location.href = 'users.php?option=4&param=' + param + '&ps=' + y;
 	}
 }
+
+
+/*****
+ * Demo Ajax
+ * To update a User in User Main
+ *
+ ******/
+ function updateRequest(direc, user)
+ {
+ 	/* GET VALUES */
+ 	var data = [];
+ 	for(let x = 1; x < 7; x++)
+ 	{
+ 		data[x - 1] = document.getElementById('edit_' + x).value;
+ 	}
+ 	window.console.log(data);
+ 	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() 
+	{
+		if (this.readyState == 4 && this.status == 200) 
+		{
+			window.console.log(" Orale ");
+		}
+	};
+	xhttp.open("PUT", direc + ".php?option=3", true);
+	xhttp.send(data);
+ }

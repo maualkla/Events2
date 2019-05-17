@@ -169,26 +169,39 @@
 				<?php }?>
 				<!-- Display Editable table -->
 				<?php if($display == 1 ){?>
-				<div class="content-table ">
-					<table class="">
-						<tr> 
-							<th> ID </th>
-							<th> Name </th>
-							<th> Lastname </th>
-							<th> Email </th>
-							<th> Nickname </th>
-							<th> Level </th>
-							<th> Options </th>
-						</tr>
-						<form action="users.php?option=3&param=<?php echo $param; ?>" method="POST">
-							<?php
-								while($row = mysqli_fetch_array($edit_result, MYSQLI_BOTH)) 
-							    {
-							        echo "<tr><td><input type='text' value='".$row[0]."' name='userid' disabled='true'></td><td><input type='text' value='".$row[1]."' name='fname' ></td><td><input type='text' value='".$row[2]."' name='lname'></td><td><input type='text' value='".$row[3]."' name='email' ></td><td><input type='text' value='".$row[4]."' name='nickname'></td><td><input type='text' value='".$row[6]."' name='level'></td><td> <input type='submit' value='SAVE'></form> - <button onclick='resetPage()'> CANCEL </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button> </tr>";
-							    }
-							?>
-						
-					</table>
+				<div class="content-big-card">
+					<?php
+						while($row = mysqli_fetch_array($edit_result, MYSQLI_BOTH)) 
+					    { ?>
+						<form action="users.php?option=3&param=<?php echo $param; ?>" method="POST"-->
+						<div>
+							<input type='text' value='<?php echo $row[0]; ?>' name='userid' id='edit_1' disabled='true'>
+						</div>
+						<div>
+							<input type='text' value='<?php echo $row[1]; ?>' name='fname' id='edit_2' >
+						</div>
+						<div>
+							<input type='text' value='<?php echo $row[2]; ?>' name='lname' id='edit_3'>
+						</div>
+						<div>
+							<input type='text' value='<?php echo $row[3]; ?>' name='email' id='edit_4'>
+						</div>
+						<div>
+							<input type='text' value='<?php echo $row[4]; ?>' name='nickname' id='edit_5'>
+						</div>
+						<div>
+							<input type='text' value='<?php echo $row[6]; ?>' name='level' id='edit_6'>
+						</div>
+						<div> 
+							<input type='submit' class="card-button" value='Save User Data'>
+							</form> 
+							<!--button onclick="updateRequest('users', '<?php #echo $row[0]; ?>')"> Save User Info</button-->
+						</div>
+						<div>
+							<button onclick='resetPage()' class='card-button'> Cancel Edition </button> 
+						</div>
+					<?php }
+					?>
 				</div>
 			<?php } ?>
 			</div>
