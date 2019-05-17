@@ -154,7 +154,9 @@
 				 			Nivel de Acceso <?php echo $row[6]; ?>
 				 		</div>
 				 		<div class="ccc-5">
-				 			<?php echo "<button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button>"; ?>
+				 			<button class="card-button" onclick='changePass("<?php echo $row[0]; ?>")'> Set Password </button>
+				 			<button class="card-button" onclick='goToEdit("<?php echo $row[0]; ?>")'> Edit User </button>
+				 			<button class="card-button" onclick='confirmDelete("<?php echo $row[0]; ?>", "users", "2")'> Delete User </button>
 				 		</div>
 				 	<!--?php
 				        echo "<div>".$row[0]."</div><div>".$row[1]."</div><div>".$row[2]."</div><div>".$row[3]."</div><div>".$row[4]."</div><div>".$row[6]."</div><div><button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button> </div>";
