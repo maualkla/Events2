@@ -89,9 +89,22 @@ body
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 4fr 1fr 1fr;
 	width: 90%; height: 80%; min-height: 200px; max-height: 500px;
-	background-color: red;
+	background-color: #32403A;
 	margin: auto auto;
+	padding: 0;
+	color: #fff;
 }
+	.cbc-1
+	{
+		font-size: 250%;
+		margin: .4em; margin-left: 1em; margin-right: auto;
+	}
+	.cbc-2
+	{
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		grid-template-rows: auto;
+	}
 
 
 /* Cards to display many items */
@@ -307,4 +320,10 @@ td
 	-webkit-box-shadow: 0px 0px 25px -6px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 25px -6px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 25px -6px rgba(0,0,0,0.75);
+}
+
+/* Mark */
+.medium-mark
+{
+	background-color: #72FF93;
 }
