@@ -54,18 +54,19 @@
 				}
 				?>
 		</div>
-		<div class="container">
-			<div class="top">
-				<div class="top-title">
-					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<div class="h1title">Add new user page</div>
-				</div>
-				<div></div>
-				<div class="menu">
-					<button onclick='window.location.href="/Events/modules/users/users.php"'>Back to Users</button>
-					<!--h3><a href="php/adduser.php">Add User</a></h3-->
-				</div>
+		<div class="top">
+			<div class="top-title">
+				<img class="t-t-img" src="/Events/assets/events-beta.png">
+				<div class="h1title">Add new user page</div>
 			</div>
+			<div></div>
+			<div class="menu">
+				<button onclick='window.location.href="/Events/modules/users/users.php"'>Back to Users</button>
+				<!--h3><a href="php/adduser.php">Add User</a></h3-->
+			</div>
+		</div>
+		<div class="container">
+			
 			<div class="content">
 				<form action="adduser.php?option=1" method="POST">
 					<h4> First Name </h4>

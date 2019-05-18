@@ -25,19 +25,19 @@
 			<?php
 			?>
 		</div>
-		<div class="container">
-			<div class="top">
-				<div class='top-title'>
-					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<div class="h1title">Welcome Again</div>
-				</div>
-				<div></div>
-				<div class="menu">
-					<button onclick='window.location.href="modules/system/close.php"'>Close Sesion</button>
-					<button onclick='window.location.href="modules/users/users.php"'>Users Module</button>
-					<button onclick='window.location.href="modules/event/event.php"'>Events Module</button>
-				</div>
+		<div class="top">
+			<div class='top-title'>
+				<img class="t-t-img" src="/Events/assets/events-beta.png">
+				<div class="h1title">Welcome Again</div>
 			</div>
+			<div></div>
+			<div class="menu">
+				<button onclick='window.location.href="modules/system/close.php"'>Close Sesion</button>
+				<button onclick='window.location.href="modules/users/users.php"'>Users Module</button>
+				<button onclick='window.location.href="modules/event/event.php"'>Events Module</button>
+			</div>
+		</div>
+		<div class="container">
 			
 		</div>
 	</body>

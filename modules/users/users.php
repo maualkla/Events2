@@ -107,25 +107,26 @@
 			}
 			?>
 		</div>
-		<div class="container">
-			<div class="top">
-				<div class="top-title">
-					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<div class="h1title">Users page</div>
-				</div>
-				<div class="c-buscador">
-					<form action="/Events/modules/users/users.php?option=0" method="POST">
-						<div class="c-b-box">
-							<input type="text" class="input-search" value="" name="param">
-							<input class="sub-button" type="submit" value="SEARCH"/>
-						</div>
-					</form>
-				</div>
-				<div class="menu">
-					<button onclick="window.location.href ='/Events/inicio.php'">Back to Home</button>
-					<button onclick="window.location.href ='/Events/modules/users/adduser.php'">Add User</button>
-				</div>
+		<div class="top">
+			<div class="top-title">
+				<img class="t-t-img" src="/Events/assets/events-beta.png">
+				<div class="h1title">Users page</div>
 			</div>
+			<div class="c-buscador">
+				<form action="/Events/modules/users/users.php?option=0" method="POST">
+					<div class="c-b-box">
+						<input type="text" class="input-search" value="" name="param">
+						<input class="sub-button" type="submit" value="SEARCH"/>
+					</div>
+				</form>
+			</div>
+			<div class="menu">
+				<button onclick="window.location.href ='/Events/inicio.php'">Back to Home</button>
+				<button onclick="window.location.href ='/Events/modules/users/adduser.php'">Add User</button>
+			</div>
+		</div>
+		<div class="container">
+			
 			<div class="content">
 				<div>
 					
@@ -143,7 +144,7 @@
 				 		<div class="ccc-2">
 				 			<div class="ccc2-1">
 				 				<div class="ccc21-1"><?php echo substr($row[1], 0, 10); ?></div>
-				 				<div class="ccc21-2"><?php echo substr($row[2], 0, 7); ?></div>
+				 				<div class="ccc21-2"><?php echo substr($row[2], 0, 6); ?></div>
 				 			</div>
 				 			<div class="ccc2-2"><img src="../../assets/events-beta-icon.png" class="thumb-img"></div>
 				 		</div>

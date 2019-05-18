@@ -154,3 +154,25 @@ function changePass(param)
 	xhttp.open("PUT", direc + ".php?option=3", true);
 	xhttp.send(data);
  }
+
+ function clic()
+{
+	var url_1 = "https://bbmkt.herokuapp.com/v1/adduser"
+	var vl = document.getElementById("valores");
+	console.log(" Entro en JS"); vl.innerHTML += "<br> ========> Ejecutando llamada <br>";
+	var req = new XMLHttpRequest();console.log(" Creo xml"); vl.innerHTML += "========> Se ha creado el archivo XMLHttpRequest <br>";
+	req.open("GET", url_1, true);console.log(" .open"); vl.innerHTML += "========> Se ha definido la URL y el metodo GET <br>";
+	req.send();console.log(" .send"); vl.innerHTML += "========> Se ha hecho la peticion a la URL: "+ url_1+" <br>";
+	if(req.response)
+	{
+		vl.innerHTML += "========> La respuesta es: <br>"+ req.response +"<br>";
+	}
+	else
+	{
+		vl.innerHTML += "========> No hay respuesta <br>";
+	}
+	
+	/*fetch('https://localhost:3000/v1/adduser');
+	.then(response => response.json());
+	.then(json => console.log(json));*/
+}

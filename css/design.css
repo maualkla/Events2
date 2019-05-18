@@ -4,6 +4,8 @@ body
 {
 	font-size: 15px; font-family: helvetica; text-align: center; color: #32403A;
 	background-color: #fff;
+	overflow-y: scroll;
+	z-index: 1;
 }
 
 
@@ -50,10 +52,36 @@ body
 /* Top bar design */
 .top
 {
+	opacity: .975;
 	background: #C6FFE8 ;
 	display: grid;
-	grid-template-rows: 1fr;
-	grid-template-columns: 2fr 3fr 2fr;
+	position: fixed;
+	width: 100%;
+	z-index: 5;
+}
+@media screen and (max-width:800px)
+{
+	.top
+	{
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+}
+@media screen and (min-width:800px)
+{
+	.top
+	{
+		grid-template-columns: 1fr 2fr ;
+		grid-template-rows: 1fr 1fr;
+	}
+}
+@media screen and (min-width:1000px)
+{
+	.top
+	{
+		grid-template-rows: auto;
+		grid-template-columns: 2fr 3fr 2fr;
+	}
 }
 .top-title
 {
@@ -65,10 +93,12 @@ body
 	display: inline-flex;
 }
 
+
 /* Content design */
 .content
 {
-	margin: 2em 0em;
+
+	margin: 5em 0em;
 }
 .c-buscador
 {
@@ -112,11 +142,47 @@ body
 {
 	display: grid;
 	grid-template-rows: 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 50px;
-	margin: auto 5%;
+	margin: auto auto;
 	color: #fff;
 }
+@media screen and (max-width:800px)
+{
+	.content-cards
+	{
+		grid-template-columns: 1fr;
+	}
+}
+@media screen and (min-width:800px)
+{
+	.content-cards
+	{
+		grid-template-columns: 1fr 1fr ;
+	}
+}
+@media screen and (min-width:1000px)
+{
+	.content-cards
+	{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+@media screen and (min-width:1400px)
+{
+	.content-cards
+	{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+@media screen and (min-width:1800px)
+{
+	.content-cards
+	{
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+}
+
+
 .c-c-card
 {
 	display: grid;
@@ -179,7 +245,7 @@ body
 	margin-top: -40px;
 }
 
-input[type="submit"]
+/*input[type="submit"]
 {
 	background: none;
 	color: inherit;
@@ -188,7 +254,7 @@ input[type="submit"]
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-}
+}*/
 
 /* Buttons of cards */
 .card-button
@@ -326,4 +392,27 @@ td
 .medium-mark
 {
 	background-color: #72FF93;
+}
+
+/* LOGIN */
+@media screen and (max-width:800px)
+{
+	.login
+	{
+		margin-top: 55em;
+	}
+}
+@media screen and (min-width:800px)
+{
+	.login
+	{
+		margin-top: 35em;
+	}
+}
+@media screen and (min-width:1000px)
+{
+	.login
+	{
+		margin-top: 18em;
+	}
 }

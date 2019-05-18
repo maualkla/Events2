@@ -52,18 +52,17 @@
 				}
 			?>
 		</div>
-		<div class="container">
-			<div class="top">
-				<div class="top-title">
-					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<div class="h1title">Set the new password</div>
-				</div>
-				<div></div>
-				<div class="menu">
-					<button onclick='window.location.href="/Events/modules/users/users.php"'>Back to Users</button>
-				</div>
+		<div class="top">
+			<div class="top-title">
+				<img class="t-t-img" src="/Events/assets/events-beta.png">
+				<div class="h1title">Set the new password</div>
 			</div>
-			
+			<div></div>
+			<div class="menu">
+				<button onclick='window.location.href="/Events/modules/users/users.php"'>Back to Users</button>
+			</div>
+		</div>
+		<div class="container">			
 			<div class="content">
 				<form method="POST" action="/Events/modules/users/setpass.php?option=2&param=<?php echo $param; ?>&auth=true">
 					<h4> Type the password </h4>
