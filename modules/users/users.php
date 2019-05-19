@@ -152,7 +152,7 @@
 				 			<?php echo $row[3]; ?>
 				 		</div>
 				 		<div class="ccc-4">
-				 			Nivel de Acceso <?php echo $row[6]; ?>
+				 			User Access Level  <?php echo $row[6]; ?>
 				 		</div>
 				 		<div class="ccc-5">
 				 			<button class="card-button" onclick='changePass("<?php echo $row[0]; ?>")'> Set Password </button>
@@ -187,20 +187,33 @@
 								
 									<input type='text' value='<?php echo $row[3]; ?>' name='email' id='edit_4' class="cbc21-3">
 								
-									<input type='text' value='<?php echo $row[4]; ?>' name='nickname' id='edit_5' class="cbc21-4">								
-									<input type='text' value='<?php echo $row[6]; ?>' name='level' id='edit_6'>
+									<input type='text' value='<?php echo $row[4]; ?>' name='nickname' id='edit_5' class="cbc21-4">		
+									<select class="cbc21-5" name='level' id='edit_6'>
+										<?php
+											for($c = 1; $c < 5; $c++)
+											{
+												if($row[6] == $c)
+												{
+													echo '<option selected value='.$c.'>Level '.$c.'</option>';
+												}else
+												{
+													echo '<option value='.$c.'>Level '.$c.'</option>';
+												}
+											}
+										?>
+									</select>
 								
 									<!--input type='submit' class="card-button" value='Save User Data'-->
-									<button class='card-button' onlick="updateRequest('users', '<?php #echo $row[0]; ?>')"> Save User Info</button>
+									<button class='card-button' onlick="updateRequest('users', '<?php #echo $row[0]; ?>')" id="cbc21-6"> Save User Info</button>
 
 							</form> 
 							<div class="cbc2-2">
-								IMG
+								<img src="../../assets/events-beta-icon.png" class="big-img">
 							</div>
 						</div>
 					
 						
-						<div>
+						<div class="cbc-3">
 							<button onclick='resetPage("users", "<?php echo $row[0]; ?>", "0")' class='card-button'> Cancel Edition </button> 
 						</div>
 					<?php }

@@ -119,8 +119,8 @@ body
 {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 4fr 1fr 1fr;
-	width: 90%; height: 80%; min-height: 200px; max-height: 500px;
+	grid-template-rows: 1fr 4fr 1fr	;
+	width: 90%; height: 80%; min-height: 200px; 
 	background-color: #32403A;
 	padding: 0;
 	color: #fff;
@@ -136,7 +136,6 @@ body
 	.cbc-2
 	{
 		display: grid;
-		grid-template-columns: 3fr 1fr;
 		grid-template-rows: auto;
 
 	}
@@ -185,16 +184,39 @@ body
 				width: 12.5em;
 			}
 
-			.cbc21-1:hover, .cbc21-2:hover, .cbc21-3:hover, .cbc21-4:hover
+			.cbc21-5
 			{
-				border-color: #C6FFE8 ;
+				border: 1px #32403A dotted; border-radius: 2px;
+				color: #fff;
+				font-size: 4em;
+				background: none;
+				margin-left: .7em;
+				width: 12.5em;
 			}
-
-			.cbc21-1:focus, .cbc21-2:focus, .cbc21-3:focus, .cbc21-4:focus
+			#cbc21-6
+			{
+				margin-top: .5em; margin-left: 2.5em;
+			}
+			.cbc21-5 option
 			{
 				background-color: #C6FFE8;	
 				color: #32403A;
 			}
+
+			.cbc21-1:hover, .cbc21-2:hover, .cbc21-3:hover, .cbc21-4:hover, .cbc21-5:hover
+			{
+				border-color: #C6FFE8 ;
+			}
+
+			.cbc21-1:focus, .cbc21-2:focus, .cbc21-3:focus, .cbc21-4:focus, .cbc21-5:focus
+			{
+				background-color: #C6FFE8;	
+				color: #32403A;
+			}
+	.cbc-3
+	{
+		margin-left: 2.7em; margin-right: auto;
+	}
 
 
 
@@ -216,6 +238,11 @@ body
 	.content-big-card
 	{
 		margin: 10em auto;
+		max-height: 900px;
+	}
+	.cbc-2 /* Edit user style */
+	{
+		grid-template-columns: 1fr;
 	}
 }
 @media screen and (min-width:701px)
@@ -227,6 +254,11 @@ body
 	.content-big-card
 	{
 		margin: 6em auto;
+		max-height: 900px;
+	}
+	.cbc-2 /* Edit user style */
+	{
+		grid-template-columns: 1fr;
 	}
 }
 @media screen and (min-width:1000px)
@@ -238,6 +270,11 @@ body
 	.content-big-card
 	{
 		margin: 2em auto;
+		max-height: 560px;
+	}
+	.cbc-2 /* Edit user style */
+	{
+		grid-template-columns:3fr 1fr;
 	}
 }
 @media screen and (min-width:1400px)
@@ -249,6 +286,11 @@ body
 	.content-big-card
 	{
 		margin: auto auto;
+		max-height: 560px;
+	}
+	.cbc-2 /* Edit user style */
+	{
+		grid-template-columns:3fr 1fr;
 	}
 }
 @media screen and (min-width:1800px)
@@ -260,6 +302,11 @@ body
 	.content-big-card
 	{
 		margin: auto auto;
+		max-height: 560px;
+	}
+	.cbc-2 /* Edit user style */
+	{
+		grid-template-columns:3fr 1fr;
 	}
 }
 
@@ -459,6 +506,11 @@ td
 .thumb-img
 {
 	height: 85px;
+}
+
+.big-img
+{
+	height: 145px;
 }
 
 /* Title text */
