@@ -137,6 +137,36 @@ body
 		grid-template-columns: 3fr 1fr;
 		grid-template-rows: auto;
 	}
+		.cbc21-1
+		{
+			border: 1px #32403A dotted; border-radius: 2px;
+			color: #fff;
+			font-size: 5.5em;
+			background: none;
+			margin-left: .5em; margin-bottom: -.2em;
+			padding: 0;
+		}
+		
+		.cbc21-2
+		{
+			border: 1px #32403A dotted; border-radius: 2px;
+			color: #fff;
+			font-size: 5.5em;
+			background: none;
+			margin-left: .5em;
+		}
+
+		.cbc21-1:hover, .cbc21-2:hover
+		{
+			border-color: #C6FFE8 ;
+		}
+
+		.cbc21-1:focus, .cbc21-2:focus
+		{
+			background-color: #C6FFE8;	
+			color: #32403A;
+		}
+
 
 
 /* Cards to display many items */

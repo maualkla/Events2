@@ -181,10 +181,10 @@
 							<form class="cbc2-1" action="users.php?option=3&param=<?php echo $param; ?>" method="POST"-->
 						
 								<div>
-									<input type='text' value='<?php echo $row[1]; ?>' name='fname' id='edit_2' >
+									<input type='text' value='<?php echo $row[1]; ?>' name='fname' id='edit_2' class="cbc21-1">
 								</div>
 								<div>
-									<input type='text' value='<?php echo $row[2]; ?>' name='lname' id='edit_3'>
+									<input type='text' value='<?php echo $row[2]; ?>' name='lname' id='edit_3' class="cbc21-2">
 								</div>
 								<div>
 									<input type='text' value='<?php echo $row[3]; ?>' name='email' id='edit_4'>
