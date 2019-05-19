@@ -180,25 +180,19 @@
 						<div class='cbc-2'>
 							<form class="cbc2-1" action="users.php?option=3&param=<?php echo $param; ?>" method="POST"-->
 						
-								<div>
 									<input type='text' value='<?php echo $row[1]; ?>' name='fname' id='edit_2' class="cbc21-1">
-								</div>
-								<div>
+								
 									<input type='text' value='<?php echo $row[2]; ?>' name='lname' id='edit_3' class="cbc21-2">
-								</div>
-								<div>
-									<input type='text' value='<?php echo $row[3]; ?>' name='email' id='edit_4'>
-								</div>
-								<div>
-									<input type='text' value='<?php echo $row[4]; ?>' name='nickname' id='edit_5'>
-								</div>
-								<div>
+								
+								
+									<input type='text' value='<?php echo $row[3]; ?>' name='email' id='edit_4' class="cbc21-3">
+								
+									<input type='text' value='<?php echo $row[4]; ?>' name='nickname' id='edit_5' class="cbc21-4">								
 									<input type='text' value='<?php echo $row[6]; ?>' name='level' id='edit_6'>
-								</div>
-								<div> 
+								
 									<!--input type='submit' class="card-button" value='Save User Data'-->
 									<button class='card-button' onlick="updateRequest('users', '<?php #echo $row[0]; ?>')"> Save User Info</button>
-								</div>
+
 							</form> 
 							<div class="cbc2-2">
 								IMG

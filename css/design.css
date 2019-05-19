@@ -122,9 +122,11 @@ body
 	grid-template-rows: 1fr 4fr 1fr 1fr;
 	width: 90%; height: 80%; min-height: 200px; max-height: 500px;
 	background-color: #32403A;
-	margin: auto auto;
 	padding: 0;
 	color: #fff;
+	-webkit-box-shadow: 0px 0px 25px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 25px -6px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 25px -6px rgba(0,0,0,0.75);
 }
 	.cbc-1
 	{
@@ -136,36 +138,63 @@ body
 		display: grid;
 		grid-template-columns: 3fr 1fr;
 		grid-template-rows: auto;
+
 	}
-		.cbc21-1
+		.cbc2-1
 		{
-			border: 1px #32403A dotted; border-radius: 2px;
-			color: #fff;
-			font-size: 5.5em;
-			background: none;
-			margin-left: .5em; margin-bottom: -.2em;
-			padding: 0;
+			text-align: left;
 		}
-		
-		.cbc21-2
-		{
-			border: 1px #32403A dotted; border-radius: 2px;
-			color: #fff;
-			font-size: 5.5em;
-			background: none;
-			margin-left: .5em;
-		}
+			.cbc21-1 /* fname */
+			{
+				border: 1px #32403A dotted; border-radius: 2px;
+				color: #fff;
+				font-size: 5.5em;
+				background: none;
+				margin-left: .5em; margin-bottom: -.2em;
+				padding: 0;
+				width: 9em;
+			}
+			
+			.cbc21-2 /* lname */
+			{
+				border: 1px #32403A dotted; border-radius: 2px;
+				color: #fff;
+				font-size: 5.5em;
+				background: none;
+				margin-left: .5em;
+				width: 9em;
+			}
 
-		.cbc21-1:hover, .cbc21-2:hover
-		{
-			border-color: #C6FFE8 ;
-		}
+			.cbc21-3 /* email */
+			{
+				border: 1px #32403A dotted; border-radius: 2px;
+				color: #fff;
+				font-size: 2.5em;
+				background: none;
+				margin-left: 1.1em;
+				width: 20em;
+			}
 
-		.cbc21-1:focus, .cbc21-2:focus
-		{
-			background-color: #C6FFE8;	
-			color: #32403A;
-		}
+			.cbc21-4 /* username */
+			{
+				border: 1px #32403A dotted; border-radius: 2px;
+				color: #fff;
+				font-size: 4em;
+				background: none;
+				margin-left: .7em;
+				width: 12.5em;
+			}
+
+			.cbc21-1:hover, .cbc21-2:hover, .cbc21-3:hover, .cbc21-4:hover
+			{
+				border-color: #C6FFE8 ;
+			}
+
+			.cbc21-1:focus, .cbc21-2:focus, .cbc21-3:focus, .cbc21-4:focus
+			{
+				background-color: #C6FFE8;	
+				color: #32403A;
+			}
 
 
 
@@ -184,12 +213,20 @@ body
 	{
 		grid-template-columns: 1fr;
 	}
+	.content-big-card
+	{
+		margin: 10em auto;
+	}
 }
 @media screen and (min-width:701px)
 {
 	.content-cards
 	{
 		grid-template-columns: 1fr 1fr ;
+	}
+	.content-big-card
+	{
+		margin: 6em auto;
 	}
 }
 @media screen and (min-width:1000px)
@@ -198,6 +235,10 @@ body
 	{
 		grid-template-columns: 1fr 1fr 1fr;
 	}
+	.content-big-card
+	{
+		margin: 2em auto;
+	}
 }
 @media screen and (min-width:1400px)
 {
@@ -205,12 +246,20 @@ body
 	{
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
+	.content-big-card
+	{
+		margin: auto auto;
+	}
 }
 @media screen and (min-width:1800px)
 {
 	.content-cards
 	{
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+	.content-big-card
+	{
+		margin: auto auto;
 	}
 }
 
