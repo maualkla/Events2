@@ -55,7 +55,7 @@
 		<div class="top">
 			<div class="top-title">
 				<img class="t-t-img" src="/Events/assets/events-beta.png">
-				<div class="h1title">Set the new password</div>
+				<div class="h1title">Reset password</div>
 			</div>
 			<div></div>
 			<div class="menu">
@@ -64,12 +64,10 @@
 		</div>
 		<div class="container">			
 			<div class="content">
-				<form method="POST" action="/Events/modules/users/setpass.php?option=2&param=<?php echo $param; ?>&auth=true">
-					<h4> Type the password </h4>
-					<input type="password" value="" name="p1">
-					<h4> Type again </h4>
-					<input type="password" value="" name="p2">
-					<input type="submit" name="" value="Change Pass">
+				<form method="POST" action="/Events/modules/users/setpass.php?option=2&param=<?php echo $param; ?>&auth=true" class="c-passform">
+					<input type="password" placeholder="Type new password" value="" name="p1">
+					<input type="password" value="" placeholder="Type again" name="p2">
+					<button>Change Pass</button>
 				</form>
 			</div>
 		</div>

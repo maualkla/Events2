@@ -108,6 +108,36 @@ body
 	margin: 0px auto;
 	padding: 0;
 }
+
+/*content pass*/
+.c-passform
+{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	background-color: #32403A;
+	margin: 4em auto;
+	padding: 3em;
+	width: 70%;
+	color: #fff;
+	-webkit-box-shadow: 0px 0px 25px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 25px -6px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 25px -6px rgba(0,0,0,0.75);
+}
+	.c-passform input
+	{
+		font-size: 5em;
+		background: none;
+		border: none;
+		color: #fff;
+		width: 9em;
+	}
+	.c-passform button
+	{
+		width: 10em;
+		margin-top: 3em;
+	}
+
 .c-b-box
 {
 	display: grid;
@@ -203,6 +233,7 @@ body
 				color: #32403A;
 				opacity: .8;
 			}
+
 
 			.cbc21-1:hover, .cbc21-2:hover, .cbc21-3:hover, .cbc21-4:hover, .cbc21-5:hover
 			{
