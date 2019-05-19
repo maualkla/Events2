@@ -113,9 +113,9 @@ function goToEdit(param)
 	window.location.href="users.php?option=1&param=" + param;
 }
 
-function resetPage()
+function resetPage(direc, param, option)
 {
-	window.location.href = 'users.php';
+	window.location.href = direc + '.php?option=' + option + '&param=' + param;
 }
 
 function changePass(param)
@@ -126,4 +126,53 @@ function changePass(param)
 		var y = btoa(x);
 		window.location.href = 'users.php?option=4&param=' + param + '&ps=' + y;
 	}
+}
+
+
+/*****
+ * Demo Ajax
+ * To update a User in User Main
+ *
+ ******/
+ function updateRequest(direc, user)
+ {
+ 	/* GET VALUES */
+ 	var data = [];
+ 	for(let x = 1; x < 7; x++)
+ 	{
+ 		data[x - 1] = document.getElementById('edit_' + x).value;
+ 	}
+ 	window.console.log(data);
+ 	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() 
+	{
+		if (this.readyState == 4 && this.status == 200) 
+		{
+			window.console.log(" Orale ");
+		}
+	};
+	xhttp.open("PUT", direc + ".php?option=3", true);
+	xhttp.send(data);
+ }
+
+ function clic()
+{
+	var url_1 = "https://bbmkt.herokuapp.com/v1/adduser"
+	var vl = document.getElementById("valores");
+	console.log(" Entro en JS"); vl.innerHTML += "<br> ========> Ejecutando llamada <br>";
+	var req = new XMLHttpRequest();console.log(" Creo xml"); vl.innerHTML += "========> Se ha creado el archivo XMLHttpRequest <br>";
+	req.open("GET", url_1, true);console.log(" .open"); vl.innerHTML += "========> Se ha definido la URL y el metodo GET <br>";
+	req.send();console.log(" .send"); vl.innerHTML += "========> Se ha hecho la peticion a la URL: "+ url_1+" <br>";
+	if(req.response)
+	{
+		vl.innerHTML += "========> La respuesta es: <br>"+ req.response +"<br>";
+	}
+	else
+	{
+		vl.innerHTML += "========> No hay respuesta <br>";
+	}
+	
+	/*fetch('https://localhost:3000/v1/adduser');
+	.then(response => response.json());
+	.then(json => console.log(json));*/
 }

@@ -34,18 +34,17 @@
 			<?php
 			?>
 		</div>
-		<div class="container">
-			
-			<div class="top">
-				<div class="top-title">
-					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<div class="h1title">Play Event</div>
-				</div>
-				<div></div>
-				<div class="menu">
-					<button onclick='window.location.href="event.php"'>Back to Events</button>
-				</div>
+		<div class="top">
+			<div class="top-title">
+				<img class="t-t-img" src="/Events/assets/events-beta.png">
+				<div class="h1title">Play Event</div>
 			</div>
+			<div></div>
+			<div class="menu">
+				<button onclick='window.location.href="event.php"'>Back to Events</button>
+			</div>
+		</div>
+		<div class="container">
 			<div class="mega-title">#<?php echo $event['event_short_name']; ?></div>
 			<div class="live-title">LIVE</div>
 		</div>

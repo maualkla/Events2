@@ -107,73 +107,117 @@
 			}
 			?>
 		</div>
-		<div class="container">
-			<div class="top">
-				<div class="top-title">
-					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<div class="h1title">Users page</div>
-				</div>
-				<div class="c-buscador">
-					<form action="/Events/modules/users/users.php?option=0" method="POST">
-						<div class="c-b-box">
-							<input type="text" class="input-search" value="" name="param">
-							<input class="sub-button" type="submit" value="SEARCH"/>
-						</div>
-					</form>
-				</div>
-				<div class="menu">
-					<button onclick="window.location.href ='/Events/inicio.php'">Back to Home</button>
-					<button onclick="window.location.href ='/Events/modules/users/adduser.php'">Add User</button>
-				</div>
+		<div class="top">
+			<div class="top-title">
+				<img class="t-t-img" src="/Events/assets/events-beta.png">
+				<div class="h1title">Users page</div>
 			</div>
+			<div class="c-buscador">
+				<form action="/Events/modules/users/users.php?option=0" method="POST">
+					<div class="c-b-box">
+						<input type="text" class="input-search" value="" name="param">
+						<input class="sub-button" type="submit" value="SEARCH"/>
+					</div>
+				</form>
+			</div>
+			<div class="menu">
+				<button onclick="window.location.href ='/Events/inicio.php'">Back to Home</button>
+				<button onclick="window.location.href ='/Events/modules/users/adduser.php'">Add User</button>
+			</div>
+		</div>
+		<div class="container">
+			
 			<div class="content">
 				<div>
 					
 				</div>
 				<!-- Display Results table -->
 				<?php if($display == 2){?>
-				<div class="content-table ">
-					<table class="">
-						<tr>
-							<th> ID </th>
-							<th> Name </th>
-							<th> Lastname </th>
-							<th> Email </th>
-							<th> Nickname </th>
-							<th> Level </th>
-							<th> Options </th>
-						</tr>
-						<?php
-							while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) 
-						    {
-						        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[6]."</td><td><button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button> </tr>";
-						    }
-						?>
-					</table>
+				<div class="content-cards">
+				<?php
+					while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
+				 	{ ?>
+				 	<div class="c-c-card">
+				 		<div class="ccc-1">
+				 			<?php echo $row[0]; ?>
+				 		</div>
+				 		<div class="ccc-2">
+				 			<div class="ccc2-1">
+				 				<div class="ccc21-1"><?php echo substr($row[1], 0, 10); ?></div>
+				 				<div class="ccc21-2"><?php echo substr($row[2], 0, 6); ?></div>
+				 			</div>
+				 			<div class="ccc2-2"><img src="../../assets/events-beta-icon.png" class="thumb-img"></div>
+				 		</div>
+				 		<div class="ccc-3">
+				 			<?php echo $row[3]; ?>
+				 		</div>
+				 		<div class="ccc-4">
+				 			User Access Level  <?php echo $row[6]; ?>
+				 		</div>
+				 		<div class="ccc-5">
+				 			<button class="card-button" onclick='changePass("<?php echo $row[0]; ?>")'> Set Password </button>
+				 			<button class="card-button" onclick='goToEdit("<?php echo $row[0]; ?>")'> Edit User </button>
+				 			<button class="card-button" onclick='confirmDelete("<?php echo $row[0]; ?>", "users", "2")'> Delete User </button>
+				 		</div>
+				 	<!--?php
+				        echo "<div>".$row[0]."</div><div>".$row[1]."</div><div>".$row[2]."</div><div>".$row[3]."</div><div>".$row[4]."</div><div>".$row[6]."</div><div><button onclick='changePass(".$row[0].")'> CHANGEPASS </button> - <button onclick='goToEdit(".$row[0].")'> EDIT </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button> </div>";
+				    ?--->
+					</div>
+				    <?php
+				    }
+				?>
 				</div>
 				<?php }?>
 				<!-- Display Editable table -->
 				<?php if($display == 1 ){?>
-				<div class="content-table ">
-					<table class="">
-						<tr> 
-							<th> ID </th>
-							<th> Name </th>
-							<th> Lastname </th>
-							<th> Email </th>
-							<th> Nickname </th>
-							<th> Level </th>
-							<th> Options </th>
-						</tr>
-						<form action="users.php?option=3&param=<?php echo $param; ?>" method="POST">
-							<?php
-								while($row = mysqli_fetch_array($edit_result, MYSQLI_BOTH)) 
-							    {
-							        echo "<tr><td><input type='text' value='".$row[0]."' name='userid' disabled='true'></td><td><input type='text' value='".$row[1]."' name='fname' ></td><td><input type='text' value='".$row[2]."' name='lname'></td><td><input type='text' value='".$row[3]."' name='email' ></td><td><input type='text' value='".$row[4]."' name='nickname'></td><td><input type='text' value='".$row[6]."' name='level'></td><td> <input type='submit' value='SAVE'></form> - <button onclick='resetPage()'> CANCEL </button> - <button onclick='confirmDelete(".$row[0].", \"users\", \"2\")'> DELETE </button> </tr>";
-							    }
-							?>
+				<div class="content-big-card">
+					<?php
+						while($row = mysqli_fetch_array($edit_result, MYSQLI_BOTH)) 
+					    { ?>
+					    <div class="cbc-1">
+							User Code: <mark class="medium-mark"><?php echo $row[0]; ?></mark>
+						</div>
+						<div class='cbc-2'>
+							<form class="cbc2-1" action="users.php?option=3&param=<?php echo $param; ?>" method="POST"-->
 						
-					</table>
+									<input type='text' value='<?php echo $row[1]; ?>' name='fname' id='edit_2' class="cbc21-1">
+								
+									<input type='text' value='<?php echo $row[2]; ?>' name='lname' id='edit_3' class="cbc21-2">
+								
+								
+									<input type='text' value='<?php echo $row[3]; ?>' name='email' id='edit_4' class="cbc21-3">
+								
+									<input type='text' value='<?php echo $row[4]; ?>' name='nickname' id='edit_5' class="cbc21-4">		
+									<select class="cbc21-5" name='level' id='edit_6'>
+										<?php
+											for($c = 1; $c < 5; $c++)
+											{
+												if($row[6] == $c)
+												{
+													echo '<option selected value='.$c.'>Access level '.$c.'</option>';
+												}else
+												{
+													echo '<option value='.$c.'>Access level '.$c.'</option>';
+												}
+											}
+										?>
+									</select>
+								
+									<!--input type='submit' class="card-button" value='Save User Data'-->
+									<button class='card-button' onlick="updateRequest('users', '<?php #echo $row[0]; ?>')" id="cbc21-6"> Save User Info</button>
+
+							</form> 
+							<div class="cbc2-2">
+								<img src="../../assets/events-beta-icon.png" class="big-img">
+							</div>
+						</div>
+					
+						
+						<div class="cbc-3">
+							<button onclick='resetPage("users", "<?php echo $row[0]; ?>", "0")' class='card-button'> Cancel Edition </button> 
+						</div>
+					<?php }
+					?>
 				</div>
 			<?php } ?>
 			</div>

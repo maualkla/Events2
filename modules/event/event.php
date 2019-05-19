@@ -94,29 +94,29 @@
 		</div>
 		<div class="" id="error-msg">
 		</div>
-		<div class="container">
-			<div class="top">
-				<div class="top-title">
-					<img class="t-t-img" src="/Events/assets/events-beta.png">
-					<div class="h1title">Events main</div>
-				</div>
-				<div class="c-buscador">
-					<form action="event.php?option=1" method="POST">
-						<div class="c-b-box">
-							<input class="input-search" type="text" name="param">
-							<input class="sub-button" type="submit" value="Search Event">
-						</div>
-					</form>
-				</div>
-				<div class="menu">
-				<?php if($display != 3){ ?>
-					<button onclick='window.location.href="../../inicio.php"'>Back to Home</button>
-					<button onclick='window.location.href="event.php?option=5"'>Create New Event</button>
-				<?php }else{ ?>
-					<button onclick='window.location.href="event.php"'>Back to Events</button>
-				<?php } ?>
-				</div>
+		<div class="top">
+			<div class="top-title">
+				<img class="t-t-img" src="/Events/assets/events-beta.png">
+				<div class="h1title">Events main</div>
 			</div>
+			<div class="c-buscador">
+				<form action="event.php?option=1" method="POST">
+					<div class="c-b-box">
+						<input class="input-search" type="text" name="param">
+						<input class="sub-button" type="submit" value="Search Event">
+					</div>
+				</form>
+			</div>
+			<div class="menu">
+			<?php if($display != 3){ ?>
+				<button onclick='window.location.href="../../inicio.php"'>Back to Home</button>
+				<button onclick='window.location.href="event.php?option=5"'>Create New Event</button>
+			<?php }else{ ?>
+				<button onclick='window.location.href="event.php"'>Back to Events</button>
+			<?php } ?>
+			</div>
+		</div>
+		<div class="container">
 			<?php if($display != 3){ ?>
 			<div class="content">
 				<div>
