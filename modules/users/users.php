@@ -194,10 +194,10 @@
 											{
 												if($row[6] == $c)
 												{
-													echo '<option selected value='.$c.'>Level '.$c.'</option>';
+													echo '<option selected value='.$c.'>Access level '.$c.'</option>';
 												}else
 												{
-													echo '<option value='.$c.'>Level '.$c.'</option>';
+													echo '<option value='.$c.'>Access level '.$c.'</option>';
 												}
 											}
 										?>
