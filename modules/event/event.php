@@ -124,24 +124,38 @@
 				</div>
 			<?php } ?>
 			<?php if($display == 1){ ?><!--echo "display";}else{echo "hide";} ?>"-->
-				<div class="display-results ">
-					<table>
-						<tr>
-							<th>Event ID</th>
-							<th>Event Name</th>
-							<th>Event Start</th>
-							<th>Event Finish</th>
-							<th>Owner</th>
-							<th>User owner</th>
-							<th>Options</th>
-						</tr>
+				<div class="content-cards">
 						<?php
 							while($row = mysqli_fetch_array($event_result,  MYSQLI_BOTH))
-							{
-								echo '<tr><td>'.$row['eventid'].'</td><td>'.$row['event_name'].'</td><td>'.$row['event_start'].'</td><td>'.$row['event_stop'].'</td><td>'.$row['owner_name'].'</td><td>'.$row['userid'].'</td><td> <a href="play.php?param='.$row['eventid'].'">Go To Event Screen</a> - <button onclick="window.location.href=\'event.php?option=2&param='.$row['eventid'].'\';"> Event Settings </button> <button onclick=\'confirmDelete('.$row[0].', "event", "4")\'> Delete </button></td></tr>';
-							}
-						?>
-					</table>	
+							{ ?>
+					<div class="c-c-card">
+						<div class="ccc-1">
+							<?php echo $row['eventid']; ?>
+						</div>
+						<div class="ccc-2">
+							<div class="ccc2-1">
+				 				<div class="ccc21-1" style="font-size: 70%;">#<?php echo substr($row['event_short_name'], 0, 10); ?></div>
+				 				<div class="ccc21-2" style="font-size: 70%; margin-top: -6px;"> <?php echo substr($row['owner_short_name'], 0, 10); ?></div>
+				 			</div>
+				 			<div class="ccc2-2"><img style="margin-top: -10px;" src="../../assets/events-beta-icon.png" class="thumb-img"></div>
+						</div>
+						<div class="ccc-3">
+							Starts: <?php echo $row['event_start']; ?>
+						</div>
+						<div class="ccc-4">
+				 			<?php echo $row['event_name']; ?>
+				 		</div>
+				 		<div class="ccc-5">
+				 			<button class="card-button" onclick=''> Play Event </button>
+				 			<button class="card-button" onclick=''> Event Settings </button>
+				 			<button class="card-button" onclick=''> Delete Event</button>
+				 		</div>
+						<!--?php	echo '<tr><td>'..'</td><td>'..'</td><td>'..'</td><td>'..'</td><td>'.$row['owner_name'].'</td><td>'.$row['userid'].'</td><td> <a href="play.php?param='.$row['eventid'].'">Go To Event Screen</a> - <button onclick="window.location.href=\'event.php?option=2&param='.$row['eventid'].'\';"> Event Settings </button> <button onclick=\'confirmDelete('.$row[0].', "event", "4")\'> Delete </button></td></tr>';
+						?-->
+					</div>
+				<?php
+						}
+					?>
 				</div>
 			<?php } elseif($display == 2){?>
 				<?php if(isset($_REQUEST['val']) == true)

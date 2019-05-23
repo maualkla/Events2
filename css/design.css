@@ -59,32 +59,7 @@ body
 	width: 100%;
 	z-index: 5;
 }
-@media screen and (max-width:700px)
-{
-	.top
-	{
-		font-size: 300%;
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr 1fr;
-	}
-}
-@media screen and (min-width:701px)
-{
-	.top
-	{
-		font-size: 120%;
-		grid-template-columns: 1fr 2fr ;
-		grid-template-rows: 1fr 1fr;
-	}
-}
-@media screen and (min-width:1000px)
-{
-	.top
-	{
-		grid-template-rows: auto;
-		grid-template-columns: 2fr 3fr 2fr;
-	}
-}
+
 .top-title
 {
 	display: inline-flex;
@@ -262,86 +237,6 @@ body
 	margin: auto auto;
 	color: #fff;
 }
-@media screen and (max-width:700px)
-{
-	.content-cards
-	{
-		grid-template-columns: 1fr;
-	}
-	.content-big-card
-	{
-		margin: 10em auto;
-		max-height: 900px;
-	}
-	.cbc-2 /* Edit user style */
-	{
-		grid-template-columns: 1fr;
-	}
-}
-@media screen and (min-width:701px)
-{
-	.content-cards
-	{
-		grid-template-columns: 1fr 1fr ;
-	}
-	.content-big-card
-	{
-		margin: 6em auto;
-		max-height: 900px;
-	}
-	.cbc-2 /* Edit user style */
-	{
-		grid-template-columns: 1fr;
-	}
-}
-@media screen and (min-width:1000px)
-{
-	.content-cards
-	{
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-	.content-big-card
-	{
-		margin: 2em auto;
-		max-height: 560px;
-	}
-	.cbc-2 /* Edit user style */
-	{
-		grid-template-columns:3fr 1fr;
-	}
-}
-@media screen and (min-width:1400px)
-{
-	.content-cards
-	{
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
-	.content-big-card
-	{
-		margin: auto auto;
-		max-height: 560px;
-	}
-	.cbc-2 /* Edit user style */
-	{
-		grid-template-columns:3fr 1fr;
-	}
-}
-@media screen and (min-width:1800px)
-{
-	.content-cards
-	{
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	}
-	.content-big-card
-	{
-		margin: auto auto;
-		max-height: 560px;
-	}
-	.cbc-2 /* Edit user style */
-	{
-		grid-template-columns:3fr 1fr;
-	}
-}
 
 
 .c-c-card
@@ -400,6 +295,14 @@ body
 	margin-top: -30px;
 	color: #FFD0C7 ; font-size: 120%;
 }
+	.ccc3-a
+	{
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 2fr 1fr 2fr;
+		margin: 0; 
+		padding: 0;
+	}
 .ccc-4
 {
 	font-size: 4em; 
@@ -470,27 +373,6 @@ a:hover, button:hover, .sub-button:hover
 	opacity: 1;
 }
 
-@media screen and (max-width:700px)
-{
-	a, button, .sub-button
-	{
-		font-size: 300%;
-	}
-}
-@media screen and (min-width:701px)
-{
-	a, button, .sub-button
-	{
-		font-size: 120%;
-	}
-}
-@media screen and (min-width:1000px)
-{
-	a, button, .sub-button
-	{
-
-	}
-}
 
 
 /* inputs */
@@ -584,12 +466,16 @@ td
 	background-color: #72FF93;
 }
 
+
+
+/* MEDIA QUERYS */
+
 /* LOGIN */
 @media screen and (max-width:700px)
 {
 	.login
 	{
-		margin-top: 55em;
+		margin-top: 45em;
 	}
 }
 @media screen and (min-width:701px)
@@ -604,5 +490,134 @@ td
 	.login
 	{
 		margin-top: 18em;
+	}
+}
+
+@media screen and (max-width:700px)
+{
+	a, button, .sub-button
+	{
+		font-size: 300%;
+	}
+}
+@media screen and (min-width:701px)
+{
+	a, button, .sub-button
+	{
+		font-size: 120%;
+	}
+}
+@media screen and (min-width:1000px)
+{
+	a, button, .sub-button
+	{
+
+	}
+}
+
+@media screen and (max-width:700px)
+{
+	.content-cards
+	{
+		grid-template-columns: 1fr;
+	}
+	.content-big-card
+	{
+		margin: 10em auto;
+		max-height: 900px;
+	}
+	.cbc-2 /* Edit user style */
+	{
+		grid-template-columns: 1fr;
+	}
+}
+@media screen and (min-width:701px)
+{
+	.content-cards
+	{
+		grid-template-columns: 1fr 1fr ;
+	}
+	.content-big-card
+	{
+		margin: 6em auto;
+		max-height: 900px;
+	}
+	.cbc-2 /* Edit user style */
+	{
+		grid-template-columns: 1fr;
+	}
+}
+@media screen and (min-width:1000px)
+{
+	.content-cards
+	{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	.content-big-card
+	{
+		margin: 2em auto;
+		max-height: 560px;
+	}
+	.cbc-2 /* Edit user style */
+	{
+		grid-template-columns:3fr 1fr;
+	}
+}
+@media screen and (min-width:1400px)
+{
+	.content-cards
+	{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	.content-big-card
+	{
+		margin: auto auto;
+		max-height: 560px;
+	}
+	.cbc-2 /* Edit user style */
+	{
+		grid-template-columns:3fr 1fr;
+	}
+}
+@media screen and (min-width:1800px)
+{
+	.content-cards
+	{
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+	.content-big-card
+	{
+		margin: auto auto;
+		max-height: 560px;
+	}
+	.cbc-2 /* Edit user style */
+	{
+		grid-template-columns:3fr 1fr;
+	}
+}
+@media screen and (max-width:700px)
+{
+	.top
+	{
+		font-size: 300%;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+}
+@media screen and (min-width:701px)
+{
+	.top
+	{
+		font-size: 120%;
+		grid-template-columns: 1fr 2fr ;
+		grid-template-rows: 1fr 1fr;
+	}
+}
+@media screen and (min-width:1000px)
+{
+	.top
+	{
+		grid-template-rows: auto;
+		grid-template-columns: 2fr 3fr 2fr;
 	}
 }

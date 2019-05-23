@@ -33,8 +33,8 @@
 	1.- Create events module
 		- Delete function. [DONE]
 		- Standarize code between users and events modules [DONE]
-		- redesign events and users view 
-		- Develop (add section, table and guest)
+		- redesign users and event view [] 
+		- Develop (add section, table and guest) 
 		- Develop a JS Ajas to update, delete and create.
 	2.- Create a ticket generator who
 		- Generate tickets by events 
