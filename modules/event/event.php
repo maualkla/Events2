@@ -146,9 +146,9 @@
 				 			<?php echo $row['event_name']; ?>
 				 		</div>
 				 		<div class="ccc-5">
-				 			<button class="card-button" onclick=''> Play Event </button>
-				 			<button class="card-button" onclick=''> Event Settings </button>
-				 			<button class="card-button" onclick=''> Delete Event</button>
+				 			<button class="card-button" onclick='window.location.href="play.php?param=<?php echo $row['eventid']; ?>"'> Play Event </button>
+				 			<button class="card-button" onclick="window.location.href='event.php?option=2&param=<?php echo $row['eventid']; ?>'"> Event Settings </button>
+				 			<button class="card-button" onclick="confirmDelete('<?php echo $row[0]; ?>', 'event', '4')"> Delete Event</button>
 				 		</div>
 						<!--?php	echo '<tr><td>'..'</td><td>'..'</td><td>'..'</td><td>'..'</td><td>'.$row['owner_name'].'</td><td>'.$row['userid'].'</td><td> <a href="play.php?param='.$row['eventid'].'">Go To Event Screen</a> - <button onclick="window.location.href=\'event.php?option=2&param='.$row['eventid'].'\';"> Event Settings </button> <button onclick=\'confirmDelete('.$row[0].', "event", "4")\'> Delete </button></td></tr>';
 						?-->
