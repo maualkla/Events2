@@ -192,28 +192,28 @@
 				else ?>
 			<?php { ?>
 				<?php $row = mysqli_fetch_array($event_result2, MYSQLI_BOTH); ?>
-				<div class="display-settings ">
-					<div class="settings-card">
+				<div class="content-big-card">
+					<div class="cbc-1">
+						<?php echo $row['eventid']; ?>
 						<button onclick="window.location.href = 'event.php?option=2&param=<?php echo $row[0]; ?>&val=1'">Edit Event</button>
-						<div class="sc-banner">
-							<h6><?php echo $row['eventid']; ?></h6>
-						</div>
-						<div class="sc-title">
-							<div class="sc-tt-left">
+					</div>
+					<div class="cbc-2">
+						<div class="cbc2-1">
+							<div class="">
 								<h3><?php echo $row['event_name']; ?></h3>
 								<h1><?php echo $row['event_short_name']; ?></h1>
 							</div>
-							<div class="sc-tt-right">
+							<div class="">
 								<p><?php echo $row['event_descr']; ?></p>
 							</div>
 						</div>
-						<div class="sc-content">
+						<div class="">
 							<div class="sc-content-left"><?php echo $row['event_start']; ?></div>
 							<div class="sc-content-right"><?php echo $row['event_stop']; ?></div>
 						</div>
-						<div class="sc-content-down">
+					</div>
+					<div class="cbc-3">
 
-						</div>
 					</div>
 				</div>
 			<?php } 
