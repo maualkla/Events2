@@ -158,65 +158,34 @@
 					?>
 				</div>
 			<?php } elseif($display == 2){?>
-				<?php if(isset($_REQUEST['val']) == true)
-				{ ?>
 				<?php $row = mysqli_fetch_array($event_result2, MYSQLI_BOTH); ?>
-				<div class="display-settings ">
-					<div class="settings-card-edit">
-						<button onclick="window.location.href = 'event.php?option=2&param=<?php echo $row[0]; ?>'">Cancel Edition</button>
-						<form action="event.php?option=3&param=<?php echo $row[0]; ?>" method="POST">
-							<div class="sc-banner">
-								<h6><?php echo $row['eventid']; ?></h6>
-							</div>
-							<div class="sc-title">
-								<div class="sc-tt-left">
-									<h3><input name='event_name' type='text' value='<?php echo $row['event_name']; ?>' ></h3>
-									<h1><input name='event_short_name' type='text' value='<?php echo $row['event_short_name']; ?>'></h1>
-								</div>
-								<div class="sc-tt-right">
-									<p><input name='event_descr' type='text' value='<?php echo $row['event_descr']; ?>' ></p>
-								</div>
-							</div>
-							<div class="sc-content">
-								<div class="sc-content-left"><?php echo $row['event_start']; ?><input name='event_start' type='date' value='<?php echo $row['event_start']; ?>'><input name='event_start_t' type='time' value='<?php echo $row['event_start']; ?>'></div>
-								<div class="sc-content-right"><?php echo $row['event_stop']; ?><input name='event_stop' type='date' value='<?php echo $row['event_stop']; ?>' ><input name='event_stop_t' type='time' value='<?php echo $row['event_stop']; ?>' ></div>
-							</div>
-							<input class="sub-button" type="submit" value="Save Changes">
-						</form>
-						<div class="sc-content-down">
-
-						</div>
-					</div>
-				</div>
-			<?php } 
-				else ?>
-			<?php { ?>
-				<?php $row = mysqli_fetch_array($event_result2, MYSQLI_BOTH); ?>
+				
 				<div class="content-big-card">
 					<div class="cbc-1">
-						<?php echo $row['eventid']; ?>
-						<button onclick="window.location.href = 'event.php?option=2&param=<?php echo $row[0]; ?>&val=1'">Edit Event</button>
+						Event ID: <?php echo $row['eventid']; ?>
 					</div>
 					<div class="cbc-2">
-						<div class="cbc2-1">
-							<div class="">
-								<h3><?php echo $row['event_name']; ?></h3>
-								<h1><?php echo $row['event_short_name']; ?></h1>
+						<form action="event.php?option=3&param=<?php echo row[0]; ?>" class="cbc2-1">
+							<input class="cbc21-1" type="text" value="<?php echo $row['event_name']; ?>" placeholder="Event Name" required>
+							<input class="cbc21-2" type="text" value="<?php echo $row['owner_name']; ?>" placeholder="Owner Name" required>
+							<input class="cbc21-3" type="text" value="<?php echo $row['event_descr']; ?>" placeholder="Event Description" required>
+							<div class="cbc21-4">
+								<input class="" type="date" value="<?php echo $row['event_start']; ?>" required>
+								<input class="" type="time" value="<?php echo $row['event_start']; ?>" required>
 							</div>
-							<div class="">
-								<p><?php echo $row['event_descr']; ?></p>
+							<div class="cbc21-4">
+								<input class="" type="date" value="<?php echo $row['event_stop']; ?>" required>
+								<input class="" type="time" value="<?php echo $row['event_stop']; ?>" required>
 							</div>
-						</div>
-						<div class="">
-							<div class="sc-content-left"><?php echo $row['event_start']; ?></div>
-							<div class="sc-content-right"><?php echo $row['event_stop']; ?></div>
-						</div>
+							<input class="cbc21-3" type="text" value="<?php echo $row['event_short_name']; ?>" placeholder="#Hastag" required>
+						</form>
+						<div class="cbc2-2">IMG</div>
 					</div>
 					<div class="cbc-3">
-
+						
 					</div>
 				</div>
-			<?php } 
+			<?php 
 			}
 			elseif($display == 3){?>
 				<div class="form_new_event">

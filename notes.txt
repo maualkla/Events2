@@ -46,7 +46,11 @@
 	4.- General design
 		- Redesign all the views
 		- Redesign the inicio view
-		- Apply resposiveness
+		- Apply 
+	5.- Backend
+		- Validar que no se pueda borrar un usuario con eventos activos.
+		- Tener bandera para poder "borrar" eventos u usuarios sin borrarlos en realidad.
+		- Implementar los logs del sistema.
 
 
 

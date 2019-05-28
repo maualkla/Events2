@@ -141,8 +141,8 @@ body
 	.cbc-2
 	{
 		display: grid;
+		/*grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));*/
 		grid-template-rows: auto;
-
 	}
 		.cbc2-1
 		{
@@ -188,6 +188,12 @@ body
 				margin-left: .7em;
 				width: 12.5em;
 			}
+				.cbc21-4 input[type="date"], .cbc21-4 input[type="time"]
+				{
+					margin: none; padding: none; border: none; background: none;
+					margin: auto auto;
+					font-size: 80%; color: white;
+				}
 
 			.cbc21-5
 			{
@@ -295,14 +301,6 @@ body
 	margin-top: -30px;
 	color: #FFD0C7 ; font-size: 120%;
 }
-	.ccc3-a
-	{
-		display: grid;
-		grid-template-rows: 1fr;
-		grid-template-columns: 1fr 2fr 1fr 2fr;
-		margin: 0; 
-		padding: 0;
-	}
 .ccc-4
 {
 	font-size: 4em; 
