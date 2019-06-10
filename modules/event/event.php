@@ -24,7 +24,7 @@
 			<?php
 				$display = 0;
 				if(isset($_REQUEST['option']))
-				{
+				{ 
 					$option = $_REQUEST['option'];
 					switch ($option) 
 					{
