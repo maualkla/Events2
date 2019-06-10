@@ -166,20 +166,23 @@
 					</div>
 					<div class="cbc-2">
 						<form action="event.php?option=3&param=<?php echo row[0]; ?>" class="cbc2-1">
-							<input class="cbc21-1" type="text" value="<?php echo $row['event_name']; ?>" placeholder="Event Name" required>
-							<input class="cbc21-2" type="text" value="<?php echo $row['owner_name']; ?>" placeholder="Owner Name" required>
-							<input class="cbc21-3" type="text" value="<?php echo $row['event_descr']; ?>" placeholder="Event Description" required>
+							<input class="cbc21-1" type="text" value="<?php echo $row['event_name']; ?>" name="event_name" placeholder="Event Name" required>
+							<input class="cbc21-2" type="text" value="<?php echo $row['owner_name']; ?>" disabled placeholder="Event Description" required>
+							<input class="cbc21-3" type="text" value="<?php echo $row['event_descr']; ?>" name="event_descr" placeholder="Event Description" required>
 							<div class="cbc21-4">
-								<input class="" type="date" value="<?php echo $row['event_start']; ?>" required>
-								<input class="" type="time" value="<?php echo $row['event_start']; ?>" required>
+								<input class="" type="date" value="<?php echo $row['event_start']; ?>" name="event_start" required>
+								<input class="" type="time" value="<?php echo $row['event_start']; ?>" name="event_start_t" required>
 							</div>
 							<div class="cbc21-4">
-								<input class="" type="date" value="<?php echo $row['event_stop']; ?>" required>
-								<input class="" type="time" value="<?php echo $row['event_stop']; ?>" required>
+								<input class="" type="date" value="<?php echo $row['event_stop']; ?>" name="event_stop" required>
+								<input class="" type="time" value="<?php echo $row['event_stop']; ?>" name="event_stop_t" required>
 							</div>
-							<input class="cbc21-3" type="text" value="<?php echo $row['event_short_name']; ?>" placeholder="#Hastag" required>
+							<input class="cbc21-3" type="text" value="<?php echo $row['event_short_name']; ?>" name="event_short_name" placeholder="#Hastag" required>
+							<button class='card-button' onlick="window.sonsole.log('hello');" id="cbc21-6"> Save User Info</button>
 						</form>
-						<div class="cbc2-2">IMG</div>
+						<div class="cbc2-2">
+							<img src="../../assets/events-beta-icon.png" class="big-img">
+						</div>
 					</div>
 					<div class="cbc-3">
 						
@@ -188,6 +191,48 @@
 			<?php 
 			}
 			elseif($display == 3){?>
+
+
+				<div class="generic-card big-card">
+					<div class="gc-head little-box">
+						<div class="">
+							ID #1323
+						</div>
+						<div class="">
+							Title One
+						</div>
+					</div>
+					<div class="gc-body">
+						
+					</div>
+					<div class="gc-footer">
+					</div>
+				</div>
+
+
+				<div class="generic-card medium-card">
+					<div class="gc-head">
+					</div>
+					<div class="gc-body">
+					</div>
+					<div class="gc-footer">
+					</div>
+				</div>
+
+				<div class="generic-card little-card">
+					<div class="gc-head">
+					</div>
+					<div class="gc-body">
+					</div>
+					<div class="gc-footer">
+					</div>
+				</div>
+
+
+
+
+
+
 				<div class="form_new_event">
 					<form action="event.php?option=5" method="POST">
 						<p>Event Name</p>

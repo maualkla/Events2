@@ -619,3 +619,20 @@ td
 		grid-template-columns: 2fr 3fr 2fr;
 	}
 }
+
+
+
+
+
+
+.generic-card
+	.big-card
+	.medium-card
+	.little-card
+		.gc-head
+		.gc-body
+		.gc-footer
+		.big-box
+		.medium-box
+		.little-box
+			

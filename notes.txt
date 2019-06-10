@@ -34,11 +34,19 @@
 		- Delete function. [DONE]
 		- Standarize code between users and events modules [DONE]
 		- redesign users and event view [] 
+		June 10th to 13th
+		- Mockops
+		June 14th
 		- Develop (add section, table and guest) 
-		- Develop a JS Ajas to update, delete and create.
+		June 15th and 16th
+		- Develop a JS Ajax to update, delete and create.
+
 	2.- Create a ticket generator who
+		June 17th
 		- Generate tickets by events 
+		June 18th
 		- Send the ticket via mail
+		June 19th
 		- Generate a blockchain hash to identify each ticket
 	3.- Develop play view:
 		- Put a tweets feed who retrieve twits with the shortname hashtag
